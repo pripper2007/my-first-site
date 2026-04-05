@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Universe Section</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-top: #181f73;
+      --bg-bottom: #4d43ff;
+      --text-primary: rgba(255,255,255,0.96);
+      --text-secondary: rgba(255,255,255,0.62);
+      --line: rgba(255,255,255,0.18);
+      --gold: #c79a43;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      background: #f3f3f1;
+      font-family: 'Inter', sans-serif;
+    }
+    .section {
+      width: min(1420px, 100%);
+      min-height: 780px;
+      color: var(--text-primary);
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+      display: flex;
+      flex-direction: column;
+      background:
+        radial-gradient(circle at 50% 78%, rgba(199,154,67,0.18), transparent 24%),
+        radial-gradient(circle at 50% 78%, rgba(199,154,67,0.14), transparent 40%),
+        linear-gradient(180deg, #2c2410 0%, #3d3018 38%, #5a4520 100%);
+      transition: background 0.6s ease;
+    }
+    .section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--glow-overlay,
+        radial-gradient(circle at 50% 100%, rgba(255,230,160,0.12), transparent 28%),
+        radial-gradient(circle at 50% 12%, rgba(255,255,255,0.03), transparent 42%));
+      pointer-events: none;
+      transition: background 0.6s ease;
+    }
+    .inner {
+      position: relative;
+      z-index: 1;
+      padding: 56px 64px 0;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .section.light-bg .eyebrow,
+    .section.light-bg .stat-title { color: rgba(60,50,30,0.85); }
+    .section.light-bg .subtitle,
+    .section.light-bg .stat-copy { color: rgba(60,50,30,0.6); }
+    .section.light-bg .stat-value { color: rgba(40,30,10,0.95); }
+    .section.light-bg .stats-wrap { border-color: rgba(60,50,30,0.18); }
+    .section.light-bg .eyebrow::before { background: var(--gold); }
+    .section.light-bg .controls button {
+      border-color: rgba(60,50,30,0.2);
+      background: rgba(60,50,30,0.08);
+      color: rgba(60,50,30,0.5);
+    }
+    .section.light-bg .controls button:hover {
+      background: rgba(60,50,30,0.15);
+      color: rgba(60,50,30,0.8);
+    }
+    .section.light-bg .preset-panel {
+      background: rgba(255,255,255,0.55);
+      border-color: rgba(60,50,30,0.12);
+    }
+    .section.light-bg .preset-btn {
+      border-color: rgba(60,50,30,0.15);
+      background: rgba(60,50,30,0.06);
+      color: rgba(60,50,30,0.55);
+    }
+    .section.light-bg .preset-btn:hover {
+      background: rgba(60,50,30,0.12);
+      color: rgba(40,30,10,0.9);
+    }
+    .section.light-bg .preset-btn.active {
+      background: rgba(60,50,30,0.15);
+      color: rgba(40,30,10,0.95);
+      border-color: rgba(60,50,30,0.3);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 34px;
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 52px;
+      height: 1px;
+      background: var(--gold);
+      display: inline-block;
+    }
+    .subtitle {
+      margin: 0 0 32px 0;
+      max-width: 680px;
+      text-align: left;
+      color: var(--text-secondary);
+      font-size: 20px;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+    .stats-wrap {
+      margin-top: 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      flex-shrink: 0;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat {
+      padding: 28px 20px 30px;
+      min-height: 0;
+    }
+    .stat-value {
+      display: block;
+      margin-bottom: 8px;
+      font-size: clamp(28px, 2.5vw, 42px);
+      line-height: 0.95;
+      font-weight: 500;
+      color: var(--text-primary);
+      letter-spacing: -0.04em;
+    }
+    .stat-title {
+      display: block;
+      font-size: 15px;
+      line-height: 1.2;
+      font-weight: 500;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 6px;
+    }
+    .stat-copy {
+      display: block;
+      max-width: 200px;
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--text-secondary);
+    }
+
+    /* ── Animation container ── */
+    .visual {
+      position: relative;
+      flex: 1;
+      min-height: 520px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      margin-bottom: -1px; /* ensure no sub-pixel gap at bottom */
+    }
+    .visual canvas {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ── Controls ── */
+    .controls {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+    .controls button {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      transition: all 0.2s ease;
+    }
+    .controls button:hover {
+      background: rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.9);
+    }
+    .controls button svg { width: 16px; height: 16px; }
+
+    /* ── Preset panel ── */
+    .preset-panel {
+      position: absolute;
+      top: 56px;
+      right: 16px;
+      display: none;
+      gap: 6px;
+      z-index: 10;
+      padding: 8px 10px;
+      background: rgba(30, 25, 15, 0.55);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+    }
+    .preset-panel.open { display: flex; }
+    .preset-btn {
+      padding: 5px 12px;
+      font-size: 11px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      cursor: pointer;
+      color: rgba(255,255,255,0.6);
+      transition: all 0.15s;
+      font-family: 'Inter', sans-serif;
+      white-space: nowrap;
+    }
+    .preset-btn:hover {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+    }
+    .preset-btn.active {
+      background: rgba(255,255,255,0.18);
+      color: #fff;
+      border-color: rgba(255,255,255,0.3);
+    }
+    .preset-btn[data-preset="default"] {
+      border-color: rgba(199,154,67,0.4);
+      color: var(--gold);
+    }
+    .preset-btn[data-preset="default"].active {
+      background: rgba(199,154,67,0.2);
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+    .section.light-bg .preset-btn[data-preset="default"] {
+      border-color: rgba(160,120,40,0.4);
+      color: #8a6a20;
+    }
+    .section.light-bg .preset-btn[data-preset="default"].active {
+      background: rgba(160,120,40,0.15);
+      color: #6a5018;
+      border-color: rgba(160,120,40,0.5);
+    }
+
+    @media (max-width: 1080px) {
+      .inner { padding: 0 28px 0; }
+      .stats { grid-template-columns: repeat(4, 1fr); }
+      .stat { padding: 20px 14px 22px; }
+      .stat-value { font-size: clamp(24px, 2.2vw, 36px); }
+      .stat-title { font-size: 13px; }
+      .stat-copy { font-size: 12px; }
+      .visual { min-height: 400px; }
+    }
+    @media (max-width: 640px) {
+      .stats { grid-template-columns: repeat(4, 1fr); }
+      .stat { padding: 16px 8px 18px; }
+      .stat-value { font-size: 22px; }
+      .stat-title { font-size: 11px; }
+      .stat-copy { display: none; }
+      .visual { min-height: 300px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="inner">
+      <div class="eyebrow">Content Map</div>
+      <p class="subtitle">An overview of the books, videos, picks, and signals that shape this website.</p>
+      <div class="stats-wrap">
+        <div class="stats">
+          <article class="stat">
+            <span class="stat-value">29</span>
+            <span class="stat-title">Signals</span>
+            <span class="stat-copy">News, articles, and current ideas worth tracking.</span>
+          </article>
+          <article class="stat">
+            <span class="stat-value">9</span>
+            <span class="stat-title">Talks</span>
+            <span class="stat-copy">Talks, interviews, and selected video appearances.</span>
+          </article>
+          <article class="stat">
+            <span class="stat-value">201</span>
+            <span class="stat-title">Bookshelf</span>
+            <span class="stat-copy">Books that informed the journey and stayed relevant.</span>
+          </article>
+          <article class="stat">
+            <span class="stat-value">29</span>
+            <span class="stat-title">Picks</span>
+            <span class="stat-copy">A curated selection of standout recommendations.</span>
+          </article>
+        </div>
+      </div>
+
+      <!-- Animated visual -->
+      <div class="visual">
+        <!-- Stripe-style controls: Pause + Dark/Light mode -->
+        <div class="controls">
+          <button id="pauseBtn" title="Pause / Play">
+            <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+            <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none"><polygon points="6,4 20,12 6,20"/></svg>
+          </button>
+          <button id="themeBtn" title="Toggle theme">
+            <!-- Moon icon (dark mode active) -->
+            <svg id="moonIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+            <!-- Sun icon (light mode active) -->
+            <svg id="sunIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+              <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Preset selector (appears on theme button click) -->
+        <div class="preset-panel" id="presetPanel">
+          <button class="preset-btn active" data-preset="default">Default</button>
+          <button class="preset-btn" data-preset="cosmic">Cosmic</button>
+          <button class="preset-btn" data-preset="ghost">Ghost</button>
+          <button class="preset-btn" data-preset="warm">Warm</button>
+          <button class="preset-btn" data-preset="ice">Ice</button>
+        </div>
+
+        <canvas id="burstCanvas"></canvas>
+      </div>
+    </div>
+  </section>
+
+<script>
+(() => {
+  const canvas = document.getElementById('burstCanvas');
+  const ctx = canvas.getContext('2d');
+  const visual = canvas.parentElement;
+
+  let width, height, dpr;
+  let time = 0;
+  let paused = false;
+  let lines = [];
+
+  const mouse = { x: -9999, y: -9999, active: false };
+  const smoothMouse = { x: -9999, y: -9999 };
+
+  const CONFIG = {
+    numLines: 160,
+    spreadAngle: Math.PI,
+    minLength: 100,
+    maxLength: 520,
+    lineWidth: 1.0,
+    dotRadius: 2.2,
+    waveSpeed: 0.35,
+    waveAmplitude: 35,
+    waveFrequencyX: 2.5,
+    waveFrequencyY: 1.8,
+    originY: 1.0,
+    originX: 0.5,
+    mouseStrength: 70,
+    mouseRadius: 200,
+    colors: [
+      { pos:0,    r:255, g:230, b:160, a:0.92 },
+      { pos:0.25, r:220, g:180, b:80,  a:0.78 },
+      { pos:0.5,  r:199, g:154, b:67,  a:0.58 },
+      { pos:0.75, r:160, g:120, b:50,  a:0.36 },
+      { pos:1,    r:120, g:90,  b:40,  a:0.18 }
+    ],
+    canvasGlow: { r:255, g:220, b:140 }
+  };
+
+  // ── Presets (each includes line colors + section background + light/dark flag) ──
+  const PRESETS = {
+    default: {
+      // pedroripper.com gold/cream palette
+      colors: [
+        { pos:0,    r:255, g:230, b:160, a:0.92 },
+        { pos:0.25, r:220, g:180, b:80,  a:0.78 },
+        { pos:0.5,  r:199, g:154, b:67,  a:0.58 },
+        { pos:0.75, r:160, g:120, b:50,  a:0.36 },
+        { pos:1,    r:120, g:90,  b:40,  a:0.18 }
+      ],
+      bg: `radial-gradient(circle at 50% 78%, rgba(199,154,67,0.18), transparent 24%),
+           radial-gradient(circle at 50% 78%, rgba(199,154,67,0.14), transparent 40%),
+           linear-gradient(180deg, #2c2410 0%, #3d3018 38%, #5a4520 100%)`,
+      glow: `radial-gradient(circle at 50% 100%, rgba(255,230,160,0.12), transparent 28%),
+             radial-gradient(circle at 50% 12%, rgba(255,255,255,0.03), transparent 42%)`,
+      canvasGlow: { r:255, g:220, b:140 },
+      lightBg: false
+    },
+    cosmic: {
+      colors: [
+        { pos:0,    r:255, g:255, b:255, a:0.88 },
+        { pos:0.25, r:208, g:200, b:255, a:0.72 },
+        { pos:0.5,  r:168, g:160, b:240, a:0.55 },
+        { pos:0.75, r:122, g:114, b:208, a:0.38 },
+        { pos:1,    r:85,  g:72,  b:176, a:0.22 }
+      ],
+      bg: `radial-gradient(circle at 50% 78%, rgba(255,255,255,0.18), transparent 24%),
+           radial-gradient(circle at 50% 78%, rgba(174,166,255,0.22), transparent 40%),
+           linear-gradient(180deg, #181f73 0%, #24268d 38%, #4d43ff 100%)`,
+      glow: `radial-gradient(circle at 50% 100%, rgba(255,255,255,0.16), transparent 28%),
+             radial-gradient(circle at 50% 12%, rgba(255,255,255,0.03), transparent 42%)`,
+      canvasGlow: { r:180, g:170, b:255 },
+      lightBg: false
+    },
+    ghost: {
+      colors: [
+        { pos:0,    r:80, g:80, b:100, a:0.5  },
+        { pos:0.25, r:100, g:100, b:120, a:0.32 },
+        { pos:0.5,  r:120, g:120, b:140, a:0.2  },
+        { pos:0.75, r:140, g:140, b:155, a:0.12 },
+        { pos:1,    r:160, g:160, b:170, a:0.06 }
+      ],
+      bg: `radial-gradient(circle at 50% 78%, rgba(200,200,220,0.12), transparent 24%),
+           radial-gradient(circle at 50% 78%, rgba(180,180,200,0.08), transparent 40%),
+           linear-gradient(180deg, #e8e6e2 0%, #dddbd6 38%, #d0cec8 100%)`,
+      glow: `radial-gradient(circle at 50% 100%, rgba(255,255,255,0.3), transparent 28%),
+             radial-gradient(circle at 50% 12%, rgba(200,200,220,0.06), transparent 42%)`,
+      canvasGlow: { r:180, g:180, b:200 },
+      lightBg: true
+    },
+    warm: {
+      colors: [
+        { pos:0,    r:255, g:255, b:255, a:0.92 },
+        { pos:0.25, r:255, g:200, b:200, a:0.75 },
+        { pos:0.5,  r:235, g:100, b:120, a:0.55 },
+        { pos:0.75, r:200, g:70,  b:140, a:0.35 },
+        { pos:1,    r:150, g:50,  b:160, a:0.18 }
+      ],
+      bg: `radial-gradient(circle at 50% 78%, rgba(255,120,120,0.18), transparent 24%),
+           radial-gradient(circle at 50% 78%, rgba(200,80,140,0.16), transparent 40%),
+           linear-gradient(180deg, #2d0a1a 0%, #4a1028 38%, #6a1840 100%)`,
+      glow: `radial-gradient(circle at 50% 100%, rgba(255,180,180,0.14), transparent 28%),
+             radial-gradient(circle at 50% 12%, rgba(255,255,255,0.03), transparent 42%)`,
+      canvasGlow: { r:255, g:160, b:180 },
+      lightBg: false
+    },
+    ice: {
+      colors: [
+        { pos:0,    r:220, g:250, b:255, a:0.9  },
+        { pos:0.25, r:150, g:220, b:255, a:0.7  },
+        { pos:0.5,  r:80,  g:180, b:240, a:0.48 },
+        { pos:0.75, r:40,  g:130, b:210, a:0.28 },
+        { pos:1,    r:20,  g:80,  b:180, a:0.12 }
+      ],
+      bg: `radial-gradient(circle at 50% 78%, rgba(100,200,255,0.18), transparent 24%),
+           radial-gradient(circle at 50% 78%, rgba(60,140,220,0.16), transparent 40%),
+           linear-gradient(180deg, #0a1a2d 0%, #0e2a4a 38%, #14406a 100%)`,
+      glow: `radial-gradient(circle at 50% 100%, rgba(180,230,255,0.14), transparent 28%),
+             radial-gradient(circle at 50% 12%, rgba(255,255,255,0.03), transparent 42%)`,
+      canvasGlow: { r:140, g:210, b:255 },
+      lightBg: false
+    }
+  };
+
+  let currentPresetName = 'default';
+
+  // ── Helpers ──
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function lerpColor(colors, t) {
+    t = Math.max(0, Math.min(1, t));
+    for (let i = 0; i < colors.length - 1; i++) {
+      if (t >= colors[i].pos && t <= colors[i + 1].pos) {
+        const local = (t - colors[i].pos) / (colors[i + 1].pos - colors[i].pos);
+        return {
+          r: Math.round(lerp(colors[i].r, colors[i + 1].r, local)),
+          g: Math.round(lerp(colors[i].g, colors[i + 1].g, local)),
+          b: Math.round(lerp(colors[i].b, colors[i + 1].b, local)),
+          a: lerp(colors[i].a, colors[i + 1].a, local),
+        };
+      }
+    }
+    const last = colors[colors.length - 1];
+    return { r: last.r, g: last.g, b: last.b, a: last.a };
+  }
+
+  // ── Lines ──
+  function initLines() {
+    lines = [];
+    const { numLines, spreadAngle, minLength, maxLength } = CONFIG;
+    const scale = Math.min(width, height) / 600;
+    for (let i = 0; i < numLines; i++) {
+      const t = i / (numLines - 1);
+      const angle = Math.PI + (Math.PI - spreadAngle) / 2 + t * spreadAngle;
+      const baseLength = lerp(minLength, maxLength, Math.random()) * scale;
+      const lengthVariation = 0.55 + 0.45 * Math.pow(Math.sin(t * Math.PI), 0.5);
+      lines.push({
+        angle,
+        baseLength: baseLength * lengthVariation,
+        t,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.8 + Math.random() * 0.4,
+        widthMult: 0.4 + Math.random() * 0.6,
+      });
+    }
+    lines.sort((a, b) => a.angle - b.angle);
+  }
+
+  function resize() {
+    const rect = visual.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = rect.width;
+    height = rect.height;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    initLines();
+  }
+
+  // ── Draw ──
+  function draw() {
+    if (!paused) time += 0.016;
+    smoothMouse.x = lerp(smoothMouse.x, mouse.x, 0.08);
+    smoothMouse.y = lerp(smoothMouse.y, mouse.y, 0.08);
+
+    ctx.clearRect(0, 0, width, height);
+
+    // Radial glow
+    const cg = CONFIG.canvasGlow;
+    const g = ctx.createRadialGradient(width*0.5, height, 0, width*0.5, height, height*0.92);
+    g.addColorStop(0, `rgba(255,255,255,0.14)`);
+    g.addColorStop(0.3, `rgba(${cg.r},${cg.g},${cg.b},0.06)`);
+    g.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, width, height);
+
+    const ox = width * CONFIG.originX;
+    const oy = height * CONFIG.originY;
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      const { angle, baseLength, t, phase, speed, widthMult } = line;
+
+      const wave1 = Math.sin(t * CONFIG.waveFrequencyX * Math.PI * 2 + time * CONFIG.waveSpeed * speed + phase);
+      const wave2 = Math.sin(t * CONFIG.waveFrequencyY * Math.PI * 3 + time * CONFIG.waveSpeed * 0.7 + phase * 1.3);
+      const displacement = (wave1 * 0.6 + wave2 * 0.4) * CONFIG.waveAmplitude;
+
+      let currentLength = Math.max(20, baseLength + displacement);
+      let currentAngle = angle + Math.sin(time * CONFIG.waveSpeed * 0.5 + phase * 2) * 0.015;
+
+      let ex = ox + Math.cos(currentAngle) * currentLength;
+      let ey = oy + Math.sin(currentAngle) * currentLength;
+
+      // Mouse interaction
+      if (mouse.active && CONFIG.mouseStrength > 0) {
+        const dx = ex - smoothMouse.x;
+        const dy = ey - smoothMouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < CONFIG.mouseRadius && dist > 0.1) {
+          const eased = Math.pow(1 - dist / CONFIG.mouseRadius, 3);
+          ex += (dx / dist) * CONFIG.mouseStrength * eased;
+          ey += (dy / dist) * CONFIG.mouseStrength * eased;
+        }
+        const mDx = smoothMouse.x - ox;
+        const mDy = smoothMouse.y - oy;
+        const mouseAngle = Math.atan2(mDy, mDx);
+        let angleDiff = mouseAngle - currentAngle;
+        while (angleDiff > Math.PI) angleDiff -= 2 * Math.PI;
+        while (angleDiff < -Math.PI) angleDiff += 2 * Math.PI;
+        const angularDist = Math.abs(angleDiff);
+        if (angularDist < 0.8) {
+          const angInfluence = 1 - angularDist / 0.8;
+          const mouseDist = Math.sqrt(mDx * mDx + mDy * mDy);
+          const radialInfluence = Math.max(0, 1 - mouseDist / (currentLength * 1.5));
+          const boost = angInfluence * radialInfluence * CONFIG.mouseStrength * 0.4;
+          currentLength += boost;
+          ex = ox + Math.cos(currentAngle) * currentLength + (ex - (ox + Math.cos(currentAngle) * (currentLength - boost)));
+          ey = oy + Math.sin(currentAngle) * currentLength + (ey - (oy + Math.sin(currentAngle) * (currentLength - boost)));
+        }
+      }
+
+      const edgeDist = Math.abs(t - 0.5) * 2;
+      const color = lerpColor(CONFIG.colors, edgeDist);
+      const lineAlpha = color.a * (0.5 + 0.5 * (currentLength / (CONFIG.maxLength * 0.8)));
+
+      ctx.beginPath();
+      ctx.moveTo(ox, oy);
+      ctx.lineTo(ex, ey);
+      ctx.strokeStyle = `rgba(${color.r},${color.g},${color.b},${lineAlpha * 0.65})`;
+      ctx.lineWidth = CONFIG.lineWidth * widthMult;
+      ctx.stroke();
+
+      const dr = CONFIG.dotRadius * (0.5 + 0.5 * widthMult);
+      if (dr > 0) {
+        ctx.beginPath();
+        ctx.arc(ex, ey, dr, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${color.r},${color.g},${color.b},${lineAlpha * 0.9})`;
+        ctx.fill();
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+
+  // ── Mouse events ──
+  visual.addEventListener('mousemove', e => {
+    const r = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - r.left;
+    mouse.y = e.clientY - r.top;
+    mouse.active = true;
+  });
+  visual.addEventListener('mouseleave', () => { mouse.active = false; });
+  visual.addEventListener('touchmove', e => {
+    e.preventDefault();
+    const r = canvas.getBoundingClientRect();
+    mouse.x = e.touches[0].clientX - r.left;
+    mouse.y = e.touches[0].clientY - r.top;
+    mouse.active = true;
+  }, { passive: false });
+  visual.addEventListener('touchend', () => { mouse.active = false; });
+
+  // ── Pause button ──
+  document.getElementById('pauseBtn').addEventListener('click', () => {
+    paused = !paused;
+    document.getElementById('pauseIcon').style.display = paused ? 'none' : 'block';
+    document.getElementById('playIcon').style.display = paused ? 'block' : 'none';
+  });
+
+  // ── Theme button toggles preset panel ──
+  document.getElementById('themeBtn').addEventListener('click', () => {
+    document.getElementById('presetPanel').classList.toggle('open');
+  });
+
+  // ── Preset buttons ──
+  function applyPreset(name) {
+    const preset = PRESETS[name];
+    if (!preset) return;
+    currentPresetName = name;
+    CONFIG.colors = JSON.parse(JSON.stringify(preset.colors));
+    CONFIG.canvasGlow = { ...preset.canvasGlow };
+
+    // Update section background
+    const section = document.querySelector('.section');
+    section.style.background = preset.bg;
+
+    // Update the ::after glow overlay via a CSS custom property trick
+    section.style.setProperty('--glow-overlay', preset.glow);
+
+    // Handle light vs dark background text
+    if (preset.lightBg) {
+      section.classList.add('light-bg');
+    } else {
+      section.classList.remove('light-bg');
+    }
+
+    // Update active state on buttons
+    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+    const active = document.querySelector(`.preset-btn[data-preset="${name}"]`);
+    if (active) active.classList.add('active');
+  }
+
+  document.querySelectorAll('.preset-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyPreset(btn.dataset.preset));
+  });
+
+  // ── Start ──
+  window.addEventListener('resize', resize);
+  resize();
+  draw();
+})();
+</script>
+</body>
+</html>

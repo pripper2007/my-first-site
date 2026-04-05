@@ -1,0 +1,571 @@
+{
+  "metadata": {
+    "database_name": "Bemobi Videos Database",
+    "version": "1.0.0",
+    "created_at": "2026-04-05T00:00:00Z",
+    "last_updated": "2026-04-05T00:00:00Z",
+    "total_videos": 9,
+    "content_filter": "videos_only",
+    "platforms": [
+      "youtube"
+    ],
+    "description": "Curated database of YouTube videos about Bemobi and Pedro Ripper, structured for CMS ingestion. Videos are added manually via bemobi_video_adder.py.",
+    "notes": "Written articles are stored separately in bemobi_news_database.json. This file contains only video content."
+  },
+  "videos": [
+    {
+      "id": "YNKNWgJZfV0",
+      "title": "CEO da Bemobi (BMOB3): Novas TECNOLOGIA e SISTEMAS de PAGAMENTOS",
+      "slug": "ceo-bemobi-bmob3-novas-tecnologia-sistemas-pagamentos",
+      "url": "https://www.youtube.com/watch?v=YNKNWgJZfV0",
+      "embed_url": "https://www.youtube.com/embed/YNKNWgJZfV0",
+      "platform": "youtube",
+      "channel": {
+        "name": "Expert XP",
+        "url": "https://www.youtube.com/@ExpertXP"
+      },
+      "published_at": "2026-03-26",
+      "discovered_at": "2026-04-05",
+      "duration": "PT88M7S",
+      "duration_seconds": 5287,
+      "duration_display": "1h 28min",
+      "thumbnail": {
+        "default": "https://i.ytimg.com/vi/YNKNWgJZfV0/default.jpg",
+        "medium": "https://i.ytimg.com/vi/YNKNWgJZfV0/mqdefault.jpg",
+        "high": "https://i.ytimg.com/vi/YNKNWgJZfV0/hqdefault.jpg",
+        "maxres": "https://i.ytimg.com/vi/YNKNWgJZfV0/maxresdefault.jpg"
+      },
+      "description": "Neste episódio do Expert Talks - Na mesa com CEOs, o estrategista-chefe da XP, Fernando Ferreira, ao lado do Bernardo Guttmann, head dos setores financeiro e de tecnologia, conversam com Pedro Ripper, CEO da Bemobi, sobre novas tecnologias e sistemas de pagamentos.",
+      "categories": [
+        "interview",
+        "payments",
+        "technology",
+        "financials"
+      ],
+      "tags": [
+        "Expert-XP",
+        "Pedro-Ripper",
+        "CEO",
+        "BMOB3",
+        "pagamentos",
+        "tecnologia"
+      ],
+      "language": "pt-BR",
+      "content_type": "interview",
+      "featured": true,
+      "people": [
+        "Pedro Ripper",
+        "Fernando Ferreira",
+        "Bernardo Guttmann"
+      ],
+      "view_count": 1878,
+      "view_count_updated_at": "2026-04-05"
+    },
+    {
+      "id": "aH93yPZ6MSY",
+      "title": "É NEGÓCIO, com Pedro Ripper, CEO da Bemobi - 20/04/2025",
+      "slug": "e-negocio-pedro-ripper-ceo-bemobi-2025",
+      "url": "https://www.youtube.com/watch?v=aH93yPZ6MSY",
+      "embed_url": "https://www.youtube.com/embed/aH93yPZ6MSY",
+      "platform": "youtube",
+      "channel": {
+        "name": "CNN Brasil",
+        "url": "https://www.youtube.com/@CNNbrasil"
+      },
+      "published_at": "2025-04-20",
+      "discovered_at": "2026-04-05",
+      "duration": "PT27M36S",
+      "duration_seconds": 1656,
+      "duration_display": "27min",
+      "thumbnail": {
+        "default": "https://i.ytimg.com/vi/aH93yPZ6MSY/default.jpg",
+        "medium": "https://i.ytimg.com/vi/aH93yPZ6MSY/mqdefault.jpg",
+        "high": "https://i.ytimg.com/vi/aH93yPZ6MSY/hqdefault.jpg",
+        "maxres": "https://i.ytimg.com/vi/aH93yPZ6MSY/maxresdefault.jpg"
+      },
+      "description": "Assista ao É Negócio deste domingo, 20 de abril de 2025, com Pedro Ripper, CEO da Bemobi.",
+      "categories": [
+        "interview",
+        "business",
+        "media_appearance"
+      ],
+      "tags": [
+        "CNN-Brasil",
+        "É-Negócio",
+        "Pedro-Ripper",
+        "CEO",
+        "entrevista"
+      ],
+      "language": "pt-BR",
+      "content_type": "tv_interview",
+      "featured": true,
+      "people": [
+        "Pedro Ripper"
+      ],
+      "view_count": 3965,
+      "view_count_updated_at": "2026-04-05"
+    },
+    {
+      "id": "zkngr-huyzY",
+      "title": "Entrevista com Pedro Ripper, presidente da empresa de tecnologia Bemobi | VEJA S/A",
+      "slug": "entrevista-pedro-ripper-bemobi-veja-sa",
+      "url": "https://www.youtube.com/watch?v=zkngr-huyzY",
+      "embed_url": "https://www.youtube.com/embed/zkngr-huyzY",
+      "platform": "youtube",
+      "channel": {
+        "name": "VEJA",
+        "url": "https://www.youtube.com/@ABORREVEJA"
+      },
+      "published_at": "2025-06-24",
+      "discovered_at": "2026-04-05",
+      "duration": "PT27M15S",
+      "duration_seconds": 1635,
+      "duration_display": "27min",
+      "thumbnail": {
+        "default": "https://i.ytimg.com/vi/zkngr-huyzY/default.jpg",
+        "medium": "https://i.ytimg.com/vi/zkngr-huyzY/mqdefault.jpg",
+        "high": "https://i.ytimg.com/vi/zkngr-huyzY/hqdefault.jpg",
+        "maxres": "https://i.ytimg.com/vi/zkngr-huyzY/maxresdefault.jpg"
+      },
+      "description": "O empresário Pedro Ripper é um dos fundadores e o presidente da empresa de tecnologia Bemobi desde meados de 2013. A abertura de capital da empresa na bolsa de valores e a trajetória de crescimento.",
+      "categories": [
+        "interview",
+        "leadership",
+        "company_history"
+      ],
+      "tags": [
+        "VEJA",
+        "VEJA-S/A",
+        "Pedro-Ripper",
+        "CEO",
+        "IPO",
+        "história"
+      ],
+      "language": "pt-BR",
+      "content_type": "magazine_interview",
+      "featured": true,
+      "people": [
+        "Pedro Ripper"
+      ],
+      "view_count": 958,
+      "view_count_updated_at": "2026-04-05"
+    },
+    {
+      "id": "_8pea5uKU1s",
+      "title": "Balanço em Foco: o que está por trás dos resultados da Bemobi (BMOB3)",
+      "slug": "balanco-em-foco-resultados-bemobi-bmob3",
+      "url": "https://www.youtube.com/watch?v=_8pea5uKU1s",
+      "embed_url": "https://www.youtube.com/embed/_8pea5uKU1s",
+      "platform": "youtube",
+      "channel": {
+        "name": "InfoMoney",
+        "url": "https://www.youtube.com/@InfoMoney"
+      },
+      "published_at": "2025-08-15",
+      "discovered_at": "2026-04-05",
+      "duration": "PT41M12S",
+      "duration_seconds": 2472,
+      "duration_display": "41min",
+      "thumbnail": {
+        "default": "https://i.ytimg.com/vi/_8pea5uKU1s/default.jpg",
+        "medium": "https://i.ytimg.com/vi/_8pea5uKU1s/mqdefault.jpg",
+        "high": "https://i.ytimg.com/vi/_8pea5uKU1s/hqdefault.jpg",
+        "maxres": "https://i.ytimg.com/vi/_8pea5uKU1s/maxresdefault.jpg"
+      },
+      "description": "Nesta entrevista exclusiva, o jornalista Anderson Figo conversa com Pedro Ripper, CEO da Bemobi, para entender as estratégias e decisões por trás dos resultados da empresa.",
+      "categories": [
+        "interview",
+        "earnings",
+        "financials",
+        "analysis"
+      ],
+      "tags": [
+        "InfoMoney",
+        "Balanço-em-Foco",
+        "Anderson-Figo",
+        "Pedro-Ripper",
+        "BMOB3",
+        "resultados"
+      ],
+      "language": "pt-BR",
+      "content_type": "interview",
+      "featured": true,
+      "people": [
+        "Pedro Ripper",
+        "Anderson Figo"
+      ],
+      "view_count": 2085,
+      "view_count_updated_at": "2026-04-05"
+    },
+    {
+      "id": "1jXIKSE-dt4",
+      "title": "BEMOBI: fundador conta história completa e planos futuros da empresa",
+      "slug": "bemobi-fundador-historia-completa-planos-futuros",
+      "url": "https://www.youtube.com/watch?v=1jXIKSE-dt4",
+      "embed_url": "https://www.youtube.com/embed/1jXIKSE-dt4",
+      "platform": "youtube",
+      "channel": {
+        "name": "Do Zero ao Topo (InfoMoney)",
+        "url": "https://www.youtube.com/@InfoMoney"
+      },
+      "published_at": "2022-03-16",
+      "discovered_at": "2026-04-05",
+      "duration": "PT65M21S",
+      "duration_seconds": 3921,
+      "duration_display": "1h 05min",
+      "thumbnail": {
+        "default": "https://i.ytimg.com/vi/1jXIKSE-dt4/default.jpg",
+        "medium": "https://i.ytimg.com/vi/1jXIKSE-dt4/mqdefault.jpg",
+        "high": "https://i.ytimg.com/vi/1jXIKSE-dt4/hqdefault.jpg",
+        "maxres": "https://i.ytimg.com/vi/1jXIKSE-dt4/maxresdefault.jpg"
+      },
+      "description": "Episódio 120 do podcast Do Zero ao Topo que conta a história de Pedro Ripper e da Bemobi. Em 2013 ele largou o conforto de uma carreira executiva para assumir a Bemobi.",
+      "categories": [
+        "podcast",
+        "company_history",
+        "leadership",
+        "entrepreneurship"
+      ],
+      "tags": [
+        "Do-Zero-ao-Topo",
+        "InfoMoney",
+        "Pedro-Ripper",
+        "história",
+        "fundador",
+        "empreendedorismo"
+      ],
+      "language": "pt-BR",
+      "content_type": "podcast",
+      "featured": true,
+      "people": [
+        "Pedro Ripper"
+      ],
+      "view_count": 7188,
+      "view_count_updated_at": "2026-04-05"
+    },
+    {
+      "id": "18oIFAXJNvc",
+      "title": "Bemobi cresce no 1º tri e movimenta R$ 2,4 bilhões em pagamentos; CEO da empresa comenta",
+      "slug": "bemobi-cresce-1-tri-2-4-bilhoes-pagamentos-ceo-comenta",
+      "url": "https://www.youtube.com/watch?v=18oIFAXJNvc",
+      "embed_url": "https://www.youtube.com/embed/18oIFAXJNvc",
+      "platform": "youtube",
+      "channel": {
+        "name": "InfoMoney",
+        "url": "https://www.youtube.com/@InfoMoney"
+      },
+      "published_at": "2025-05-14",
+      "discovered_at": "2026-04-05",
+      "duration": "PT9M38S",
+      "duration_seconds": 578,
+      "duration_display": "9min",
+      "thumbnail": {
+        "default": "https://i.ytimg.com/vi/18oIFAXJNvc/default.jpg",
+        "medium": "https://i.ytimg.com/vi/18oIFAXJNvc/mqdefault.jpg",
+        "high": "https://i.ytimg.com/vi/18oIFAXJNvc/hqdefault.jpg",
+        "maxres": "https://i.ytimg.com/vi/18oIFAXJNvc/maxresdefault.jpg"
+      },
+      "description": "Bemobi cresce no primeiro trimestre de 2025 e movimenta R$ 2,4 bilhões em pagamentos. Pedro Ripper, CEO da empresa, comenta os resultados.",
+      "categories": [
+        "interview",
+        "earnings",
+        "payments"
+      ],
+      "tags": [
+        "InfoMoney",
+        "Pedro-Ripper",
+        "1T25",
+        "pagamentos",
+        "resultados"
+      ],
+      "language": "pt-BR",
+      "content_type": "news_interview",
+      "featured": false,
+      "people": [
+        "Pedro Ripper"
+      ],
+      "view_count": 375,
+      "view_count_updated_at": "2026-04-05"
+    },
+    {
+      "id": "Wbqu113DIZE",
+      "title": "Temporada de Balanços: o que está por trás dos números da BEMOBI (BMOB3)",
+      "slug": "temporada-balancos-numeros-bemobi-bmob3",
+      "url": "https://www.youtube.com/watch?v=Wbqu113DIZE",
+      "embed_url": "https://www.youtube.com/embed/Wbqu113DIZE",
+      "platform": "youtube",
+      "channel": {
+        "name": "InfoMoney",
+        "url": "https://www.youtube.com/@InfoMoney"
+      },
+      "published_at": "2026-03-20",
+      "discovered_at": "2026-04-05",
+      "duration": "PT33M40S",
+      "duration_seconds": 2020,
+      "duration_display": "33min",
+      "thumbnail": {
+        "default": "https://i.ytimg.com/vi/Wbqu113DIZE/default.jpg",
+        "medium": "https://i.ytimg.com/vi/Wbqu113DIZE/mqdefault.jpg",
+        "high": "https://i.ytimg.com/vi/Wbqu113DIZE/hqdefault.jpg",
+        "maxres": "https://i.ytimg.com/vi/Wbqu113DIZE/maxresdefault.jpg"
+      },
+      "description": "Nesta entrevista exclusiva, o jornalista Anderson Figo conversa com Pedro Ripper, CEO da Bemobi para entender as estratégias e decisões por trás dos resultados da empresa.",
+      "categories": [
+        "interview",
+        "earnings",
+        "financials",
+        "analysis"
+      ],
+      "tags": [
+        "InfoMoney",
+        "Temporada-de-Balanços",
+        "Anderson-Figo",
+        "Pedro-Ripper",
+        "BMOB3",
+        "4T25"
+      ],
+      "language": "pt-BR",
+      "content_type": "interview",
+      "featured": true,
+      "people": [
+        "Pedro Ripper",
+        "Anderson Figo"
+      ],
+      "view_count": 242,
+      "view_count_updated_at": "2026-04-05"
+    },
+    {
+      "id": "SZDwcLSjL-M",
+      "title": "Avenidas de crescimento de serviços digitais para mobile",
+      "slug": "avenidas-crescimento-servicos-digitais-mobile",
+      "url": "https://www.youtube.com/watch?v=SZDwcLSjL-M",
+      "embed_url": "https://www.youtube.com/embed/SZDwcLSjL-M",
+      "platform": "youtube",
+      "channel": {
+        "name": "Expert XP",
+        "url": "https://www.youtube.com/@ExpertXP"
+      },
+      "published_at": "2021-06-23",
+      "discovered_at": "2026-04-05",
+      "duration": "PT58M45S",
+      "duration_seconds": 3525,
+      "duration_display": "58min",
+      "thumbnail": {
+        "default": "https://i.ytimg.com/vi/SZDwcLSjL-M/default.jpg",
+        "medium": "https://i.ytimg.com/vi/SZDwcLSjL-M/mqdefault.jpg",
+        "high": "https://i.ytimg.com/vi/SZDwcLSjL-M/hqdefault.jpg",
+        "maxres": "https://i.ytimg.com/vi/SZDwcLSjL-M/maxresdefault.jpg"
+      },
+      "description": "Participantes: Pedro Ripper, CEO da Bemobi; Bernardo Guttmann, Analista de Tech, Media e Telecom (TMT) da XP; Marco Nardini, Analista de TMT da XP. O CEO da Bemobi discute avenidas de crescimento em serviços digitais para mobile.",
+      "categories": [
+        "panel",
+        "technology",
+        "strategy",
+        "growth"
+      ],
+      "tags": [
+        "Expert-XP",
+        "Pedro-Ripper",
+        "Bernardo-Guttmann",
+        "Marco-Nardini",
+        "mobile",
+        "serviços-digitais"
+      ],
+      "language": "pt-BR",
+      "content_type": "panel",
+      "featured": false,
+      "people": [
+        "Pedro Ripper",
+        "Bernardo Guttmann",
+        "Marco Nardini"
+      ],
+      "view_count": 3342,
+      "view_count_updated_at": "2026-04-05"
+    },
+    {
+      "id": "pG3J-e-CK3w",
+      "title": "#150 - Bemobi: sucesso nos games e boom nas finanças",
+      "slug": "bemobi-sucesso-games-boom-financas",
+      "url": "https://www.youtube.com/watch?v=pG3J-e-CK3w",
+      "embed_url": "https://www.youtube.com/embed/pG3J-e-CK3w",
+      "platform": "youtube",
+      "channel": {
+        "name": "Projeto Investir",
+        "url": null
+      },
+      "published_at": "2023-02-10",
+      "discovered_at": "2026-04-05",
+      "duration": "PT44M52S",
+      "duration_seconds": 2692,
+      "duration_display": "44min",
+      "thumbnail": {
+        "default": "https://i.ytimg.com/vi/pG3J-e-CK3w/default.jpg",
+        "medium": "https://i.ytimg.com/vi/pG3J-e-CK3w/mqdefault.jpg",
+        "high": "https://i.ytimg.com/vi/pG3J-e-CK3w/hqdefault.jpg",
+        "maxres": "https://i.ytimg.com/vi/pG3J-e-CK3w/maxresdefault.jpg"
+      },
+      "description": "Conheça um mundo de oportunidades de negócios via celular. A brasileira Bemobi nos conta a jornada de sucesso pelo mundo e como soube aproveitar passando dos games para o boom nas finanças.",
+      "categories": [
+        "podcast",
+        "company_history",
+        "games",
+        "fintech"
+      ],
+      "tags": [
+        "Projeto-Investir",
+        "Bemobi",
+        "games",
+        "finanças",
+        "mobile",
+        "história"
+      ],
+      "language": "pt-BR",
+      "content_type": "podcast",
+      "featured": false,
+      "people": [
+        "Pedro Ripper"
+      ],
+      "view_count": 6332,
+      "view_count_updated_at": "2026-04-05"
+    }
+  ],
+  "categories_taxonomy": [
+    {
+      "id": "interview",
+      "label": "Entrevista",
+      "label_en": "Interview"
+    },
+    {
+      "id": "tv_interview",
+      "label": "Entrevista TV",
+      "label_en": "TV Interview"
+    },
+    {
+      "id": "news_interview",
+      "label": "Entrevista Notícia",
+      "label_en": "News Interview"
+    },
+    {
+      "id": "magazine_interview",
+      "label": "Entrevista Revista",
+      "label_en": "Magazine Interview"
+    },
+    {
+      "id": "podcast",
+      "label": "Podcast",
+      "label_en": "Podcast"
+    },
+    {
+      "id": "panel",
+      "label": "Painel / Mesa Redonda",
+      "label_en": "Panel Discussion"
+    },
+    {
+      "id": "earnings",
+      "label": "Resultados Financeiros",
+      "label_en": "Financial Results"
+    },
+    {
+      "id": "financials",
+      "label": "Finanças",
+      "label_en": "Financials"
+    },
+    {
+      "id": "payments",
+      "label": "Pagamentos",
+      "label_en": "Payments"
+    },
+    {
+      "id": "technology",
+      "label": "Tecnologia",
+      "label_en": "Technology"
+    },
+    {
+      "id": "strategy",
+      "label": "Estratégia",
+      "label_en": "Strategy"
+    },
+    {
+      "id": "growth",
+      "label": "Crescimento",
+      "label_en": "Growth"
+    },
+    {
+      "id": "leadership",
+      "label": "Liderança",
+      "label_en": "Leadership"
+    },
+    {
+      "id": "company_history",
+      "label": "História da Empresa",
+      "label_en": "Company History"
+    },
+    {
+      "id": "entrepreneurship",
+      "label": "Empreendedorismo",
+      "label_en": "Entrepreneurship"
+    },
+    {
+      "id": "business",
+      "label": "Negócios",
+      "label_en": "Business"
+    },
+    {
+      "id": "media_appearance",
+      "label": "Aparição na Mídia",
+      "label_en": "Media Appearance"
+    },
+    {
+      "id": "analysis",
+      "label": "Análise",
+      "label_en": "Analysis"
+    },
+    {
+      "id": "games",
+      "label": "Games",
+      "label_en": "Games"
+    },
+    {
+      "id": "fintech",
+      "label": "Fintech",
+      "label_en": "Fintech"
+    }
+  ],
+  "channels_registry": [
+    {
+      "name": "CNN Brasil",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/@CNNbrasil",
+      "tier": 1,
+      "type": "news_media"
+    },
+    {
+      "name": "VEJA",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/@ABORREVEJA",
+      "tier": 1,
+      "type": "magazine"
+    },
+    {
+      "name": "InfoMoney",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/@InfoMoney",
+      "tier": 1,
+      "type": "financial_media"
+    },
+    {
+      "name": "Expert XP",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/@ExpertXP",
+      "tier": 1,
+      "type": "financial_media"
+    },
+    {
+      "name": "Projeto Investir",
+      "platform": "youtube",
+      "url": null,
+      "tier": 2,
+      "type": "investment_podcast"
+    }
+  ]
+}

@@ -36,6 +36,13 @@ yarn-error.log*
 # vercel
 .vercel
 
+# video backups
+public/videos/Backup/
+*.backup.mp4
+
+# scripts (local tooling)
+scripts/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

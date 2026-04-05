@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Ripper — Picks Components Preview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --color-accent: #C8A251;
+            --color-bg: #FAFAFA;
+            --color-white: #FFFFFF;
+            --color-text: #1a1a1a;
+            --color-light-text: #666666;
+            --color-border: #E5E5E5;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* ================================================================
+           COMPONENT 1 — UPDATED NAVBAR
+           ================================================================ */
+        .preview-label {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 48px 20px;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-accent);
+        }
+
+        .preview-label::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--color-accent);
+            vertical-align: middle;
+            margin-right: 12px;
+        }
+
+        .preview-divider {
+            max-width: 1400px;
+            margin: 80px auto;
+            padding: 0 48px;
+            border: none;
+            border-top: 1px solid var(--color-border);
+        }
+
+        /* --- Navbar --- */
+        nav {
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(229, 229, 229, 0.3);
+            padding: 0 48px;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .nav-logo {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-logo-dot { color: var(--color-accent); }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--color-accent);
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-links a:hover { color: var(--color-accent); }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* The Picks badge in the nav — subtle new-item indicator */
+        .nav-new-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 6px;
+            height: 6px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            margin-left: 4px;
+            vertical-align: super;
+        }
+
+        .nav-social {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .nav-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid var(--color-border);
+            color: var(--color-light-text);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-social a:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+            background: rgba(200, 162, 81, 0.08);
+        }
+
+        .nav-social svg { width: 16px; height: 16px; }
+
+        /* ================================================================
+           COMPONENT 2 — PICKS HOMEPAGE SECTION
+           ================================================================ */
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 48px;
+        }
+
+        .section-ai-picks {
+            padding: 120px 0;
+            background: var(--color-bg);
+        }
+
+        .section-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 64px;
+        }
+
+        .section-header-left {}
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 28px;
+            height: 1.5px;
+            background: var(--color-accent);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--color-light-text);
+            margin-top: 16px;
+            max-width: 520px;
+            line-height: 1.7;
+        }
+
+        .view-all-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-accent);
+            transition: gap 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            white-space: nowrap;
+            padding-bottom: 8px;
+        }
+
+        .view-all-link:hover { gap: 12px; }
+
+        /* Picks Grid — mixed media, asymmetric bento */
+        .ai-picks-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 24px;
+        }
+
+        /* First item spans 2 columns — the featured pick */
+        .ai-picks-grid .ai-pick-card:first-child {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .ai-pick-card {
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--color-white);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ai-pick-card:hover {
+            border-color: #CCCCCC;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
+            transform: translateY(-4px);
+        }
+
+        /* Thumbnail area */
+        .ai-pick-thumb {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Featured card gets taller thumbnail */
+        .ai-picks-grid .ai-pick-card:first-child .ai-pick-thumb {
+            height: 100%;
+            min-height: 320px;
+        }
+
+        .ai-picks-grid .ai-pick-card:not(:first-child) .ai-pick-thumb {
+            height: 180px;
+        }
+
+        .ai-pick-thumb-bg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Media type badge — top-left of thumbnail */
+        .ai-pick-media-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            border-radius: 100px;
+            color: var(--color-text);
+            z-index: 2;
+        }
+
+        .ai-pick-media-badge svg {
+            width: 14px;
+            height: 14px;
+            color: var(--color-accent);
+        }
+
+        /* Play button overlay for video/podcast */
+        .ai-pick-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 2;
+        }
+
+        .ai-pick-card:hover .ai-pick-play {
+            transform: translate(-50%, -50%) scale(1.08);
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .ai-pick-play svg { width: 20px; height: 20px; margin-left: 2px; }
+
+        /* Duration badge — bottom-right */
+        .ai-pick-duration {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 6px;
+            letter-spacing: 0.03em;
+            z-index: 2;
+        }
+
+        /* Card body */
+        .ai-pick-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ai-picks-grid .ai-pick-card:first-child .ai-pick-body {
+            padding: 32px;
+        }
+
+        .ai-pick-source {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .ai-pick-title {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+
+        .ai-picks-grid .ai-pick-card:first-child .ai-pick-title {
+            font-size: 24px;
+        }
+
+        .ai-pick-excerpt {
+            font-size: 14px;
+            color: var(--color-light-text);
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .ai-pick-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-top: 16px;
+            transition: gap 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .ai-pick-card:hover .ai-pick-cta { gap: 10px; }
+
+        /* ================================================================
+           COMPONENT 3 — STANDALONE PICKS PAGE
+           ================================================================ */
+        .page-ai-picks {
+            padding: 120px 0 80px;
+        }
+
+        .page-header {
+            margin-bottom: 48px;
+        }
+
+        .page-title {
+            font-family: var(--font-heading);
+            font-size: 56px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .page-description {
+            font-size: 18px;
+            color: var(--color-light-text);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        /* Filter tabs */
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 48px;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 0;
+        }
+
+        .filter-tab {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-light-text);
+            background: none;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .filter-tab::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transform: scaleX(0);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .filter-tab:hover { color: var(--color-text); }
+
+        .filter-tab.active {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .filter-tab.active::after {
+            transform: scaleX(1);
+        }
+
+        /* Count badge inside tab */
+        .filter-count {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 22px;
+            height: 22px;
+            font-size: 11px;
+            font-weight: 600;
+            background: rgba(200, 162, 81, 0.1);
+            color: var(--color-accent);
+            border-radius: 100px;
+            padding: 0 7px;
+            margin-left: 8px;
+        }
+
+        .filter-tab.active .filter-count {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        /* Full-page grid — 3 columns, all equal */
+        .ai-picks-full-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .ai-picks-full-grid .ai-pick-card .ai-pick-thumb {
+            height: 200px;
+        }
+
+        /* Back navigation */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-light-text);
+            margin-bottom: 48px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--color-accent);
+            gap: 12px;
+        }
+
+        /* ================================================================
+           RESPONSIVE
+           ================================================================ */
+        @media (max-width: 1024px) {
+            .ai-picks-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .ai-picks-grid .ai-pick-card:first-child {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+            .ai-picks-grid .ai-pick-card:first-child .ai-pick-thumb {
+                min-height: 240px;
+            }
+            .ai-picks-full-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-container { padding: 0 20px; }
+            .section-ai-picks { padding: 80px 0; }
+            .page-ai-picks { padding: 80px 0; }
+            .section-header-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+            .section-title { font-size: 32px; }
+            .page-title { font-size: 36px; }
+            .ai-picks-grid {
+                grid-template-columns: 1fr;
+            }
+            .ai-picks-grid .ai-pick-card:first-child {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            .ai-picks-grid .ai-pick-card:first-child .ai-pick-thumb {
+                min-height: 200px;
+            }
+            .ai-picks-full-grid {
+                grid-template-columns: 1fr;
+            }
+            .filter-tabs {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            nav { padding: 0 20px; }
+            .nav-links { gap: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ================================================================
+     COMPONENT 1 — UPDATED NAVBAR
+     Updated nav: "Picks" added after "Books", "Articles" removed
+     ================================================================ -->
+<div class="preview-label">Component 1 — Updated Navigation Bar</div>
+
+<nav>
+    <div class="nav-container">
+        <a href="/" class="nav-logo">Pedro<span class="nav-logo-dot">.</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#videos">Talks</a></li>
+            <li><a href="#books">Books</a></li>
+            <li><a href="#picks">Picks<span class="nav-new-badge"></span></a></li>
+        </ul>
+        <div class="nav-social">
+            <a href="https://linkedin.com/in/pedroripper" target="_blank" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://x.com/pedroripper" target="_blank" aria-label="X">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+<hr class="preview-divider">
+
+
+<!-- ================================================================
+     COMPONENT 2 — PICKS HOMEPAGE SECTION
+     Final section on the homepage, after "Books".
+     Shows 5 featured picks in an asymmetric bento layout.
+     ================================================================ -->
+<div class="preview-label">Component 2 — Picks Section (Homepage)</div>
+
+<section class="section-ai-picks" id="picks">
+    <div class="section-container">
+        <div class="section-header-row">
+            <div class="section-header-left">
+                <div class="section-label">Curated by Pedro</div>
+                <h2 class="section-title">Picks</h2>
+                <p class="section-subtitle">Podcasts, videos, and articles on AI, payments, and technology that I find worth sharing.</p>
+            </div>
+            <a href="/picks" class="view-all-link">
+                View all
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+
+        <div class="ai-picks-grid">
+
+            <!-- FEATURED — Video (spans 2 cols, 2 rows) -->
+            <div class="ai-pick-card">
+                <div class="ai-pick-thumb">
+                    <div class="ai-pick-thumb-bg" style="width:100%;height:100%;background:linear-gradient(135deg, #1a1a2e, #16213e);"></div>
+                    <span class="ai-pick-media-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        Video
+                    </span>
+                    <div class="ai-pick-play">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                    <span class="ai-pick-duration">1:42:08</span>
+                </div>
+                <div class="ai-pick-body">
+                    <div class="ai-pick-source">Lex Fridman Podcast</div>
+                    <h3 class="ai-pick-title">Sam Altman: The Future of AI, OpenAI, and the Meaning of Life</h3>
+                    <p class="ai-pick-excerpt">A deep conversation about the trajectory of artificial intelligence, the challenges of building safe AGI, and how AI will reshape every industry over the next decade.</p>
+                    <span class="ai-pick-cta">Watch now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </div>
+
+            <!-- Podcast -->
+            <div class="ai-pick-card">
+                <div class="ai-pick-thumb">
+                    <div class="ai-pick-thumb-bg" style="width:100%;height:100%;background:linear-gradient(135deg, #2d3436, #636e72);"></div>
+                    <span class="ai-pick-media-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        Podcast
+                    </span>
+                    <div class="ai-pick-play">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                    <span class="ai-pick-duration">58:32</span>
+                </div>
+                <div class="ai-pick-body">
+                    <div class="ai-pick-source">All-In Podcast</div>
+                    <h3 class="ai-pick-title">AI Agents Are Coming for Enterprise Software</h3>
+                    <span class="ai-pick-cta">Listen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </div>
+
+            <!-- Article -->
+            <div class="ai-pick-card">
+                <div class="ai-pick-thumb">
+                    <div class="ai-pick-thumb-bg" style="width:100%;height:100%;background:linear-gradient(135deg, #0c3547, #1a6985);"></div>
+                    <span class="ai-pick-media-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        Article
+                    </span>
+                </div>
+                <div class="ai-pick-body">
+                    <div class="ai-pick-source">Sequoia Capital</div>
+                    <h3 class="ai-pick-title">Generative AI's Act Two</h3>
+                    <span class="ai-pick-cta">Read <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </div>
+
+            <!-- Video -->
+            <div class="ai-pick-card">
+                <div class="ai-pick-thumb">
+                    <div class="ai-pick-thumb-bg" style="width:100%;height:100%;background:linear-gradient(135deg, #44403C, #78716C);"></div>
+                    <span class="ai-pick-media-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        Video
+                    </span>
+                    <div class="ai-pick-play">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                    <span class="ai-pick-duration">24:17</span>
+                </div>
+                <div class="ai-pick-body">
+                    <div class="ai-pick-source">TED Talk</div>
+                    <h3 class="ai-pick-title">Why AI Will Save the World, Not Destroy It</h3>
+                    <span class="ai-pick-cta">Watch <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </div>
+
+            <!-- Podcast -->
+            <div class="ai-pick-card">
+                <div class="ai-pick-thumb">
+                    <div class="ai-pick-thumb-bg" style="width:100%;height:100%;background:linear-gradient(135deg, #1C1917, #57534E);"></div>
+                    <span class="ai-pick-media-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        Podcast
+                    </span>
+                    <div class="ai-pick-play">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                    <span class="ai-pick-duration">1:12:45</span>
+                </div>
+                <div class="ai-pick-body">
+                    <div class="ai-pick-source">Acquired</div>
+                    <h3 class="ai-pick-title">NVIDIA: The Machine Learning Company</h3>
+                    <span class="ai-pick-cta">Listen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<hr class="preview-divider">
+
+
+<!-- ================================================================
+     COMPONENT 3 — STANDALONE /PICKS PAGE
+     Full page with filter tabs (All, Videos, Podcasts, Articles)
+     and a uniform 3-column grid showing all content.
+     ================================================================ -->
+<div class="preview-label">Component 3 — Standalone Picks Page (/picks)</div>
+
+<section class="page-ai-picks">
+    <div class="section-container">
+
+        <!-- Back link -->
+        <a href="/" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Back to home
+        </a>
+
+        <!-- Page header -->
+        <div class="page-header">
+            <div class="section-label">Curated by Pedro</div>
+            <h1 class="page-title">Picks</h1>
+            <p class="page-description">Podcasts, videos, and articles on AI, payments, and technology worth your time.</p>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">
+                All<span class="filter-count">12</span>
+            </button>
+            <button class="filter-tab" data-filter="video">
+                Videos<span class="filter-count">5</span>
+            </button>
+            <button class="filter-tab" data-filter="podcast">
+                Podcasts<span class="filter-count">4</span>
+            </button>
+            <button class="filter-tab" data-filter="article">
+                Articles<span class="filter-count">3</span>
+            </button>
+        </div>
+
+        <!-- Full grid — all items -->
+        <div class="ai-picks-full-grid">
+
+            <!-- Video -->
+            <div class="ai-pick-card" data-type="video">
+                <div class="ai-pick-thumb">
+                    <div class="ai-pick-thumb-bg" style="width:100%;height:100%;background:linear-gradient(135deg, #1a1a2e, #16213e);"></div>
+                    <span class="ai-pick-media-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        Video
+                    </span>
+                    <div class="ai-pick-play">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                    <span class="ai-pick-duration">1:42:08</span>
+                </div>
+                <div class="ai-pick-body">
+                    <div class="ai-pick-source">Lex Fridman Podcast</div>
+                    <h3 class="ai-pick-title">Sam Altman: The Future of AI, OpenAI, and the Meaning of Life</h3>
+                    <p class="ai-pick-excerpt">A deep conversation about the trajectory of artificial intelligence, the challenges of building safe AGI, and how AI will reshape every industry.</p>
+                    <span class="ai-pick-cta">Watch <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </div>
+
+            <!-- Podcast -->
+            <div class="ai-pick-card" data-type="podcast">
+                <div class="ai-pick-thumb">
+                    <div class="ai-pick-thumb-bg" style="width:100%;height:100%;background:linear-gradient(135deg, #2d3436, #636e72);"></div>
+                    <span class="ai-pick-media-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        Podcast
+                    </span>
+                    <div class="ai-pick-play">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                    <span class="ai-pick-duration">58:32</span>
+                </div>
+                <div class="ai-pick-body">
+                    <div class="ai-pick-source">All-In Podcast</div>
+                    <h3 class="ai-pick-title">AI Agents Are Coming for Enterprise Software</h3>
+                    <p class="ai-pick-excerpt">The impact of autonomous AI agents on B2B software and why the current SaaS model is about to be disrupted.</p>
+                    <span class="ai-pick-cta">Listen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </div>
+
+            <!-- Article -->
+            <div class="ai-pick-card" data-type="article">
+                <div class="ai-pick-thumb">
+                    <div class="ai-pick-thumb-bg" style="width:100%;height:100%;background:linear-gradient(135deg, #0c3547, #1a6985);"></div>
+                    <span class="ai-pick-media-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        Article
+                    </span>
+                </div>
+                <div class="ai-pick-body">
+                    <div class="ai-pick-source">Sequoia Capital</div>
+                    <h3 class="ai-pick-title">Generative AI's Act Two</h3>
+                    <p class="ai-pick-excerpt">Sequoia's framework for understanding where generative AI is headed after the initial hype cycle — and which companies will capture real value.</p>
+                    <span class="ai-pick-cta">Read <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </div>
+
+            <!-- Video -->
+            <div class="ai-pick-card" data-type="video">
+                <div class="ai-pick-thumb">
+                    <div class="ai-pick-thumb-bg" style="width:100%;height:100%;background:linear-gradient(135deg, #44403C, #78716C);"></div>
+                    <span class="ai-pick-media-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        Video
+                    </span>
+                    <div class="ai-pick-play">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                    <span class="ai-pick-duration">24:17</span>
+                </div>
+                <div class="ai-pick-body">
+                    <div class="ai-pick-source">TED Talk</div>
+                    <h3 class="ai-pick-title">Why AI Will Save the World, Not Destroy It</h3>
+                    <p class="ai-pick-excerpt">A compelling counternarrative to AI doomerism, arguing that artificial intelligence is the most important positive force for humanity since electricity.</p>
+                    <span class="ai-pick-cta">Watch <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </div>
+
+            <!-- Podcast -->
+            <div class="ai-pick-card" data-type="podcast">
+                <div class="ai-pick-thumb">
+                    <div class="ai-pick-thumb-bg" style="width:100%;height:100%;background:linear-gradient(135deg, #1C1917, #57534E);"></div>
+                    <span class="ai-pick-media-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        Podcast
+                    </span>
+                    <div class="ai-pick-play">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                    <span class="ai-pick-duration">1:12:45</span>
+                </div>
+                <div class="ai-pick-body">
+                    <div class="ai-pick-source">Acquired</div>
+                    <h3 class="ai-pick-title">NVIDIA: The Machine Learning Company</h3>
+                    <p class="ai-pick-excerpt">The full story of how NVIDIA pivoted from gaming GPUs to becoming the foundational hardware layer for the entire AI revolution.</p>
+                    <span class="ai-pick-cta">Listen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </div>
+
+            <!-- Article -->
+            <div class="ai-pick-card" data-type="article">
+                <div class="ai-pick-thumb">
+                    <div class="ai-pick-thumb-bg" style="width:100%;height:100%;background:linear-gradient(135deg, #4a1942, #7b2d8e);"></div>
+                    <span class="ai-pick-media-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        Article
+                    </span>
+                </div>
+                <div class="ai-pick-body">
+                    <div class="ai-pick-source">Anthropic Research</div>
+                    <h3 class="ai-pick-title">The Case for Constitutional AI</h3>
+                    <p class="ai-pick-excerpt">Anthropic's approach to aligning AI systems through a constitution of principles rather than pure human feedback loops.</p>
+                    <span class="ai-pick-cta">Read <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </div>
+
+            <!-- Video -->
+            <div class="ai-pick-card" data-type="video">
+                <div class="ai-pick-thumb">
+                    <div class="ai-pick-thumb-bg" style="width:100%;height:100%;background:linear-gradient(135deg, #14532D, #166534);"></div>
+                    <span class="ai-pick-media-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        Video
+                    </span>
+                    <div class="ai-pick-play">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                    <span class="ai-pick-duration">47:33</span>
+                </div>
+                <div class="ai-pick-body">
+                    <div class="ai-pick-source">a16z</div>
+                    <h3 class="ai-pick-title">How AI Is Rewriting the Rules of Fintech in LatAm</h3>
+                    <p class="ai-pick-excerpt">A panel exploring how AI-native financial products are emerging faster in Latin America than in established markets.</p>
+                    <span class="ai-pick-cta">Watch <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </div>
+
+            <!-- Podcast -->
+            <div class="ai-pick-card" data-type="podcast">
+                <div class="ai-pick-thumb">
+                    <div class="ai-pick-thumb-bg" style="width:100%;height:100%;background:linear-gradient(135deg, #78350F, #92400E);"></div>
+                    <span class="ai-pick-media-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        Podcast
+                    </span>
+                    <div class="ai-pick-play">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                    <span class="ai-pick-duration">1:05:20</span>
+                </div>
+                <div class="ai-pick-body">
+                    <div class="ai-pick-source">Latent Space</div>
+                    <h3 class="ai-pick-title">The AI Engineer: A New Role for a New Era</h3>
+                    <p class="ai-pick-excerpt">Why the "AI engineer" is emerging as a distinct role between ML researchers and traditional software engineers.</p>
+                    <span class="ai-pick-cta">Listen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </div>
+
+            <!-- Article -->
+            <div class="ai-pick-card" data-type="article">
+                <div class="ai-pick-thumb">
+                    <div class="ai-pick-thumb-bg" style="width:100%;height:100%;background:linear-gradient(135deg, #312E81, #3730A3);"></div>
+                    <span class="ai-pick-media-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        Article
+                    </span>
+                </div>
+                <div class="ai-pick-body">
+                    <div class="ai-pick-source">Ben Thompson — Stratechery</div>
+                    <h3 class="ai-pick-title">AI and the Big Five: Who Wins the Platform War?</h3>
+                    <p class="ai-pick-excerpt">An analysis of how Apple, Google, Microsoft, Amazon, and Meta are positioning themselves in the race to own the AI platform layer.</p>
+                    <span class="ai-pick-cta">Read <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================================================================
+     FILTER TAB INTERACTIVITY
+     ================================================================ -->
+<script>
+(function() {
+    const tabs = document.querySelectorAll('.filter-tab');
+    const cards = document.querySelectorAll('.ai-picks-full-grid .ai-pick-card');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Update active tab
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const filter = tab.getAttribute('data-filter');
+
+            // Filter cards with animation
+            cards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-type') === filter) {
+                    card.style.display = '';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(16px)';
+                    requestAnimationFrame(() => {
+                        requestAnimationFrame(() => {
+                            card.style.transition = 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        });
+                    });
+                } else {
+                    card.style.transition = 'opacity 0.2s ease';
+                    card.style.opacity = '0';
+                    setTimeout(() => { card.style.display = 'none'; }, 200);
+                }
+            });
+        });
+    });
+})();
+</script>
+
+</body>
+</html>

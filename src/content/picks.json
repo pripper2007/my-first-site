@@ -1,0 +1,844 @@
+[
+  {
+    "id": "pick-channel-ai-explained",
+    "title": "AI Explained",
+    "source": "YouTube",
+    "mediaType": "channel",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-04-05",
+    "excerpt": "Breaks down the latest AI developments with clarity and investigative depth — covering model releases, AI ethics, and bigger industry shifts. Known for exclusive analysis series on GPT, Claude, and Gemini.",
+    "url": "https://www.youtube.com/@AiExplained-official",
+    "thumbnailGradient": "linear-gradient(135deg, #1C1917, #57534E)",
+    "note": "Best YouTube channel for staying current on AI model releases and their real implications.",
+    "channelName": "AI Explained",
+    "channelUrl": "https://www.youtube.com/@AiExplained-official",
+    "categories": [
+      "artificial-intelligence",
+      "education",
+      "news"
+    ],
+    "language": "en",
+    "featured": true,
+    "order": 0,
+    "createdAt": "2026-04-05T14:52:44.517377+00:00",
+    "updatedAt": "2026-04-05T15:32:08.915Z",
+    "thumbnailUrl": "https://yt3.googleusercontent.com/GFuvgO3IZvs5XkYOxyLoWQto2lyY6-7Ob-7sfZRyoann4eBgvBMxuGgSVU1cvBgRCgAn41St7g=s900-c-k-c0x00ffffff-no-rj",
+    "visible": false
+  },
+  {
+    "id": "pick-video-dwarkesh-dario-amodei-2026",
+    "title": "Dario Amodei — \"We are near the end of the exponential\"",
+    "source": "Dwarkesh Patel",
+    "mediaType": "video",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-02-13",
+    "duration": "2h 22min",
+    "excerpt": "Anthropic CEO Dario Amodei discusses scaling hypotheses, whether we're near the end of the exponential, how AI labs will make money, and the future of AI regulation.",
+    "url": "https://www.youtube.com/watch?v=n1E9IZfvGMA",
+    "thumbnailGradient": "linear-gradient(135deg, #1a1a2e, #16213e)",
+    "thumbnailUrl": "https://i.ytimg.com/vi/n1E9IZfvGMA/hqdefault.jpg",
+    "note": "Dario at his most candid on whether the scaling paradigm is ending. Critical listening.",
+    "embedUrl": "https://www.youtube.com/embed/n1E9IZfvGMA",
+    "channelName": "Dwarkesh Patel",
+    "channelUrl": "https://www.youtube.com/@DwarkeshPatel",
+    "viewCount": 932074,
+    "categories": [
+      "artificial-intelligence",
+      "interview",
+      "AGI"
+    ],
+    "language": "en",
+    "featured": true,
+    "order": 1,
+    "createdAt": "2026-04-05T14:52:44.517394+00:00",
+    "updatedAt": "2026-04-05T15:25:34.897Z"
+  },
+  {
+    "id": "pick-channel-3blue1brown",
+    "title": "3Blue1Brown",
+    "source": "YouTube",
+    "mediaType": "channel",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-04-05",
+    "excerpt": "Grant Sanderson turns abstract math and deep learning concepts into beautiful animations. The neural networks and transformer series are legendary for making complex AI math actually intuitive.",
+    "url": "https://www.youtube.com/@3blue1brown",
+    "thumbnailGradient": "linear-gradient(135deg, #1C1917, #57534E)",
+    "note": "If you want to truly understand how neural networks work, start here.",
+    "channelName": "3Blue1Brown",
+    "channelUrl": "https://www.youtube.com/@3blue1brown",
+    "categories": [
+      "artificial-intelligence",
+      "education",
+      "mathematics"
+    ],
+    "language": "en",
+    "featured": true,
+    "order": 1,
+    "createdAt": "2026-04-05T14:52:44.517379+00:00",
+    "updatedAt": "2026-04-05T15:32:10.057Z",
+    "thumbnailUrl": "https://yt3.googleusercontent.com/ytc/AIdro_nFzZFPLxPZRHcE3SSwzdrbuWqfoWYwLAu0_2iO6blQYAU=s900-c-k-c0x00ffffff-no-rj",
+    "visible": false
+  },
+  {
+    "id": "pick-video-lex-peter-steinberger-openclaw-491",
+    "title": "OpenClaw: The Viral AI Agent that Broke the Internet - Peter Steinberger | Lex Fridman Podcast #491",
+    "source": "Lex Fridman",
+    "mediaType": "video",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-02-12",
+    "duration": "3h 15min",
+    "excerpt": "Peter Steinberger, creator of OpenClaw, discusses the fastest-growing GitHub project in history — an autonomous AI agent that executes tasks via natural language.",
+    "url": "https://www.youtube.com/watch?v=YFjfBk8HI5o",
+    "thumbnailGradient": "linear-gradient(135deg, #1a1a2e, #16213e)",
+    "thumbnailUrl": "https://i.ytimg.com/vi/YFjfBk8HI5o/hqdefault.jpg",
+    "note": "The story behind the AI agent that broke GitHub. A must-watch for anyone building AI agents.",
+    "embedUrl": "https://www.youtube.com/embed/YFjfBk8HI5o",
+    "channelName": "Lex Fridman",
+    "channelUrl": "https://www.youtube.com/@lexfridman",
+    "viewCount": 1123719,
+    "categories": [
+      "artificial-intelligence",
+      "agentic-AI",
+      "interview"
+    ],
+    "language": "en",
+    "featured": true,
+    "order": 1,
+    "createdAt": "2026-04-05T14:52:44.517390+00:00",
+    "updatedAt": "2026-04-05T15:26:05.315Z"
+  },
+  {
+    "id": "pick-channel-lex-fridman",
+    "title": "Lex Fridman Podcast",
+    "source": "YouTube",
+    "mediaType": "channel",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-04-05",
+    "excerpt": "Long-form conversations with scientists, engineers, and leaders in AI, technology, and beyond. Known for deep, multi-hour interviews with figures like Jensen Huang, Demis Hassabis, Sam Altman, and more.",
+    "url": "https://www.youtube.com/@lexfridman",
+    "thumbnailGradient": "linear-gradient(135deg, #1C1917, #57534E)",
+    "note": "The gold standard for long-form AI interviews. Every major AI leader has been on this show.",
+    "channelName": "Lex Fridman",
+    "channelUrl": "https://www.youtube.com/@lexfridman",
+    "categories": [
+      "artificial-intelligence",
+      "interview",
+      "education"
+    ],
+    "language": "en",
+    "featured": true,
+    "order": 4,
+    "createdAt": "2026-04-05T14:52:44.517407+00:00",
+    "updatedAt": "2026-04-05T15:32:15.870Z",
+    "thumbnailUrl": "https://yt3.googleusercontent.com/ytc/AIdro_ljfMy9kUR1PH9VRf-XsTsPqFMgORC_zodOQVEAm4hx36lC=s900-c-k-c0x00ffffff-no-rj",
+    "visible": false
+  },
+  {
+    "id": "pick-channel-latent-space-podcast",
+    "title": "Latent Space Podcast",
+    "source": "Latent Space",
+    "mediaType": "channel",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-04-05",
+    "excerpt": "The podcast for AI engineers. Alessio Fanelli and Swyx interview builders, researchers, and investors — covering foundation models, code generation, agents, and infrastructure with unmatched technical depth.",
+    "url": "https://www.latent.space/",
+    "thumbnailGradient": "linear-gradient(135deg, #1C1917, #57534E)",
+    "note": "Subscribe if you build with AI. Best technical AI podcast available.",
+    "channelName": "Latent Space",
+    "channelUrl": "https://www.latent.space/",
+    "feedUrl": "https://api.substack.com/feed/podcast/1084089.rss",
+    "categories": [
+      "artificial-intelligence",
+      "engineering",
+      "podcast"
+    ],
+    "language": "en",
+    "featured": true,
+    "order": 5,
+    "createdAt": "2026-04-05T14:52:44.517381+00:00",
+    "updatedAt": "2026-04-05T15:32:11.759Z",
+    "thumbnailUrl": "https://substackcdn.com/image/fetch/$s_!KuJk!,f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Fswyx.substack.com%2Ftwitter%2Fsubscribe-card.jpg%3Fv%3D1652097308%26version%3D9",
+    "visible": false
+  },
+  {
+    "id": "pick-channel-dwarkesh-patel",
+    "title": "Dwarkesh Patel",
+    "source": "YouTube",
+    "mediaType": "channel",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-04-05",
+    "excerpt": "In-depth interviews with AI leaders, scientists, and tech executives. Known for exceptionally well-researched questions and guests like Dario Amodei, Ilya Sutskever, Elon Musk, and Satya Nadella.",
+    "url": "https://www.youtube.com/@DwarkeshPatel",
+    "thumbnailGradient": "linear-gradient(135deg, #1C1917, #57534E)",
+    "note": "The best-prepared interviewer in tech. His research shows in every question.",
+    "channelName": "Dwarkesh Patel",
+    "channelUrl": "https://www.youtube.com/@DwarkeshPatel",
+    "categories": [
+      "artificial-intelligence",
+      "interview",
+      "strategy"
+    ],
+    "language": "en",
+    "featured": true,
+    "order": 5,
+    "createdAt": "2026-04-05T14:52:44.517409+00:00",
+    "updatedAt": "2026-04-05T15:32:17.908Z",
+    "thumbnailUrl": "https://yt3.googleusercontent.com/lG-z7sTfhFIW2Ne1oXMHvXMXyZSaA02_I17gUel0GAEj7OypsSHQ7PE91Vp4bTbpm3PTIAWJdko=s900-c-k-c0x00ffffff-no-rj",
+    "visible": false
+  },
+  {
+    "id": "pick-channel-ai-engineer",
+    "title": "AI Engineer",
+    "source": "YouTube",
+    "mediaType": "channel",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-04-05",
+    "excerpt": "The official channel of the AI Engineer community. Features talks from AI Engineer Summit and World's Fair conferences — top-tier technical content on building with LLMs, RAG, agents, and AI infrastructure.",
+    "url": "https://www.youtube.com/@aiaboratories",
+    "thumbnailGradient": "linear-gradient(135deg, #1C1917, #57534E)",
+    "note": "Best conference talks on applied AI engineering. Where builders share what actually works.",
+    "channelName": "AI Engineer",
+    "channelUrl": "https://www.youtube.com/@aiaboratories",
+    "categories": [
+      "artificial-intelligence",
+      "engineering",
+      "agentic-AI"
+    ],
+    "language": "en",
+    "featured": true,
+    "order": 6,
+    "createdAt": "2026-04-05T14:52:44.517405+00:00",
+    "updatedAt": "2026-04-05T15:32:13.856Z",
+    "visible": false
+  },
+  {
+    "id": "pick-channel-sequoia-training-data",
+    "title": "Sequoia Capital — Training Data Podcast",
+    "source": "YouTube",
+    "mediaType": "channel",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-04-05",
+    "excerpt": "Sequoia Capital's podcast series featuring conversations with AI founders, researchers, and investors. Includes iconic talks by Andrew Ng, and deep dives into AI infrastructure, agents, and business models.",
+    "url": "https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8",
+    "thumbnailGradient": "linear-gradient(135deg, #1C1917, #57534E)",
+    "note": "Where Sequoia shares its AI thesis. The Andrew Ng agentic workflows talk alone is worth subscribing for.",
+    "channelName": "Sequoia Capital",
+    "channelUrl": "https://www.youtube.com/@sequoiacapital",
+    "categories": [
+      "artificial-intelligence",
+      "strategy",
+      "interview"
+    ],
+    "language": "en",
+    "featured": true,
+    "order": 8,
+    "createdAt": "2026-04-05T14:52:44.517413+00:00",
+    "updatedAt": "2026-04-05T15:32:21.997Z",
+    "thumbnailUrl": "https://i.ytimg.com/pl_c/PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8/studio_square_thumbnail.jpg?sqp=CJbYyc4G-oaymwEICPABEPABSFqi85f_AwYI4bzGswY=&rs=AOn4CLAXumtxvjXN7fqVvrTnsBNpyIsOJg&days_since_epoch=20548",
+    "visible": false
+  },
+  {
+    "id": "pick-video-lex-jensen-huang-494",
+    "title": "Jensen Huang: NVIDIA - The $4 Trillion Company & the AI Revolution | Lex Fridman Podcast #494",
+    "source": "Lex Fridman",
+    "mediaType": "video",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-03-23",
+    "duration": "2h 25min",
+    "excerpt": "Jensen Huang, CEO of NVIDIA, discusses the AI revolution, GPU computing, NVIDIA's $4 trillion journey, and the future of accelerated computing with Lex Fridman.",
+    "url": "https://www.youtube.com/watch?v=vif8NQcjVf0",
+    "thumbnailGradient": "linear-gradient(135deg, #1a1a2e, #16213e)",
+    "thumbnailUrl": "https://i.ytimg.com/vi/vif8NQcjVf0/hqdefault.jpg",
+    "note": "The man behind the GPUs powering the AI revolution. Essential for understanding AI infrastructure.",
+    "embedUrl": "https://www.youtube.com/embed/vif8NQcjVf0",
+    "channelName": "Lex Fridman",
+    "channelUrl": "https://www.youtube.com/@lexfridman",
+    "viewCount": 866542,
+    "categories": [
+      "artificial-intelligence",
+      "interview",
+      "strategy"
+    ],
+    "language": "en",
+    "featured": true,
+    "order": 10,
+    "createdAt": "2026-04-05T14:52:44.517383+00:00",
+    "updatedAt": "2026-04-05T15:26:05.389Z"
+  },
+  {
+    "id": "pick-podcast-cognitive-revolution",
+    "title": "The Cognitive Revolution: AI Scouting Report — State of AI Agents 2026",
+    "source": "The Cognitive Revolution",
+    "mediaType": "podcast",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-02-01",
+    "excerpt": "Nathan Labenz synthesizes the state of AI agents in 2026 — long-form deep dive into who's building what, what works, and what's hype.",
+    "url": "https://www.cognitiverevolution.ai/",
+    "thumbnailGradient": "linear-gradient(135deg, #2d3436, #636e72)",
+    "note": "Best synthesis of the AI agents landscape I've found.",
+    "channelName": "The Cognitive Revolution",
+    "categories": [
+      "artificial-intelligence",
+      "agentic-AI",
+      "podcast"
+    ],
+    "language": "en",
+    "featured": false,
+    "order": 11,
+    "createdAt": "2026-04-05T14:52:44.517370+00:00",
+    "updatedAt": "2026-04-05T22:45:35.292Z",
+    "thumbnailUrl": "https://www.cognitiverevolution.ai/content/images/size/w1200/2024/03/CR-YT-Banner-2.png"
+  },
+  {
+    "id": "pick-article-visa-ai-payments-2026",
+    "title": "Visa AI-Initiated Payments: What Fintech Must Know in 2026",
+    "source": "ALM Corp",
+    "mediaType": "article",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-01-15",
+    "excerpt": "Deep dive into Visa's Trusted Agent Protocol for AI-initiated payments, and what it means for fintech companies building agentic commerce solutions.",
+    "url": "https://almcorp.com/blog/visa-ai-initiated-payments-agentic-commerce-fintech/",
+    "thumbnailGradient": "linear-gradient(135deg, #0c3547, #1a6985)",
+    "note": "The intersection of AI agents and payments — directly relevant to Bemobi's future.",
+    "categories": [
+      "artificial-intelligence",
+      "payments",
+      "fintech"
+    ],
+    "language": "en",
+    "featured": false,
+    "order": 11,
+    "createdAt": "2026-04-05T14:52:44.517355+00:00",
+    "updatedAt": "2026-04-05T22:32:13.515Z",
+    "thumbnailUrl": "https://almcorp.com/wp-content/uploads/2026/03/Visa-Has-Completed-Hundreds-of-AI-Initiated-Payments.webp"
+  },
+  {
+    "id": "pick-article-mit-whats-next-ai-2026",
+    "title": "What's next for AI in 2026",
+    "source": "MIT Technology Review",
+    "mediaType": "article",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-01-05",
+    "excerpt": "MIT Technology Review's annual forecast of the most important AI developments and trends to watch in the coming year.",
+    "url": "https://www.technologyreview.com/2026/01/05/1130662/whats-next-for-ai-in-2026/",
+    "thumbnailGradient": "linear-gradient(135deg, #0c3547, #1a6985)",
+    "note": "MIT Tech Review's annual AI forecast — always a must-read.",
+    "categories": [
+      "artificial-intelligence",
+      "trends",
+      "forecast"
+    ],
+    "language": "en",
+    "featured": false,
+    "order": 13,
+    "createdAt": "2026-04-05T14:52:44.517350+00:00",
+    "updatedAt": "2026-04-05T22:45:37.064Z",
+    "thumbnailUrl": "https://wp.technologyreview.com/wp-content/uploads/2025/12/WN-AI-2026.jpg?resize=1200,600"
+  },
+  {
+    "id": "pick-video-dwarkesh-ilya-sutskever-research",
+    "title": "Ilya Sutskever — We're moving from the age of scaling to the age of research",
+    "source": "Dwarkesh Patel",
+    "mediaType": "video",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2025-11-25",
+    "duration": "1h 36min",
+    "excerpt": "SSI co-founder Ilya Sutskever argues that the scaling era (2020-2025) is ending and a new age of research is beginning, with current LLMs having inadequate generalization.",
+    "url": "https://www.youtube.com/watch?v=aR20FWCCjAs",
+    "thumbnailGradient": "linear-gradient(135deg, #1a1a2e, #16213e)",
+    "thumbnailUrl": "https://i.ytimg.com/vi/aR20FWCCjAs/hqdefault.jpg",
+    "note": "Ilya's most important interview since leaving OpenAI. His skepticism about current approaches is worth hearing.",
+    "embedUrl": "https://www.youtube.com/embed/aR20FWCCjAs",
+    "channelName": "Dwarkesh Patel",
+    "channelUrl": "https://www.youtube.com/@DwarkeshPatel",
+    "viewCount": 1263657,
+    "categories": [
+      "artificial-intelligence",
+      "interview",
+      "AGI"
+    ],
+    "language": "en",
+    "featured": true,
+    "order": 14,
+    "createdAt": "2026-04-05T14:52:44.517401+00:00",
+    "updatedAt": "2026-04-05T15:26:05.430Z"
+  },
+  {
+    "id": "pick-video-dwarkesh-andrej-karpathy-agi",
+    "title": "Andrej Karpathy — \"We're summoning ghosts, not building animals\"",
+    "source": "Dwarkesh Patel",
+    "mediaType": "video",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2025-10-17",
+    "duration": "2h 26min",
+    "excerpt": "Andrej Karpathy argues AGI is still a decade away, discusses why RL is terrible but everything else is worse, model collapse, the future of education, and why this is the decade of agents.",
+    "url": "https://www.youtube.com/watch?v=lXUZvyajciY",
+    "thumbnailGradient": "linear-gradient(135deg, #1a1a2e, #16213e)",
+    "thumbnailUrl": "https://i.ytimg.com/vi/lXUZvyajciY/hqdefault.jpg",
+    "note": "Karpathy's sobering counter-narrative to AGI hype. Brilliant and grounded thinking.",
+    "embedUrl": "https://www.youtube.com/embed/lXUZvyajciY",
+    "channelName": "Dwarkesh Patel",
+    "channelUrl": "https://www.youtube.com/@DwarkeshPatel",
+    "viewCount": 1240800,
+    "categories": [
+      "artificial-intelligence",
+      "interview",
+      "agentic-AI"
+    ],
+    "language": "en",
+    "featured": true,
+    "order": 15,
+    "createdAt": "2026-04-05T14:52:44.517403+00:00",
+    "updatedAt": "2026-04-05T14:52:44.517403+00:00"
+  },
+  {
+    "id": "pick-video-lex-demis-hassabis-475",
+    "title": "Demis Hassabis: Future of AI, Simulating Reality, Physics and Video Games | Lex Fridman Podcast #475",
+    "source": "Lex Fridman",
+    "mediaType": "video",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2025-07-23",
+    "duration": "2h 28min",
+    "excerpt": "Nobel Prize winner Demis Hassabis, CEO of Google DeepMind, discusses the future of AI, simulating reality, AlphaFold, and his conjecture on AI's ability to model nature.",
+    "url": "https://www.youtube.com/watch?v=-HzgcbRXUK8",
+    "thumbnailGradient": "linear-gradient(135deg, #1a1a2e, #16213e)",
+    "thumbnailUrl": "https://i.ytimg.com/vi/-HzgcbRXUK8/hqdefault.jpg",
+    "note": "A Nobel laureate's vision for AI — from protein folding to AGI. Deeply thoughtful.",
+    "embedUrl": "https://www.youtube.com/embed/-HzgcbRXUK8",
+    "channelName": "Lex Fridman",
+    "channelUrl": "https://www.youtube.com/@lexfridman",
+    "viewCount": 1378748,
+    "categories": [
+      "artificial-intelligence",
+      "interview",
+      "AGI"
+    ],
+    "language": "en",
+    "featured": true,
+    "order": 16,
+    "createdAt": "2026-04-05T14:52:44.517387+00:00",
+    "updatedAt": "2026-04-05T15:26:25.989Z"
+  },
+  {
+    "id": "pick-video-lex-deepseek-459",
+    "title": "DeepSeek, China, OpenAI, NVIDIA, xAI, TSMC, Stargate, and AI Megaclusters | Lex Fridman Podcast #459",
+    "source": "Lex Fridman",
+    "mediaType": "video",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2025-02-02",
+    "duration": "5h 6min",
+    "excerpt": "Dylan Patel (SemiAnalysis) and Nathan Lambert (AI2) join Lex Fridman for a 5-hour deep dive into DeepSeek, US-China AI competition, compute scaling, and AI megaclusters.",
+    "url": "https://www.youtube.com/watch?v=_1f-o0nqpEI",
+    "thumbnailGradient": "linear-gradient(135deg, #1a1a2e, #16213e)",
+    "thumbnailUrl": "https://i.ytimg.com/vi/_1f-o0nqpEI/hqdefault.jpg",
+    "note": "5 hours of pure AI geopolitics and infrastructure analysis. The deepest dive into AI compute I've seen.",
+    "embedUrl": "https://www.youtube.com/embed/_1f-o0nqpEI",
+    "channelName": "Lex Fridman",
+    "channelUrl": "https://www.youtube.com/@lexfridman",
+    "viewCount": 2104983,
+    "categories": [
+      "artificial-intelligence",
+      "interview",
+      "strategy"
+    ],
+    "language": "en",
+    "featured": true,
+    "order": 17,
+    "createdAt": "2026-04-05T14:52:44.517391+00:00",
+    "updatedAt": "2026-04-05T14:52:44.517391+00:00"
+  },
+  {
+    "id": "pick-video-andrew-ng-agentic-workflows",
+    "title": "What's next for AI agentic workflows ft. Andrew Ng of AI Fund",
+    "source": "Sequoia Capital",
+    "mediaType": "video",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2024-03-26",
+    "duration": "13min",
+    "excerpt": "Andrew Ng speaks at Sequoia Capital's AI Ascent about agentic workflows and their potential to significantly advance AI capabilities.",
+    "url": "https://www.youtube.com/watch?v=sal78ACtGTc",
+    "thumbnailGradient": "linear-gradient(135deg, #1a1a2e, #16213e)",
+    "thumbnailUrl": "https://i.ytimg.com/vi/sal78ACtGTc/hqdefault.jpg",
+    "note": "The talk that defined 'agentic AI' for the industry. Essential viewing.",
+    "embedUrl": "https://www.youtube.com/embed/sal78ACtGTc",
+    "channelName": "Sequoia Capital",
+    "channelUrl": "https://www.youtube.com/@sequoiacapital",
+    "viewCount": 403743,
+    "categories": [
+      "artificial-intelligence",
+      "agentic-AI",
+      "talk"
+    ],
+    "language": "en",
+    "featured": true,
+    "order": 18,
+    "createdAt": "2026-04-05T14:52:44.517364+00:00",
+    "updatedAt": "2026-04-05T14:52:44.517364+00:00"
+  },
+  {
+    "id": "pick-video-lex-sam-altman-agi",
+    "title": "Sam Altman: OpenAI, GPT-5, Sora, Board Saga, Elon Musk, Ilya, Power & AGI | Lex Fridman Podcast #419",
+    "source": "Lex Fridman",
+    "mediaType": "video",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2024-03-18",
+    "duration": "1h 55min",
+    "excerpt": "Sam Altman, CEO of OpenAI, discusses GPT-5, Sora, the board saga, competition, and the path to AGI in this in-depth conversation with Lex Fridman.",
+    "url": "https://www.youtube.com/watch?v=jvqFAi7vkBc",
+    "thumbnailGradient": "linear-gradient(135deg, #1a1a2e, #16213e)",
+    "thumbnailUrl": "https://i.ytimg.com/vi/jvqFAi7vkBc/hqdefault.jpg",
+    "note": "One of the most candid conversations with Sam Altman about OpenAI's trajectory.",
+    "embedUrl": "https://www.youtube.com/embed/jvqFAi7vkBc",
+    "channelName": "Lex Fridman",
+    "channelUrl": "https://www.youtube.com/@lexfridman",
+    "viewCount": 2459202,
+    "categories": [
+      "artificial-intelligence",
+      "interview",
+      "AGI"
+    ],
+    "language": "en",
+    "featured": false,
+    "order": 19,
+    "createdAt": "2026-04-05T14:52:44.517361+00:00",
+    "updatedAt": "2026-04-05T15:26:17.881Z"
+  },
+  {
+    "id": "pick-video-karpathy-intro-llms",
+    "title": "[1hr Talk] Intro to Large Language Models",
+    "source": "Andrej Karpathy",
+    "mediaType": "video",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2023-11-22",
+    "duration": "59min",
+    "excerpt": "A 1-hour general-audience introduction to Large Language Models by Andrej Karpathy, covering the core technical component behind ChatGPT, Claude, and more.",
+    "url": "https://www.youtube.com/watch?v=zjkBMFhNj_g",
+    "thumbnailGradient": "linear-gradient(135deg, #1a1a2e, #16213e)",
+    "thumbnailUrl": "https://i.ytimg.com/vi/zjkBMFhNj_g/hqdefault.jpg",
+    "note": "The single best introduction to LLMs for anyone. Karpathy at his best.",
+    "embedUrl": "https://www.youtube.com/embed/zjkBMFhNj_g",
+    "channelName": "Andrej Karpathy",
+    "channelUrl": "https://www.youtube.com/@AndrejKarpathy",
+    "viewCount": 3535116,
+    "categories": [
+      "artificial-intelligence",
+      "education",
+      "LLMs"
+    ],
+    "language": "en",
+    "featured": false,
+    "order": 20,
+    "createdAt": "2026-04-05T14:52:44.517366+00:00",
+    "updatedAt": "2026-04-05T15:26:13.542Z"
+  },
+  {
+    "id": "pick-channel-nate-b-jones",
+    "title": "AI News & Strategy Daily | Nate B Jones",
+    "source": "YouTube",
+    "mediaType": "channel",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-04-05",
+    "excerpt": "Daily AI news and strategy analysis covering the latest developments in artificial intelligence, business applications, and industry trends.",
+    "url": "https://www.youtube.com/@natebjones",
+    "thumbnailGradient": "linear-gradient(135deg, #1C1917, #57534E)",
+    "note": "Great for staying on top of daily AI developments with a strategic lens.",
+    "channelName": "Nate B Jones",
+    "channelUrl": "https://www.youtube.com/@natebjones",
+    "categories": [
+      "artificial-intelligence",
+      "news",
+      "strategy"
+    ],
+    "language": "en",
+    "featured": false,
+    "order": 21,
+    "createdAt": "2026-04-05T14:52:44.517411+00:00",
+    "updatedAt": "2026-04-05T15:32:25.065Z",
+    "thumbnailUrl": "https://yt3.googleusercontent.com/iw3-bJlxOVngLK1Y3DDsAcr8yKwg1Kvx7Erm7R19-NcIJ1V1IzLbCBBTPIVVARJ-JK_A1Z5BAZo=s900-c-k-c0x00ffffff-no-rj",
+    "visible": false
+  },
+  {
+    "id": "pick-video-dwarkesh-dylan-patel-compute",
+    "title": "Dylan Patel — The single biggest bottleneck to scaling AI compute",
+    "source": "Dwarkesh Patel",
+    "mediaType": "video",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-03-13",
+    "duration": "2h 30min",
+    "excerpt": "SemiAnalysis founder Dylan Patel provides a deep dive into the three biggest bottlenecks to scaling AI compute: logic, memory, and power.",
+    "url": "https://www.youtube.com/watch?v=mDG_Hx3BSUE",
+    "thumbnailGradient": "linear-gradient(135deg, #1a1a2e, #16213e)",
+    "thumbnailUrl": "https://i.ytimg.com/vi/mDG_Hx3BSUE/hqdefault.jpg",
+    "note": "The most detailed public breakdown of AI compute bottlenecks. Essential for understanding the supply side.",
+    "embedUrl": "https://www.youtube.com/embed/mDG_Hx3BSUE",
+    "channelName": "Dwarkesh Patel",
+    "channelUrl": "https://www.youtube.com/@DwarkeshPatel",
+    "viewCount": 200122,
+    "categories": [
+      "artificial-intelligence",
+      "interview",
+      "engineering"
+    ],
+    "language": "en",
+    "featured": false,
+    "order": 22,
+    "createdAt": "2026-04-05T14:52:44.517395+00:00",
+    "updatedAt": "2026-04-05T14:52:44.517395+00:00"
+  },
+  {
+    "id": "pick-podcast-hard-fork-nyt",
+    "title": "Hard Fork: Is AI Making Us Dumber or Smarter?",
+    "source": "Hard Fork (NYT)",
+    "mediaType": "podcast",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-02-15",
+    "excerpt": "Kevin Roose and Casey Newton tackle the big question: is AI making us more capable or more dependent? A nuanced take on AI's cognitive impact.",
+    "url": "https://www.nytimes.com/column/hard-fork",
+    "thumbnailGradient": "linear-gradient(135deg, #2d3436, #636e72)",
+    "note": "Accessible AI discussion for non-technical audiences. Great for sharing.",
+    "channelName": "Hard Fork",
+    "categories": [
+      "artificial-intelligence",
+      "society",
+      "podcast"
+    ],
+    "language": "en",
+    "featured": false,
+    "order": 23,
+    "createdAt": "2026-04-05T14:52:44.517376+00:00",
+    "updatedAt": "2026-04-05T14:52:44.517376+00:00",
+    "thumbnailUrl": "https://static01.nyt.com/images/2022/09/28/podcasts/hard-fork-album-art/hard-fork-album-art-videoSixteenByNineJumbo1600-v2.png"
+  },
+  {
+    "id": "pick-video-dwarkesh-elon-musk-space-ai",
+    "title": "Elon Musk — \"In 36 months, the cheapest place to put AI will be space\"",
+    "source": "Dwarkesh Patel",
+    "mediaType": "video",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-02-05",
+    "duration": "2h 49min",
+    "excerpt": "Elon Musk discusses orbital AI data centers, humanoid robots, xAI's future, and why space will become the most economical place for AI compute.",
+    "url": "https://www.youtube.com/watch?v=BYXbuik3dgA",
+    "thumbnailGradient": "linear-gradient(135deg, #1a1a2e, #16213e)",
+    "thumbnailUrl": "https://i.ytimg.com/vi/BYXbuik3dgA/hqdefault.jpg",
+    "note": "Wild but compelling vision of AI infrastructure moving to orbit. Vintage Musk thinking.",
+    "embedUrl": "https://www.youtube.com/embed/BYXbuik3dgA",
+    "channelName": "Dwarkesh Patel",
+    "channelUrl": "https://www.youtube.com/@DwarkeshPatel",
+    "viewCount": 1281742,
+    "categories": [
+      "artificial-intelligence",
+      "interview",
+      "strategy"
+    ],
+    "language": "en",
+    "featured": false,
+    "order": 24,
+    "createdAt": "2026-04-05T14:52:44.517397+00:00",
+    "updatedAt": "2026-04-05T14:52:44.517397+00:00"
+  },
+  {
+    "id": "pick-article-agentic-ai-fintech-2026",
+    "title": "Agentic AI and more to reshape fintech in 2026",
+    "source": "TechInformed",
+    "mediaType": "article",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2026-01-08",
+    "excerpt": "How agentic AI is set to influence over $1 trillion in e-commerce spending, with 81% of US consumers expecting to use AI agents for shopping.",
+    "url": "https://techinformed.com/agentic-ai-and-more-to-reshape-fintech-in-2026/",
+    "thumbnailGradient": "linear-gradient(135deg, #0c3547, #1a6985)",
+    "note": "Compelling data on how AI agents will reshape financial services.",
+    "categories": [
+      "artificial-intelligence",
+      "fintech",
+      "agentic-AI"
+    ],
+    "language": "en",
+    "featured": false,
+    "order": 25,
+    "createdAt": "2026-04-05T14:52:44.517358+00:00",
+    "updatedAt": "2026-04-05T14:52:44.517358+00:00",
+    "thumbnailUrl": "https://techinformed.com/wp-content/uploads/2025/12/shutterstock_2700408445-1024x576.jpg"
+  },
+  {
+    "id": "pick-podcast-ai-agents-best-2025",
+    "title": "The Best AI Agents in 2025 | AI Agents Podcast EP31",
+    "source": "AI Agents Podcast",
+    "mediaType": "podcast",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2025-12-20",
+    "excerpt": "Comprehensive review of the best AI agents of 2025 — covering both technical architecture and real-world business impact.",
+    "url": "https://creators.spotify.com/pod/profile/ai-agents-podcast/episodes/The-Best-AI-Agents-in-2025--EP31-e30trhc",
+    "thumbnailGradient": "linear-gradient(135deg, #2d3436, #636e72)",
+    "note": "Great roundup of what actually worked in AI agents during 2025.",
+    "channelName": "AI Agents Podcast",
+    "categories": [
+      "artificial-intelligence",
+      "agentic-AI",
+      "review"
+    ],
+    "language": "en",
+    "featured": false,
+    "order": 26,
+    "createdAt": "2026-04-05T14:52:44.517374+00:00",
+    "updatedAt": "2026-04-05T14:52:44.517374+00:00",
+    "thumbnailUrl": "https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_nologo400/42539137/42539137-1733303815306-07044099b9f1d.jpg"
+  },
+  {
+    "id": "pick-podcast-latent-space-agents",
+    "title": "Latent Space: The AI Engineer's Guide to Agents",
+    "source": "Latent Space",
+    "mediaType": "podcast",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2025-12-15",
+    "excerpt": "Alessio Fanelli and Swyx dive deep into the practical engineering of AI agents — foundation models, code generation, multimodality, and GPU infrastructure.",
+    "url": "https://www.latent.space/p/ai-engineers-guide-to-agents",
+    "thumbnailGradient": "linear-gradient(135deg, #2d3436, #636e72)",
+    "note": "The most technically rigorous AI podcast. Essential for builders.",
+    "channelName": "Latent Space",
+    "categories": [
+      "artificial-intelligence",
+      "engineering",
+      "agentic-AI"
+    ],
+    "language": "en",
+    "featured": false,
+    "order": 27,
+    "createdAt": "2026-04-05T14:52:44.517372+00:00",
+    "updatedAt": "2026-04-05T14:52:44.517372+00:00",
+    "thumbnailUrl": "https://substackcdn.com/image/fetch/$s_!KuJk!,f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Fswyx.substack.com%2Ftwitter%2Fsubscribe-card.jpg%3Fv%3D1652097308%26version%3D9"
+  },
+  {
+    "id": "pick-video-dwarkesh-satya-nadella-agi",
+    "title": "Satya Nadella — How Microsoft thinks about AGI",
+    "source": "Dwarkesh Patel",
+    "mediaType": "video",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2025-11-12",
+    "duration": "1h 28min",
+    "excerpt": "Microsoft CEO Satya Nadella gives Dwarkesh and Dylan Patel an exclusive look at Microsoft's Fairwater 2 datacenter and discusses AGI strategy, Copilot, and the OpenAI partnership.",
+    "url": "https://www.youtube.com/watch?v=8-boBsWcr5A",
+    "thumbnailGradient": "linear-gradient(135deg, #1a1a2e, #16213e)",
+    "thumbnailUrl": "https://i.ytimg.com/vi/8-boBsWcr5A/hqdefault.jpg",
+    "note": "Rare candid Satya interview with real datacenter access. Great for understanding Microsoft's AI bet.",
+    "embedUrl": "https://www.youtube.com/embed/8-boBsWcr5A",
+    "channelName": "Dwarkesh Patel",
+    "channelUrl": "https://www.youtube.com/@DwarkeshPatel",
+    "viewCount": 317674,
+    "categories": [
+      "artificial-intelligence",
+      "interview",
+      "strategy"
+    ],
+    "language": "en",
+    "featured": false,
+    "order": 28,
+    "createdAt": "2026-04-05T14:52:44.517399+00:00",
+    "updatedAt": "2026-04-05T14:52:44.517399+00:00"
+  },
+  {
+    "id": "pick-video-jerry-liu-rag-production",
+    "title": "Building Production-Ready RAG Applications: Jerry Liu",
+    "source": "AI Engineer",
+    "mediaType": "video",
+    "tags": [
+      "artificial-intelligence"
+    ],
+    "date": "2023-11-15",
+    "duration": "18min",
+    "excerpt": "Jerry Liu covers how to build production-ready RAG applications, covering retrieval-augmented generation architecture, toolkits, and best practices.",
+    "url": "https://www.youtube.com/watch?v=TRjq7t2Ms5I",
+    "thumbnailGradient": "linear-gradient(135deg, #1a1a2e, #16213e)",
+    "thumbnailUrl": "https://i.ytimg.com/vi/TRjq7t2Ms5I/hqdefault.jpg",
+    "note": "Practical deep-dive into building RAG systems that actually work in production.",
+    "embedUrl": "https://www.youtube.com/embed/TRjq7t2Ms5I",
+    "channelName": "AI Engineer",
+    "channelUrl": "https://www.youtube.com/@aiaboratories",
+    "viewCount": 403221,
+    "categories": [
+      "artificial-intelligence",
+      "engineering",
+      "RAG"
+    ],
+    "language": "en",
+    "featured": false,
+    "order": 29,
+    "createdAt": "2026-04-05T14:52:44.517368+00:00",
+    "updatedAt": "2026-04-05T14:52:44.517368+00:00"
+  },
+  {
+    "title": "Skill Issue: Andrej Karpathy on Code Agents, AutoResearch, and the Loopy Era of AI",
+    "source": "No Priors: AI, Machine Learning, Tech, & Startups",
+    "mediaType": "video",
+    "tags": [],
+    "date": "2026-03-29",
+    "excerpt": "What happens when AI agents can design experiments, collect data, and improve — without a human in the loop? Andrej Karpathy joins Sarah Guo on the state of models, the future of engineering and education, thinking about impact on jobs, and his project AutoResearch: where agents close the loop on a piece of AI research (experimentation, training, and optimization, autonomously).",
+    "url": "https://www.youtube.com/watch?v=kwSVtQ7dziU",
+    "thumbnailGradient": "linear-gradient(135deg, #1a1a2e, #16213e)",
+    "thumbnailUrl": "https://i.ytimg.com/vi/kwSVtQ7dziU/maxresdefault.jpg",
+    "channelName": "No Priors: AI, Machine Learning, Tech, & Startups",
+    "channelUrl": "https://www.youtube.com/@NoPriorsPodcast",
+    "visible": true,
+    "featured": true,
+    "order": 0,
+    "id": "f4c458e2-c156-43e5-a96e-48b6a7f8d0ef",
+    "createdAt": "2026-04-05T22:46:52.831Z",
+    "updatedAt": "2026-04-05T22:46:52.831Z"
+  }
+]

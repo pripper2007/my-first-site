@@ -1,14 +1,78 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-serif: var(--font-pt-serif);
-  --color-accent: #ffb900;
-  --color-accent-hover: #e0a300;
+  /* Fonts — set via CSS variables from next/font in layout.tsx */
+  --font-display: var(--font-playfair-display);
+  --font-body: var(--font-inter);
+
+  /* Colors — matched from new HTML reference */
+  --color-bg: #ECECEC;
+  --color-bg-alt: #FFFFFF;
+  --color-surface: #F2F2F2;
+  --color-text: #1A1A1A;
+  --color-text-secondary: #6B6B6B;
+  --color-accent: #C8A251;
+  --color-accent-light: rgba(200, 162, 81, 0.12);
+  --color-border: #E5E5E5;
+  --color-border-hover: #CCCCCC;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  background: #ffffff;
-  color: #1a1a1a;
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-body), -apple-system, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* Heading font utility */
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+/* Reveal animation for scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtle scrollbar for modals */
+.book-modal-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.book-modal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.book-modal-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+.book-modal-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+.book-modal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
 }

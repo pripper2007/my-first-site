@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Ripper - Co-founder & CEO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-accent: #C8A251;
+            --color-bg: #FAFAFA;
+            --color-white: #FFFFFF;
+            --color-text: #1a1a1a;
+            --color-light-text: #666666;
+            --color-border: #E5E5E5;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(229, 229, 229, 0.3);
+            padding: 0 48px;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .nav-logo {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-logo-dot {
+            color: var(--color-accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 48px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        /* CANVAS PARTICLE MESH */
+        #particleCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        main {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            margin-top: 80px;
+            padding: 120px 48px;
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-content {
+            opacity: 0;
+            animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--color-accent);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            background: rgba(200, 162, 81, 0.08);
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .hero-name {
+            font-family: var(--font-heading);
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: var(--color-light-text);
+            margin-bottom: 48px;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-value {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--color-light-text);
+            font-weight: 500;
+        }
+
+        .hero-portrait {
+            background: linear-gradient(135deg, #E5D5B5 0%, #D4B896 100%);
+            border-radius: 16px;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-light-text);
+            font-size: 14px;
+            opacity: 0;
+            animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            padding: 120px 48px;
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .about-text {
+            opacity: 0;
+        }
+
+        .about-text.visible {
+            animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            color: var(--color-light-text);
+            margin-bottom: 24px;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .about-text p:first-letter {
+            font-family: var(--font-heading);
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--color-accent);
+            float: left;
+            line-height: 1;
+            padding-right: 8px;
+            margin-top: 4px;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            opacity: 0;
+        }
+
+        .about-highlights.visible {
+            animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+        }
+
+        .highlight-card {
+            padding: 32px;
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .highlight-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
+        }
+
+        .highlight-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(200, 162, 81, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+
+        .highlight-title {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .highlight-description {
+            font-size: 14px;
+            color: var(--color-light-text);
+            line-height: 1.6;
+        }
+
+        /* NEWS SECTION */
+        .news {
+            padding: 120px 48px;
+            background: var(--color-bg);
+        }
+
+        .news-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 64px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .section-label::before {
+            content: '';
+            display: inline-block;
+            width: 32px;
+            height: 1px;
+            background: var(--color-accent);
+            margin-right: 12px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .view-all-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--color-accent);
+            transition: gap 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            white-space: nowrap;
+            padding-bottom: 8px;
+            text-decoration: none;
+        }
+
+        .view-all-link:hover {
+            gap: 12px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .news-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0;
+        }
+
+        .news-card.visible {
+            animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .news-card:nth-child(1).visible { animation-delay: 0s; }
+        .news-card:nth-child(2).visible { animation-delay: 0.1s; }
+        .news-card:nth-child(3).visible { animation-delay: 0.2s; }
+
+        .news-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #E5D5B5 0%, #D4B896 100%);
+            position: relative;
+        }
+
+        .news-image.image-1 { background: linear-gradient(135deg, #8B7355 0%, #A0826D 100%); }
+        .news-image.image-2 { background: linear-gradient(135deg, #6B5B4F 0%, #8B7B6F 100%); }
+        .news-image.image-3 { background: linear-gradient(135deg, #9B8B7F 0%, #BBAA99 100%); }
+
+        .news-content {
+            padding: 24px;
+        }
+
+        .news-source {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .news-date {
+            font-size: 12px;
+            color: var(--color-light-text);
+            margin-bottom: 12px;
+        }
+
+        .news-title {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .news-excerpt {
+            font-size: 14px;
+            color: var(--color-light-text);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .news-read {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: gap 0.3s ease;
+        }
+
+        .news-read:hover {
+            gap: 12px;
+        }
+
+        /* VIDEOS SECTION */
+        .videos {
+            padding: 120px 48px;
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .videos-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 32px;
+        }
+
+        .video-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #E5D5B5 0%, #D4B896 100%);
+            opacity: 0;
+        }
+
+        .video-item.visible {
+            animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .video-item:nth-child(1).visible { animation-delay: 0s; }
+        .video-item:nth-child(2).visible { animation-delay: 0.1s; }
+        .video-item:nth-child(3).visible { animation-delay: 0.2s; }
+
+        .video-main {
+            aspect-ratio: 16 / 9;
+        }
+
+        .video-small {
+            aspect-ratio: 1.5 / 1;
+        }
+
+        .video-col {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .video-item:hover .video-overlay {
+            opacity: 1;
+        }
+
+        .play-button {
+            width: 72px;
+            height: 72px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            font-size: 28px;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .video-item:hover .play-button {
+            transform: scale(1.1);
+        }
+
+        .video-duration {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            background: rgba(0, 0, 0, 0.6);
+            color: var(--color-white);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .video-info {
+            padding: 20px 0;
+        }
+
+        .video-title {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .video-meta {
+            font-size: 13px;
+            color: var(--color-light-text);
+        }
+
+        /* BOOKS SECTION */
+        .books {
+            padding: 120px 48px;
+            background: var(--color-bg);
+        }
+
+        .books-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .book-item {
+            opacity: 0;
+        }
+
+        .book-item.visible {
+            animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .book-item:nth-child(1).visible { animation-delay: 0s; }
+        .book-item:nth-child(2).visible { animation-delay: 0.05s; }
+        .book-item:nth-child(3).visible { animation-delay: 0.1s; }
+        .book-item:nth-child(4).visible { animation-delay: 0.15s; }
+        .book-item:nth-child(5).visible { animation-delay: 0.2s; }
+        .book-item:nth-child(6).visible { animation-delay: 0.25s; }
+        .book-item:nth-child(7).visible { animation-delay: 0.3s; }
+        .book-item:nth-child(8).visible { animation-delay: 0.35s; }
+
+        .book-cover {
+            width: 100%;
+            aspect-ratio: 0.75;
+            background: linear-gradient(135deg, #E5D5B5 0%, #D4B896 100%);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            color: var(--color-white);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .book-item:nth-child(1) .book-cover { background: linear-gradient(135deg, #5B7B99 0%, #3D5A80 100%); }
+        .book-item:nth-child(2) .book-cover { background: linear-gradient(135deg, #8B6B4F 0%, #6B4E35 100%); }
+        .book-item:nth-child(3) .book-cover { background: linear-gradient(135deg, #4A4A4A 0%, #2A2A2A 100%); }
+        .book-item:nth-child(4) .book-cover { background: linear-gradient(135deg, #C84B3F 0%, #A03530 100%); }
+        .book-item:nth-child(5) .book-cover { background: linear-gradient(135deg, #6B5B95 0%, #4A3F70 100%); }
+        .book-item:nth-child(6) .book-cover { background: linear-gradient(135deg, #9B7B5F 0%, #7B5B45 100%); }
+        .book-item:nth-child(7) .book-cover { background: linear-gradient(135deg, #3B7B5F 0%, #1B5B45 100%); }
+        .book-item:nth-child(8) .book-cover { background: linear-gradient(135deg, #7B4B9B 0%, #5B2B7B 100%); }
+
+        .book-cover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+        }
+
+        .book-title {
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .book-author {
+            font-size: 13px;
+            color: var(--color-light-text);
+            margin-bottom: 16px;
+        }
+
+        .book-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--color-accent);
+            background: rgba(200, 162, 81, 0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        /* ARTICLES SECTION */
+        .articles {
+            padding: 120px 48px;
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .articles-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .articles-list {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .article-item {
+            display: grid;
+            grid-template-columns: 60px 1fr 32px;
+            gap: 40px;
+            align-items: center;
+            padding: 32px;
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0;
+        }
+
+        .article-item.visible {
+            animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .article-item:nth-child(1).visible { animation-delay: 0s; }
+        .article-item:nth-child(2).visible { animation-delay: 0.05s; }
+        .article-item:nth-child(3).visible { animation-delay: 0.1s; }
+        .article-item:nth-child(4).visible { animation-delay: 0.15s; }
+        .article-item:nth-child(5).visible { animation-delay: 0.2s; }
+
+        .article-item:hover {
+            border-color: var(--color-accent);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
+        }
+
+        .article-number {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--color-accent);
+        }
+
+        .article-content {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .article-meta {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--color-light-text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .article-title {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--color-text);
+        }
+
+        .article-excerpt {
+            font-size: 14px;
+            color: var(--color-light-text);
+            line-height: 1.6;
+        }
+
+        .article-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            color: var(--color-accent);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .article-item:hover .article-arrow {
+            background: var(--color-accent);
+            color: var(--color-white);
+            border-color: var(--color-accent);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 64px 48px;
+            background: var(--color-text);
+            color: var(--color-white);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 64px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand h3 {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-social {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            width: fit-content;
+        }
+
+        .footer-social a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copyright {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-legal a {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal a:hover {
+            color: var(--color-accent);
+        }
+
+        /* ANIMATIONS */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .books-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 24px;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav {
+                padding: 0 24px;
+            }
+
+            .nav-container {
+                height: 64px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 80px 24px;
+                margin-top: 64px;
+            }
+
+            .hero-name {
+                font-size: 48px;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .about {
+                padding: 80px 24px;
+            }
+
+            .news {
+                padding: 80px 24px;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .videos {
+                padding: 80px 24px;
+            }
+
+            .books {
+                padding: 80px 24px;
+            }
+
+            .books-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .articles {
+                padding: 80px 24px;
+            }
+
+            .article-item {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                padding: 24px;
+            }
+
+            .section-header-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            footer {
+                padding: 48px 24px;
+            }
+
+            .footer-container {
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PARTICLE CANVAS -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">Pedro<span class="nav-logo-dot">.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#articles">Articles</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">Co-founder & CEO</div>
+                    <h1 class="hero-name">Pedro Ripper</h1>
+                    <p class="hero-description">Building transformative technology through Bemobi (BMOB3), serving 50+ countries across mobile and digital platforms with over 20 years of tech leadership.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">50+</div>
+                            <div class="stat-label">Countries</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">BMOB3</div>
+                            <div class="stat-label">B3 Listed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">20+</div>
+                            <div class="stat-label">Years in Tech</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-portrait">Portrait Placeholder</div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about" id="about">
+            <div class="about-container">
+                <div class="about-text">
+                    <p>Pedro Ripper is a visionary entrepreneur and technology leader with a proven track record of building scalable, global companies. As co-founder and CEO of Bemobi, he has transformed the mobile technology landscape, establishing one of Brazil's most successful tech companies with operations spanning four continents.</p>
+                    <p>Throughout his 20+ years in the technology sector, Pedro has consistently demonstrated an ability to identify emerging opportunities, build high-performing teams, and create sustainable business models. His leadership philosophy centers on innovation, operational excellence, and creating lasting value for stakeholders.</p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🏢</div>
+                        <h3 class="highlight-title">Public Company CEO</h3>
+                        <p class="highlight-description">Leading Bemobi as a B3-listed company with significant market presence and investor confidence.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🌍</div>
+                        <h3 class="highlight-title">Global Footprint</h3>
+                        <p class="highlight-description">Operations across 50+ countries, serving millions of users through innovative digital solutions.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">📚</div>
+                        <h3 class="highlight-title">Academic Foundation</h3>
+                        <p class="highlight-description">Deep expertise in computer science and business strategy, continuously learning and evolving leadership practices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWS SECTION -->
+        <section class="news" id="news">
+            <div class="news-container">
+                <div class="section-header-row">
+                    <div class="section-header">
+                        <div class="section-label">Latest</div>
+                        <h2 class="section-title">In the Press</h2>
+                    </div>
+                    <a href="/news" class="view-all-link">View all<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: 2px;"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                </div>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <div class="news-image image-1"></div>
+                        <div class="news-content">
+                            <div class="news-source">Valor Econômico</div>
+                            <div class="news-date">March 2026</div>
+                            <h3 class="news-title">Bemobi Expands Regional Operations</h3>
+                            <p class="news-excerpt">Pedro Ripper discusses the company's strategic expansion plans across South America and Africa.</p>
+                            <a href="#" class="news-read">Read article<svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-image image-2"></div>
+                        <div class="news-content">
+                            <div class="news-source">Bloomberg Línea</div>
+                            <div class="news-date">February 2026</div>
+                            <h3 class="news-title">Tech Leaders Shape Digital Future</h3>
+                            <p class="news-excerpt">Insights from industry pioneers on transforming mobile technology and digital inclusion.</p>
+                            <a href="#" class="news-read">Read article<svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-image image-3"></div>
+                        <div class="news-content">
+                            <div class="news-source">Exame</div>
+                            <div class="news-date">January 2026</div>
+                            <h3 class="news-title">Bemobi's Innovation Strategy Unveiled</h3>
+                            <p class="news-excerpt">New product launches and technology roadmap position company for sustained growth.</p>
+                            <a href="#" class="news-read">Read article<svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEOS SECTION -->
+        <section class="videos" id="videos">
+            <div class="videos-container">
+                <div class="section-header-row">
+                    <div class="section-header">
+                        <div class="section-label">Featured</div>
+                        <h2 class="section-title">Talks & Interviews</h2>
+                    </div>
+                    <a href="/videos" class="view-all-link">View all<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: 2px;"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                </div>
+                <div class="videos-grid">
+                    <div class="video-item video-main">
+                        <div class="video-overlay">
+                            <div class="play-button">▶</div>
+                        </div>
+                        <div class="video-duration">32:14</div>
+                        <div class="video-info" style="padding-top: 320px;">
+                            <h3 class="video-title">Web Summit Keynote</h3>
+                            <p class="video-meta">The Future of Digital Innovation</p>
+                        </div>
+                    </div>
+                    <div class="video-col">
+                        <div class="video-item video-small">
+                            <div class="video-overlay">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-duration">18:47</div>
+                            <div class="video-info">
+                                <h3 class="video-title">Brazil Tech Panel</h3>
+                                <p class="video-meta">Industry Leadership Discussion</p>
+                            </div>
+                        </div>
+                        <div class="video-item video-small">
+                            <div class="video-overlay">
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="video-duration">45:22</div>
+                            <div class="video-info">
+                                <h3 class="video-title">InfoMoney Interview</h3>
+                                <p class="video-meta">Building Global Technology Companies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOOKS SECTION -->
+        <section class="books" id="books">
+            <div class="books-container">
+                <div class="section-header-row">
+                    <div class="section-header">
+                        <div class="section-label">Recommended</div>
+                        <h2 class="section-title">Books I've Read</h2>
+                    </div>
+                    <a href="/books" class="view-all-link">View all<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: 2px;"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                </div>
+                <div class="books-grid">
+                    <div class="book-item">
+                        <div class="book-cover">The Innovator's Dilemma</div>
+                        <h3 class="book-title">The Innovator's Dilemma</h3>
+                        <p class="book-author">Clayton M. Christensen</p>
+                        <span class="book-tag">Strategy</span>
+                    </div>
+
+                    <div class="book-item">
+                        <div class="book-cover">Zero to One</div>
+                        <h3 class="book-title">Zero to One</h3>
+                        <p class="book-author">Peter Thiel & Blake Masters</p>
+                        <span class="book-tag">Entrepreneurship</span>
+                    </div>
+
+                    <div class="book-item">
+                        <div class="book-cover">Sapiens</div>
+                        <h3 class="book-title">Sapiens</h3>
+                        <p class="book-author">Yuval Noah Harari</p>
+                        <span class="book-tag">History</span>
+                    </div>
+
+                    <div class="book-item">
+                        <div class="book-cover">The Hard Thing About Hard Things</div>
+                        <h3 class="book-title">The Hard Thing About Hard Things</h3>
+                        <p class="book-author">Ben Horowitz</p>
+                        <span class="book-tag">Leadership</span>
+                    </div>
+
+                    <div class="book-item">
+                        <div class="book-cover">Thinking, Fast and Slow</div>
+                        <h3 class="book-title">Thinking, Fast and Slow</h3>
+                        <p class="book-author">Daniel Kahneman</p>
+                        <span class="book-tag">Psychology</span>
+                    </div>
+
+                    <div class="book-item">
+                        <div class="book-cover">Blitzscaling</div>
+                        <h3 class="book-title">Blitzscaling</h3>
+                        <p class="book-author">Reid Hoffman & Chris Yeh</p>
+                        <span class="book-tag">Growth</span>
+                    </div>
+
+                    <div class="book-item">
+                        <div class="book-cover">The Lean Startup</div>
+                        <h3 class="book-title">The Lean Startup</h3>
+                        <p class="book-author">Eric Ries</p>
+                        <span class="book-tag">Methodology</span>
+                    </div>
+
+                    <div class="book-item">
+                        <div class="book-cover">AI Superpowers</div>
+                        <h3 class="book-title">AI Superpowers</h3>
+                        <p class="book-author">Kai-Fu Lee</p>
+                        <span class="book-tag">Technology</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ARTICLES SECTION -->
+        <section class="articles" id="articles">
+            <div class="articles-container">
+                <div class="section-header-row">
+                    <div class="section-header">
+                        <div class="section-label">Curated</div>
+                        <h2 class="section-title">Articles Worth Reading</h2>
+                    </div>
+                    <a href="/articles" class="view-all-link">View all<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: 2px;"><path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                </div>
+                <div class="articles-list">
+                    <article class="article-item">
+                        <div class="article-number">01</div>
+                        <div class="article-content">
+                            <div class="article-meta">Harvard Business Review • March 2026</div>
+                            <h3 class="article-title">The Future of Leadership in an AI-Driven World</h3>
+                            <p class="article-excerpt">Examining how executives must adapt their leadership strategies to thrive in an increasingly AI-driven business landscape.</p>
+                        </div>
+                        <a href="#" class="article-arrow">→</a>
+                    </article>
+
+                    <article class="article-item">
+                        <div class="article-number">02</div>
+                        <div class="article-content">
+                            <div class="article-meta">MIT Technology Review • February 2026</div>
+                            <h3 class="article-title">Building Sustainable Tech Companies in Emerging Markets</h3>
+                            <p class="article-excerpt">Insights into creating long-term value in growth markets while maintaining profitability and impact.</p>
+                        </div>
+                        <a href="#" class="article-arrow">→</a>
+                    </article>
+
+                    <article class="article-item">
+                        <div class="article-number">03</div>
+                        <div class="article-content">
+                            <div class="article-meta">The Economist • January 2026</div>
+                            <h3 class="article-title">The Rise of Brazilian Tech Entrepreneurs</h3>
+                            <p class="article-excerpt">A comprehensive analysis of Brazil's growing role in the global technology ecosystem and entrepreneurial landscape.</p>
+                        </div>
+                        <a href="#" class="article-arrow">→</a>
+                    </article>
+
+                    <article class="article-item">
+                        <div class="article-number">04</div>
+                        <div class="article-content">
+                            <div class="article-meta">a16z Blog • December 2025</div>
+                            <h3 class="article-title">Scaling Global Operations: Lessons from B3-Listed Companies</h3>
+                            <p class="article-excerpt">Strategic approaches to international expansion while maintaining governance standards and investor relations.</p>
+                        </div>
+                        <a href="#" class="article-arrow">→</a>
+                    </article>
+
+                    <article class="article-item">
+                        <div class="article-number">05</div>
+                        <div class="article-content">
+                            <div class="article-meta">Stratechery • November 2025</div>
+                            <h3 class="article-title">Digital Inclusion and Business Impact</h3>
+                            <p class="article-excerpt">How technology companies can drive positive social impact while creating sustainable business value.</p>
+                        </div>
+                        <a href="#" class="article-arrow">→</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Pedro.</h3>
+                <p>Entrepreneur & Technology Leader | Co-founder & CEO of Bemobi</p>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#news">News</a>
+                <a href="#videos">Videos</a>
+                <a href="#books">Books</a>
+                <a href="#articles">Articles</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com" target="_blank">X (Twitter)</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copyright">&copy; 2026 Pedro Ripper. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // PARTICLE MESH ANIMATION
+        class ParticleMesh {
+            constructor() {
+                this.canvas = document.getElementById('particleCanvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.particleCount = 50;
+                this.connectionDistance = 150;
+
+                this.resize();
+                this.initParticles();
+                this.animate();
+
+                window.addEventListener('resize', () => this.resize());
+            }
+
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+
+            initParticles() {
+                this.particles = [];
+                for (let i = 0; i < this.particleCount; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5,
+                        radius: Math.random() * 1.5 + 0.5,
+                    });
+                }
+            }
+
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                this.ctx.fillStyle = 'rgba(200, 162, 81, 0.3)';
+                this.ctx.strokeStyle = 'rgba(200, 162, 81, 0.1)';
+
+                for (let i = 0; i < this.particles.length; i++) {
+                    const p = this.particles[i];
+
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.x < 0 || p.x > this.canvas.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > this.canvas.height) p.vy *= -1;
+
+                    p.x = Math.max(0, Math.min(this.canvas.width, p.x));
+                    p.y = Math.max(0, Math.min(this.canvas.height, p.y));
+
+                    this.ctx.beginPath();
+                    this.ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    this.ctx.fill();
+
+                    for (let j = i + 1; j < this.particles.length; j++) {
+                        const p2 = this.particles[j];
+                        const dx = p.x - p2.x;
+                        const dy = p.y - p2.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < this.connectionDistance) {
+                            this.ctx.beginPath();
+                            this.ctx.moveTo(p.x, p.y);
+                            this.ctx.lineTo(p2.x, p2.y);
+                            this.ctx.stroke();
+                        }
+                    }
+                }
+
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        new ParticleMesh();
+
+        // SCROLL REVEAL ANIMATIONS
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for scroll reveal
+        document.querySelectorAll('.about-text, .about-highlights, .news-card, .video-item, .book-item, .article-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // SMOOTH SCROLL
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#' || href === '') return;
+
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

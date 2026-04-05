@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<!-- saved from url=(0239)file:///Users/pedroripper/Library/Application%20Support/Claude/local-agent-mode-sessions/f34ee018-f40f-440e-b280-df3bc3404ed1/1430c7c7-2d12-409f-a82c-120e2c627451/local_b044563b-37dd-45f6-b748-228b76a0dcde/outputs/pedro-ripper-website.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedro Ripper — Co-founder &amp; CEO of Bemobi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./Pedro Ripper — Co-founder &amp; CEO of Bemobi_files/css2" rel="stylesheet">
+<style>
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --color-bg: #FAFAFA;
+  --color-bg-alt: #FFFFFF;
+  --color-surface: #F2F2F2;
+  --color-text: #1A1A1A;
+  --color-text-secondary: #6B6B6B;
+  --color-accent: #C8A251;
+  --color-accent-light: rgba(200, 162, 81, 0.12);
+  --color-border: #E5E5E5;
+  --color-border-hover: #CCCCCC;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 0.4s var(--ease-out);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ============================================
+   PARTICLE CANVAS (HERO BACKGROUND)
+   ============================================ */
+#particle-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 48px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(250, 250, 250, 0.82);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  transition: all 0.3s ease;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.nav-logo span { color: var(--color-accent); }
+
+.nav-links { display: flex; gap: 36px; align-items: center; }
+
+.nav-links a {
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-base);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1.5px;
+  background: var(--color-accent);
+  transition: width var(--transition-base);
+}
+
+.nav-links a:hover { color: var(--color-text); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-social { display: flex; gap: 16px; align-items: center; }
+.nav-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  transition: all var(--transition-base);
+}
+.nav-social a:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+}
+.nav-social svg { width: 16px; height: 16px; }
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  padding: 120px 0;
+  position: relative;
+}
+
+/* ============================================
+   SECTION HEADERS
+   ============================================ */
+.section-header {
+  margin-bottom: 64px;
+}
+
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-label::before {
+  content: '';
+  width: 28px; height: 1.5px;
+  background: var(--color-accent);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--color-text);
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  margin-top: 16px;
+  max-width: 560px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-text { z-index: 2; }
+
+.hero-greeting {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-greeting::before {
+  content: '';
+  width: 40px; height: 1.5px;
+  background: var(--color-accent);
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5.5vw, 4.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: 12px;
+}
+
+.hero-role {
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+  font-weight: 300;
+  margin-bottom: 36px;
+  line-height: 1.6;
+}
+
+.hero-role strong {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 48px;
+  padding-top: 36px;
+  border-top: 1px solid var(--color-border);
+}
+
+.hero-stat-value {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+}
+
+.hero-stat-label {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image-frame {
+  width: 400px;
+  height: 480px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #e8e8e8 0%, #d4d4d4 100%);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+}
+
+.hero-image-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.hero-image-placeholder {
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #f0f0f0, #e0e0e0);
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  gap: 12px;
+}
+
+.hero-image-placeholder svg {
+  width: 64px; height: 64px;
+  opacity: 0.3;
+}
+
+.hero-accent-dot {
+  position: absolute;
+  width: 12px; height: 12px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  top: -6px; right: 40px;
+  box-shadow: 0 0 20px rgba(200, 162, 81, 0.4);
+}
+
+/* ============================================
+   BIO SECTION
+   ============================================ */
+.bio-section { background: var(--color-bg-alt); }
+
+.bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.bio-text p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+
+.bio-text p:first-child::first-letter {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  float: left;
+  line-height: 1;
+  margin-right: 12px;
+  margin-top: 4px;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.bio-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bio-highlight-card {
+  padding: 28px 32px;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+}
+
+.bio-highlight-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 32px rgba(200, 162, 81, 0.08);
+  transform: translateY(-2px);
+}
+
+.bio-highlight-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--color-accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: var(--color-accent);
+}
+
+.bio-highlight-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.bio-highlight-desc {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* ============================================
+   NEWS SECTION
+   ============================================ */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.news-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-bg-alt);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.06);
+  transform: translateY(-4px);
+}
+
+.news-card-image {
+  height: 200px;
+  background: linear-gradient(135deg, #f0f0f0, #e6e6e6);
+  position: relative;
+  overflow: hidden;
+}
+
+.news-card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.03), transparent);
+}
+
+.news-card-source {
+  position: absolute;
+  top: 16px; left: 16px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  border-radius: 100px;
+  color: var(--color-text-secondary);
+  z-index: 1;
+}
+
+.news-card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+
+.news-card-date {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.news-card-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.news-card-excerpt {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  flex: 1;
+  font-weight: 300;
+}
+
+.news-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-top: 20px;
+  transition: gap var(--transition-base);
+}
+
+.news-card:hover .news-card-link { gap: 10px; }
+
+/* ============================================
+   VIDEOS SECTION
+   ============================================ */
+.videos-section { background: var(--color-bg-alt); }
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 28px;
+}
+
+.video-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+}
+
+.video-card:hover {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+
+.video-thumbnail {
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, #e8e8e8, #d8d8d8);
+  position: relative;
+}
+
+.video-play-btn {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px; height: 64px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  transition: all var(--transition-base);
+}
+
+.video-card:hover .video-play-btn {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: var(--color-accent);
+  color: white;
+}
+
+.video-play-btn svg { width: 24px; height: 24px; margin-left: 3px; }
+
+.video-duration {
+  position: absolute;
+  bottom: 12px; right: 12px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+}
+
+.video-info { padding: 24px 28px; background: var(--color-bg-alt); }
+
+.video-info-meta {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.video-info-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.video-info-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-top: 8px;
+  line-height: 1.55;
+  font-weight: 300;
+}
+
+.videos-secondary {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ============================================
+   BOOKS SECTION
+   ============================================ */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.book-card {
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.book-card:hover { transform: translateY(-6px); }
+
+.book-cover {
+  aspect-ratio: 2/3;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+  transition: box-shadow var(--transition-base);
+}
+
+.book-card:hover .book-cover {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06);
+}
+
+.book-cover-inner {
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  color: white;
+}
+
+.book-cover-inner .book-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.book-cover-inner .book-title-overlay {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.book-cover-inner .book-author-overlay {
+  font-size: 0.72rem;
+  margin-top: 8px;
+  opacity: 0.75;
+  font-weight: 400;
+}
+
+.book-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+.book-author {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+.book-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-top: 10px;
+}
+
+/* ============================================
+   ARTICLES SECTION
+   ============================================ */
+.articles-section { background: var(--color-bg-alt); }
+
+.articles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.article-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 40px;
+  align-items: center;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.article-item:first-child { border-top: 1px solid var(--color-border); }
+
+.article-item:hover { padding-left: 16px; }
+
+.article-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-surface);
+  line-height: 1;
+  min-width: 60px;
+  transition: color var(--transition-base);
+}
+
+.article-item:hover .article-number { color: var(--color-accent); }
+
+.article-content { flex: 1; }
+
+.article-meta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.article-source {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+}
+
+.article-date {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.article-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.article-excerpt {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-top: 8px;
+  line-height: 1.6;
+  max-width: 640px;
+  font-weight: 300;
+}
+
+.article-arrow {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+}
+
+.article-item:hover .article-arrow {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  padding: 80px 0 48px;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 64px;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.footer-brand span { color: var(--color-accent); }
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  max-width: 320px;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social-link {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  transition: all var(--transition-base);
+}
+
+.footer-social-link:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+}
+
+.footer-social-link svg { width: 20px; height: 20px; }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.footer-links { display: flex; gap: 28px; }
+
+.footer-links a {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-base);
+}
+
+.footer-links a:hover { color: var(--color-accent); }
+
+/* ============================================
+   SCROLL ANIMATIONS
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  background: none;
+  border: none;
+}
+
+.mobile-menu-btn span {
+  width: 24px; height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .container { padding: 0 32px; }
+  .nav { padding: 0 32px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+  .hero-greeting { justify-content: center; }
+  .hero-stats { justify-content: center; }
+  .hero-image-wrapper { order: -1; }
+  .hero-image-frame { width: 300px; height: 360px; }
+  .bio-grid { grid-template-columns: 1fr; gap: 48px; }
+  .news-grid { grid-template-columns: 1fr 1fr; }
+  .videos-grid { grid-template-columns: 1fr; }
+  .books-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-social { display: none; }
+  .mobile-menu-btn { display: flex; }
+  .container { padding: 0 20px; }
+  .nav { padding: 0 20px; }
+  section { padding: 80px 0; }
+  .news-grid { grid-template-columns: 1fr; }
+  .books-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .article-item { grid-template-columns: 1fr; gap: 12px; }
+  .article-number { display: none; }
+  .article-arrow { display: none; }
+  .hero-stats { flex-direction: column; gap: 20px; }
+  .footer-inner { flex-direction: column; gap: 32px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== PARTICLE CANVAS ========== -->
+<canvas id="particle-canvas" width="1310" height="1122"></canvas>
+
+<!-- ========== NAVIGATION ========== -->
+<nav class="nav" style="box-shadow: none;">
+  <a href="file:///Users/pedroripper/Library/Application%20Support/Claude/local-agent-mode-sessions/f34ee018-f40f-440e-b280-df3bc3404ed1/1430c7c7-2d12-409f-a82c-120e2c627451/local_b044563b-37dd-45f6-b748-228b76a0dcde/outputs/pedro-ripper-website.html#" class="nav-logo">Pedro<span>.</span></a>
+  <div class="nav-links">
+    <a href="file:///Users/pedroripper/Library/Application%20Support/Claude/local-agent-mode-sessions/f34ee018-f40f-440e-b280-df3bc3404ed1/1430c7c7-2d12-409f-a82c-120e2c627451/local_b044563b-37dd-45f6-b748-228b76a0dcde/outputs/pedro-ripper-website.html#about">About</a>
+    <a href="file:///Users/pedroripper/Library/Application%20Support/Claude/local-agent-mode-sessions/f34ee018-f40f-440e-b280-df3bc3404ed1/1430c7c7-2d12-409f-a82c-120e2c627451/local_b044563b-37dd-45f6-b748-228b76a0dcde/outputs/pedro-ripper-website.html#news">News</a>
+    <a href="file:///Users/pedroripper/Library/Application%20Support/Claude/local-agent-mode-sessions/f34ee018-f40f-440e-b280-df3bc3404ed1/1430c7c7-2d12-409f-a82c-120e2c627451/local_b044563b-37dd-45f6-b748-228b76a0dcde/outputs/pedro-ripper-website.html#videos">Videos</a>
+    <a href="file:///Users/pedroripper/Library/Application%20Support/Claude/local-agent-mode-sessions/f34ee018-f40f-440e-b280-df3bc3404ed1/1430c7c7-2d12-409f-a82c-120e2c627451/local_b044563b-37dd-45f6-b748-228b76a0dcde/outputs/pedro-ripper-website.html#books">Books</a>
+    <a href="file:///Users/pedroripper/Library/Application%20Support/Claude/local-agent-mode-sessions/f34ee018-f40f-440e-b280-df3bc3404ed1/1430c7c7-2d12-409f-a82c-120e2c627451/local_b044563b-37dd-45f6-b748-228b76a0dcde/outputs/pedro-ripper-website.html#articles">Articles</a>
+  </div>
+  <div class="nav-social">
+    <a href="https://linkedin.com/in/pedroripper" target="_blank" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </a>
+    <a href="https://x.com/pedroripper" target="_blank" aria-label="X (Twitter)">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+    </a>
+  </div>
+  <button class="mobile-menu-btn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-greeting">Co-founder &amp; CEO</div>
+        <h1 class="hero-name">Pedro<br>Ripper</h1>
+        <p class="hero-role">
+          Leading <strong>Bemobi (BMOB3)</strong> — a Brazilian public technology company with a global footprint spanning <strong>50+ countries</strong>, powering digital payments and software platforms for large enterprises.
+        </p>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-value">50+</div>
+            <div class="hero-stat-label">Countries</div>
+          </div>
+          <div>
+            <div class="hero-stat-value">BMOB3</div>
+            <div class="hero-stat-label">B3 Listed</div>
+          </div>
+          <div>
+            <div class="hero-stat-value">20+</div>
+            <div class="hero-stat-label">Years in Tech</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <div class="hero-image-frame">
+          <div class="hero-image-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"></circle><path d="M20 21a8 8 0 1 0-16 0"></path></svg>
+            <span>Your portrait photo</span>
+          </div>
+          <div class="hero-accent-dot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BIO / ABOUT ========== -->
+<section class="bio-section" id="about">
+  <div class="container">
+    <div class="section-header reveal visible">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Building the future<br>of digital payments</h2>
+    </div>
+    <div class="bio-grid">
+      <div class="bio-text reveal visible">
+        <p>Pedro Ripper is co-founder and CEO of Bemobi (BMOB3), a Brazilian public technology company with a global footprint spanning more than 50 countries. He has led the company's journey from its origins in mobile services to its current position as a digital payments and software platform for large enterprises.</p>
+        <p>Prior to co-founding Bemobi, Pedro held senior executive roles at Promon, Cisco Systems, and Oi. He holds a degree in Computer Engineering and a Master's in Software Engineering from PUC-Rio, and also completed executive education programs at Harvard Business School and Singularity University.</p>
+        <p>Pedro is also a co-founder and investor in other technology ventures and has served on the boards of leading Brazilian companies.</p>
+      </div>
+      <div class="bio-highlights reveal visible">
+        <div class="bio-highlight-card">
+          <div class="bio-highlight-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+          </div>
+          <div class="bio-highlight-title">Public Company CEO</div>
+          <div class="bio-highlight-desc">Leading Bemobi (BMOB3), listed on Brazil's B3 stock exchange, through continuous growth and global expansion.</div>
+        </div>
+        <div class="bio-highlight-card">
+          <div class="bio-highlight-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+          <div class="bio-highlight-title">Global Footprint</div>
+          <div class="bio-highlight-desc">Operations spanning 50+ countries, connecting enterprises to digital payment solutions worldwide.</div>
+        </div>
+        <div class="bio-highlight-card">
+          <div class="bio-highlight-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+          </div>
+          <div class="bio-highlight-title">Academic Foundation</div>
+          <div class="bio-highlight-desc">PUC-Rio engineering background complemented by executive programs at Harvard Business School and Singularity University.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== NEWS ========== -->
+<section id="news">
+  <div class="container">
+    <div class="section-header reveal visible">
+      <div class="section-label">In the Press</div>
+      <h2 class="section-title">Recent News</h2>
+      <p class="section-subtitle">Latest coverage and mentions from leading business and technology publications.</p>
+    </div>
+    <div class="news-grid">
+      <div class="news-card reveal visible">
+        <div class="news-card-image" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
+          <span class="news-card-source">Valor Econômico</span>
+        </div>
+        <div class="news-card-body">
+          <div class="news-card-date">March 2026</div>
+          <h3 class="news-card-title">Bemobi expands SaaS platform into three new Latin American markets</h3>
+          <p class="news-card-excerpt">The company announced partnerships with major telecom operators in Colombia, Chile, and Peru as part of its regional growth strategy.</p>
+          <span class="news-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+        </div>
+      </div>
+      <div class="news-card reveal visible">
+        <div class="news-card-image" style="background: linear-gradient(135deg, #2d3436, #636e72);">
+          <span class="news-card-source">Bloomberg Línea</span>
+        </div>
+        <div class="news-card-body">
+          <div class="news-card-date">February 2026</div>
+          <h3 class="news-card-title">How Brazilian fintechs are reshaping enterprise payments in emerging markets</h3>
+          <p class="news-card-excerpt">Pedro Ripper discusses Bemobi's strategy for digital payment infrastructure and the company's role in financial inclusion across developing nations.</p>
+          <span class="news-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+        </div>
+      </div>
+      <div class="news-card reveal visible">
+        <div class="news-card-image" style="background: linear-gradient(135deg, #0c3547, #1a6985);">
+          <span class="news-card-source">Exame</span>
+        </div>
+        <div class="news-card-body">
+          <div class="news-card-date">January 2026</div>
+          <h3 class="news-card-title">The 50 most innovative CEOs in Brazilian technology for 2026</h3>
+          <p class="news-card-excerpt">Pedro Ripper is featured among Brazil's top tech leaders for driving Bemobi's transformation from mobile services to a comprehensive digital platform.</p>
+          <span class="news-card-link">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== VIDEOS ========== -->
+<section class="videos-section" id="videos">
+  <div class="container">
+    <div class="section-header reveal visible">
+      <div class="section-label">Watch</div>
+      <h2 class="section-title">Talks &amp; Interviews</h2>
+      <p class="section-subtitle">Selected keynotes, panel discussions, and interviews on technology, fintech, and leadership.</p>
+    </div>
+    <div class="videos-grid reveal visible">
+      <div class="video-card">
+        <div class="video-thumbnail" style="background: linear-gradient(135deg, #1a1a2e, #0f3460);">
+          <div class="video-play-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          </div>
+          <span class="video-duration">32:14</span>
+        </div>
+        <div class="video-info">
+          <div class="video-info-meta">Keynote · Web Summit 2025</div>
+          <div class="video-info-title">The Next Wave of Digital Payments in Emerging Markets</div>
+          <div class="video-info-desc">Pedro discusses how digital infrastructure is enabling financial inclusion across Latin America, Africa, and Southeast Asia.</div>
+        </div>
+      </div>
+      <div class="videos-secondary">
+        <div class="video-card">
+          <div class="video-thumbnail" style="background: linear-gradient(135deg, #2d3436, #636e72);">
+            <div class="video-play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </div>
+            <span class="video-duration">18:47</span>
+          </div>
+          <div class="video-info">
+            <div class="video-info-meta">Panel · Brazil Tech Conference</div>
+            <div class="video-info-title">Scaling a Public Tech Company from Brazil to the World</div>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumbnail" style="background: linear-gradient(135deg, #0c3547, #1a6985);">
+            <div class="video-play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </div>
+            <span class="video-duration">45:22</span>
+          </div>
+          <div class="video-info">
+            <div class="video-info-meta">Interview · InfoMoney</div>
+            <div class="video-info-title">Inside Bemobi: Strategy, Culture, and the IPO Journey</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BOOKS ========== -->
+<section id="books">
+  <div class="container">
+    <div class="section-header reveal visible">
+      <div class="section-label">Reading List</div>
+      <h2 class="section-title">Books I've Read</h2>
+      <p class="section-subtitle">A curated selection of books that have shaped my thinking on technology, business, and leadership.</p>
+    </div>
+    <div class="books-grid reveal visible">
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cover-inner" style="background: linear-gradient(160deg, #1a1a2e, #16213e);">
+            <div class="book-icon">📘</div>
+            <div class="book-title-overlay">The Innovator's Dilemma</div>
+            <div class="book-author-overlay">Clayton Christensen</div>
+          </div>
+        </div>
+        <div class="book-title">The Innovator's Dilemma</div>
+        <div class="book-author">Clayton Christensen</div>
+        <span class="book-tag">Innovation</span>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cover-inner" style="background: linear-gradient(160deg, #2d3436, #636e72);">
+            <div class="book-icon">📗</div>
+            <div class="book-title-overlay">Zero to One</div>
+            <div class="book-author-overlay">Peter Thiel</div>
+          </div>
+        </div>
+        <div class="book-title">Zero to One</div>
+        <div class="book-author">Peter Thiel</div>
+        <span class="book-tag">Startups</span>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cover-inner" style="background: linear-gradient(160deg, #0c3547, #1a6985);">
+            <div class="book-icon">📙</div>
+            <div class="book-title-overlay">Sapiens</div>
+            <div class="book-author-overlay">Yuval Noah Harari</div>
+          </div>
+        </div>
+        <div class="book-title">Sapiens</div>
+        <div class="book-author">Yuval Noah Harari</div>
+        <span class="book-tag">History</span>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cover-inner" style="background: linear-gradient(160deg, #4a1942, #7b2d8e);">
+            <div class="book-icon">📕</div>
+            <div class="book-title-overlay">The Hard Thing About Hard Things</div>
+            <div class="book-author-overlay">Ben Horowitz</div>
+          </div>
+        </div>
+        <div class="book-title">The Hard Thing About Hard Things</div>
+        <div class="book-author">Ben Horowitz</div>
+        <span class="book-tag">Leadership</span>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cover-inner" style="background: linear-gradient(160deg, #1B4332, #2D6A4F);">
+            <div class="book-icon">📗</div>
+            <div class="book-title-overlay">Thinking, Fast and Slow</div>
+            <div class="book-author-overlay">Daniel Kahneman</div>
+          </div>
+        </div>
+        <div class="book-title">Thinking, Fast and Slow</div>
+        <div class="book-author">Daniel Kahneman</div>
+        <span class="book-tag">Psychology</span>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cover-inner" style="background: linear-gradient(160deg, #78350F, #B45309);">
+            <div class="book-icon">📘</div>
+            <div class="book-title-overlay">Blitzscaling</div>
+            <div class="book-author-overlay">Reid Hoffman</div>
+          </div>
+        </div>
+        <div class="book-title">Blitzscaling</div>
+        <div class="book-author">Reid Hoffman</div>
+        <span class="book-tag">Growth</span>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cover-inner" style="background: linear-gradient(160deg, #312E81, #4338CA);">
+            <div class="book-icon">📕</div>
+            <div class="book-title-overlay">The Lean Startup</div>
+            <div class="book-author-overlay">Eric Ries</div>
+          </div>
+        </div>
+        <div class="book-title">The Lean Startup</div>
+        <div class="book-author">Eric Ries</div>
+        <span class="book-tag">Methodology</span>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cover-inner" style="background: linear-gradient(160deg, #7F1D1D, #B91C1C);">
+            <div class="book-icon">📙</div>
+            <div class="book-title-overlay">AI Superpowers</div>
+            <div class="book-author-overlay">Kai-Fu Lee</div>
+          </div>
+        </div>
+        <div class="book-title">AI Superpowers</div>
+        <div class="book-author">Kai-Fu Lee</div>
+        <span class="book-tag">AI &amp; Tech</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ARTICLES ========== -->
+<section class="articles-section" id="articles">
+  <div class="container">
+    <div class="section-header reveal visible">
+      <div class="section-label">Shared Reading</div>
+      <h2 class="section-title">Articles Worth Reading</h2>
+      <p class="section-subtitle">Pieces on fintech, digital transformation, and the future of technology that I find worth sharing.</p>
+    </div>
+    <div class="articles-list">
+      <div class="article-item reveal visible">
+        <div class="article-number">01</div>
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-source">Harvard Business Review</span>
+            <span class="article-date">March 2026</span>
+          </div>
+          <h3 class="article-title">Why Emerging Market Fintechs Are Outpacing Silicon Valley</h3>
+          <p class="article-excerpt">An analysis of how companies built for constrained environments are creating more resilient and scalable business models than their Western counterparts.</p>
+        </div>
+        <div class="article-arrow">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"></path></svg>
+        </div>
+      </div>
+      <div class="article-item reveal visible">
+        <div class="article-number">02</div>
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-source">MIT Technology Review</span>
+            <span class="article-date">February 2026</span>
+          </div>
+          <h3 class="article-title">The Infrastructure Layer: How Payments Became the New Platform</h3>
+          <p class="article-excerpt">Digital payment rails are evolving from simple transaction processors into full-stack platforms powering an entirely new generation of enterprise applications.</p>
+        </div>
+        <div class="article-arrow">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"></path></svg>
+        </div>
+      </div>
+      <div class="article-item reveal visible">
+        <div class="article-number">03</div>
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-source">The Economist</span>
+            <span class="article-date">January 2026</span>
+          </div>
+          <h3 class="article-title">Brazil's Quiet Tech Revolution</h3>
+          <p class="article-excerpt">Beyond the headlines about consumer apps, a generation of Brazilian B2B technology companies is building critical infrastructure for the global digital economy.</p>
+        </div>
+        <div class="article-arrow">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"></path></svg>
+        </div>
+      </div>
+      <div class="article-item reveal visible">
+        <div class="article-number">04</div>
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-source">a16z Blog</span>
+            <span class="article-date">December 2025</span>
+          </div>
+          <h3 class="article-title">The Unbundling of Enterprise Software in Latin America</h3>
+          <p class="article-excerpt">Why the next wave of SaaS winners will come from companies that understand the unique regulatory, cultural, and technical landscape of LatAm markets.</p>
+        </div>
+        <div class="article-arrow">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"></path></svg>
+        </div>
+      </div>
+      <div class="article-item reveal visible">
+        <div class="article-number">05</div>
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-source">Stratechery</span>
+            <span class="article-date">November 2025</span>
+          </div>
+          <h3 class="article-title">AI and the Second Wave of Digital Transformation</h3>
+          <p class="article-excerpt">The first wave digitized processes. The second wave, powered by AI, is fundamentally redesigning them — and the companies that understand this distinction will win.</p>
+        </div>
+        <div class="article-arrow">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"></path></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Pedro Ripper<span>.</span></div>
+        <p class="footer-tagline">Co-founder &amp; CEO of Bemobi. Building the future of digital payments and software platforms across 50+ countries.</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://linkedin.com/in/pedroripper" target="_blank" class="footer-social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="https://x.com/pedroripper" target="_blank" class="footer-social-link" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Pedro Ripper. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="file:///Users/pedroripper/Library/Application%20Support/Claude/local-agent-mode-sessions/f34ee018-f40f-440e-b280-df3bc3404ed1/1430c7c7-2d12-409f-a82c-120e2c627451/local_b044563b-37dd-45f6-b748-228b76a0dcde/outputs/pedro-ripper-website.html#">Privacy</a>
+        <a href="file:///Users/pedroripper/Library/Application%20Support/Claude/local-agent-mode-sessions/f34ee018-f40f-440e-b280-df3bc3404ed1/1430c7c7-2d12-409f-a82c-120e2c627451/local_b044563b-37dd-45f6-b748-228b76a0dcde/outputs/pedro-ripper-website.html#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+// ============================================
+// PARTICLE MESH ANIMATION
+// ============================================
+(function() {
+  const canvas = document.getElementById('particle-canvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let mouse = { x: null, y: null };
+  let animFrame;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.vx = (Math.random() - 0.5) * 0.4;
+      this.vy = (Math.random() - 0.5) * 0.4;
+      this.radius = Math.random() * 1.8 + 0.5;
+    }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(200, 162, 81, 0.5)';
+      ctx.fill();
+    }
+  }
+
+  function init() {
+    resize();
+    const count = Math.min(Math.floor((canvas.width * canvas.height) / 12000), 120);
+    particles = [];
+    for (let i = 0; i < count; i++) {
+      particles.push(new Particle());
+    }
+  }
+
+  function connectParticles() {
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 160) {
+          const opacity = (1 - dist / 160) * 0.15;
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(200, 162, 81, ${opacity})`;
+          ctx.lineWidth = 0.6;
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => { p.update(); p.draw(); });
+    connectParticles();
+    animFrame = requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('resize', () => {
+    cancelAnimationFrame(animFrame);
+    init();
+    animate();
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+
+  init();
+  animate();
+})();
+
+// ============================================
+// SCROLL REVEAL ANIMATION
+// ============================================
+(function() {
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+})();
+
+// ============================================
+// NAVBAR SCROLL EFFECT
+// ============================================
+(function() {
+  const nav = document.querySelector('.nav');
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const scroll = window.scrollY;
+    if (scroll > 100) {
+      nav.style.boxShadow = '0 1px 24px rgba(0,0,0,0.06)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+    lastScroll = scroll;
+  });
+})();
+
+// ============================================
+// SMOOTH SCROLL FOR NAV LINKS
+// ============================================
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+
+</body></html>

@@ -1,0 +1,30 @@
+{
+  "paragraphs": [
+    "Pedro Ripper is co-founder and CEO of Bemobi (BMOB3), a Brazilian public technology company with operations in more than 50 countries. He has led the company's evolution from mobile services into a digital payments and software platform serving large enterprises.",
+    "Before Bemobi, Pedro held senior executive roles at Promon, Cisco Systems, and Oi. He earned his degree in Computer Engineering and his Master's in Software Engineering from PUC-Rio, and later completed executive education programs at Harvard Business School and Singularity University.",
+    "Pedro currently serves on the boards of Iguatemi and Smart Fit, and previously served on the boards of Positivo Tecnologia and Vibra Energia. He is also co-founder, board member, and shareholder of Akross, a specialized software company.",
+    "Based in Rio de Janeiro. Father of three."
+  ],
+  "highlights": [
+    {
+      "icon": "chart",
+      "title": "Public Company CEO",
+      "description": "Leading Bemobi (BMOB3), listed on Brazil's B3 stock exchange, through growth, transformation, and international expansion."
+    },
+    {
+      "icon": "globe",
+      "title": "Global Footprint",
+      "description": "Operating in more than 50 countries, with digital payments and software solutions for large enterprises."
+    },
+    {
+      "icon": "star",
+      "title": "Boards & Investments",
+      "description": "Current board roles at Iguatemi and Smart Fit, previous roles at Positivo Tecnologia and Vibra Energia, and co-founder and board member of Akross."
+    }
+  ],
+  "stats": [
+    { "value": "BMOB3", "label": "B3 Listed" },
+    { "value": "50+", "label": "Countries" },
+    { "value": "30+", "label": "Years in Tech" }
+  ]
+}
