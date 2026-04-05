@@ -23,7 +23,6 @@ describe("Home page", () => {
     render(<Home />);
     expect(screen.getByText("LinkedIn")).toBeInTheDocument();
     expect(screen.getByText("X")).toBeInTheDocument();
-    expect(screen.getByText("Email")).toBeInTheDocument();
   });
 
   it("renders the profile photo", () => {

@@ -1,7 +1,6 @@
 /**
- * Row of text-based social links — LinkedIn, X (Twitter), and Email.
+ * Row of text-based social links — LinkedIn and X (Twitter).
  * Uses the yellow accent color on hover, inspired by seths.blog.
- * Replace placeholder URLs with real ones when ready.
  */
 
 /* Each link's label, URL, and whether it opens in a new tab */
@@ -13,13 +12,8 @@ const links = [
   },
   {
     label: "X",
-    href: "https://x.com/pedroripper",
+    href: "https://x.com/ripper_pedro",
     external: true,
-  },
-  {
-    label: "Email",
-    href: "mailto:pedro@example.com",
-    external: false,
   },
 ];
 

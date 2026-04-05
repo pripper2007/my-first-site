@@ -2,12 +2,11 @@ import { render, screen } from "@testing-library/react";
 import SocialLinks from "@/components/SocialLinks";
 
 describe("SocialLinks", () => {
-  it("renders LinkedIn, X, and Email links", () => {
+  it("renders LinkedIn and X links", () => {
     render(<SocialLinks />);
 
     expect(screen.getByText("LinkedIn")).toBeInTheDocument();
     expect(screen.getByText("X")).toBeInTheDocument();
-    expect(screen.getByText("Email")).toBeInTheDocument();
   });
 
   it("links to correct URLs", () => {
@@ -19,11 +18,7 @@ describe("SocialLinks", () => {
     );
     expect(screen.getByText("X")).toHaveAttribute(
       "href",
-      "https://x.com/pedroripper"
-    );
-    expect(screen.getByText("Email")).toHaveAttribute(
-      "href",
-      "mailto:pedro@example.com"
+      "https://x.com/ripper_pedro"
     );
   });
 
@@ -37,12 +32,5 @@ describe("SocialLinks", () => {
     const x = screen.getByText("X");
     expect(x).toHaveAttribute("target", "_blank");
     expect(x).toHaveAttribute("rel", "noopener noreferrer");
-  });
-
-  it("does not open email link in a new tab", () => {
-    render(<SocialLinks />);
-
-    const email = screen.getByText("Email");
-    expect(email).not.toHaveAttribute("target");
   });
 });
