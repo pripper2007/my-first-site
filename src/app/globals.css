@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-pt-serif);
+  --color-accent: #ffb900;
+  --color-accent-hover: #e0a300;
+}
+
+body {
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
