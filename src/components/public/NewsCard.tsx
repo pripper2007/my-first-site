@@ -31,9 +31,9 @@ export default function NewsCard({ item, index }: NewsCardProps) {
                   src={item.imageUrl || item.thumbnailUrl}
                   alt=""
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover [filter:saturate(0.65)_brightness(1.08)_contrast(0.92)] transition-all duration-[500ms] group-hover:[filter:none]"
+                  className="absolute inset-0 w-full h-full object-cover md:[filter:saturate(0.65)_brightness(1.08)_contrast(0.92)] transition-all duration-[500ms] md:group-hover:[filter:none]"
                 />
-                <div className="absolute inset-0 bg-[rgba(248,243,230,0.45)] transition-opacity duration-[500ms] group-hover:opacity-0" />
+                <div className="absolute inset-0 md:bg-[rgba(248,243,230,0.45)] bg-transparent transition-opacity duration-[500ms] md:group-hover:opacity-0" />
               </>
             ) : (
               <div className="absolute inset-0 bg-gradient-to-t from-black/[0.03] to-transparent" />

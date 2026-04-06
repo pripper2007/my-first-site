@@ -142,7 +142,7 @@ export default function BooksPageGrid({ items, tags }: BooksPageGridProps) {
               }}
             >
               <div
-                className="aspect-[2/3] overflow-hidden relative mb-5 flex items-center justify-center p-6 transition-all duration-[500ms] group-hover:shadow-[0_16px_48px_rgba(0,0,0,0.12)] saturate-0 brightness-[1.35] group-hover:saturate-100 group-hover:brightness-100"
+                className="aspect-[2/3] overflow-hidden relative mb-5 flex items-center justify-center p-6 transition-all duration-[500ms] group-hover:shadow-[0_16px_48px_rgba(0,0,0,0.12)] md:saturate-0 md:brightness-[1.35] md:group-hover:saturate-100 md:group-hover:brightness-100"
                 style={{
                   borderRadius: "var(--radius-sm)",
                   background: "var(--color-surface)",
