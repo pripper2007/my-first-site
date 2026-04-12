@@ -1,0 +1,26 @@
+[
+  {
+    "id": "insight-003",
+    "title": "OpenClaw, PRIP and the Future of Personal Agents",
+    "titlePt": "OpenClaw, PRIP e o futuro dos agentes pessoais",
+    "slug": "openclaw-prip",
+    "excerpt": "What I learned building PRIP, my personal agent based on OpenClaw, and where AI agents are heading.",
+    "excerptPt": "O que eu aprendi construindo o PRIP, meu agente pessoal baseado no OpenClaw, e para onde os agentes de IA est\u00e3o caminhando.",
+    "content": "This article is available as a standalone page. [Read the full article \u2192](/insights/openclaw-prip)",
+    "contentPt": "Este artigo est\u00e1 dispon\u00edvel como uma p\u00e1gina standalone. [Leia o artigo completo \u2192](/insights/openclaw-prip)",
+    "language": "pt",
+    "coverImage": "/images/insights/openclaw-prip-cover.jpg",
+    "tags": [
+      "AI",
+      "Agents",
+      "OpenClaw"
+    ],
+    "date": "2026-04-11",
+    "readingTime": "8 min read",
+    "visible": true,
+    "featured": true,
+    "order": 0,
+    "createdAt": "2026-04-11T00:00:00Z",
+    "updatedAt": "2026-04-11T00:00:00Z"
+  }
+]

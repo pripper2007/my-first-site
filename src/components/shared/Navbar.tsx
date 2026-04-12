@@ -20,6 +20,7 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "/about", label: "About" },
+    { href: "/#insights", label: "Insights" },
     { href: "/#picks", label: "Picks", badge: true },
     { href: "/#books", label: "Books" },
     { href: "/#talks", label: "Talks" },

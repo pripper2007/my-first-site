@@ -9,6 +9,7 @@ import type {
   VideoItem,
   BookItem,
   Pick,
+  Insight,
   Bio,
   Settings,
 } from "./types";
@@ -312,6 +313,79 @@ export async function deletePick(id: string): Promise<boolean> {
   const filtered = picks.filter((p) => p.id !== id);
   if (filtered.length === picks.length) return false;
   await writeJsonFile("picks.json", filtered);
+  return true;
+}
+
+/* ── Insights ────────────────────────────────── */
+
+/**
+ * Returns ALL insight items (including hidden) — used by admin pages.
+ */
+export async function getAllInsights(): Promise<Insight[]> {
+  try {
+    const data = await readJsonFile<Insight[]>("insights.json");
+    return data.sort((a, b) => a.order - b.order);
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Returns only visible insight items — used by public-facing pages.
+ */
+export async function getInsights(): Promise<Insight[]> {
+  const all = await getAllInsights();
+  return all.filter((i) => i.visible !== false);
+}
+
+export async function getFeaturedInsights(limit = 6): Promise<Insight[]> {
+  const insights = await getInsights();
+  return insights.filter((i) => i.featured).slice(0, limit || undefined);
+}
+
+export async function getInsightById(id: string): Promise<Insight | null> {
+  const insights = await getAllInsights();
+  return insights.find((i) => i.id === id) ?? null;
+}
+
+export async function getInsightBySlug(slug: string): Promise<Insight | null> {
+  const insights = await getInsights();
+  return insights.find((i) => i.slug === slug) ?? null;
+}
+
+export async function createInsight(
+  item: Omit<Insight, "id" | "createdAt" | "updatedAt">
+): Promise<Insight> {
+  const { v4: uuidv4 } = await import("uuid");
+  const insights = await getAllInsights();
+  const newItem: Insight = {
+    ...item,
+    id: uuidv4(),
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  };
+  insights.push(newItem);
+  await writeJsonFile("insights.json", insights);
+  return newItem;
+}
+
+export async function updateInsight(
+  id: string,
+  updates: Partial<Omit<Insight, "id" | "createdAt">>
+): Promise<Insight | null> {
+  const insights = await getAllInsights();
+  const index = insights.findIndex((i) => i.id === id);
+  if (index === -1) return null;
+  insights[index] = { ...insights[index], ...updates, updatedAt: new Date().toISOString() };
+  await writeJsonFile("insights.json", insights);
+  return insights[index];
+}
+
+export async function deleteInsight(id: string): Promise<boolean> {
+  const insights = await getAllInsights();
+  const filtered = insights.filter((i) => i.id !== id);
+  if (filtered.length === insights.length) return false;
+  await writeJsonFile("insights.json", filtered);
   return true;
 }
 

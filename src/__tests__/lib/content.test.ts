@@ -11,7 +11,8 @@ import type { NewsItem, VideoItem, BookItem, Pick, Bio, Settings } from "@/lib/t
 jest.mock("fs", () => ({
   promises: {
     readFile: jest.fn(),
-    writeFile: jest.fn(),
+    writeFile: jest.fn().mockResolvedValue(undefined),
+    rename: jest.fn().mockResolvedValue(undefined),
   },
 }));
 
@@ -240,8 +241,8 @@ describe("News CRUD", () => {
   });
 
   it("getFeaturedNews respects limit", async () => {
-    const featured = await getFeaturedNews(0);
-    expect(featured).toHaveLength(0);
+    const featured = await getFeaturedNews(1);
+    expect(featured).toHaveLength(1);
   });
 
   it("getNewsById returns matching item", async () => {

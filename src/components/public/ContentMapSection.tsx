@@ -8,6 +8,7 @@ interface ContentMapSectionProps {
   talks: number;
   bookshelf: number;
   picks: number;
+  insights: number;
 }
 
 /* ── Color stop type used by the canvas animation ── */
@@ -129,6 +130,7 @@ const STAT_META: { key: keyof ContentMapSectionProps; title: string; copy: strin
   { key: "talks", title: "Talks", copy: "Talks, interviews, and selected video appearances." },
   { key: "bookshelf", title: "Bookshelf", copy: "Books that informed the journey and stayed relevant." },
   { key: "picks", title: "Picks", copy: "A curated selection of standout recommendations." },
+  { key: "insights", title: "Insights", copy: "Original essays on AI, payments, and leadership." },
 ];
 
 /* ── Helpers ── */
@@ -157,7 +159,7 @@ function lerpColor(colors: ColorStop[], t: number) {
  * ContentMapSection — full-bleed animated section that visualizes
  * content counts with a canvas "burst" animation and theme presets.
  */
-export default function ContentMapSection({ signals, talks, bookshelf, picks }: ContentMapSectionProps) {
+export default function ContentMapSection({ signals, talks, bookshelf, picks, insights }: ContentMapSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const visualRef = useRef<HTMLDivElement>(null);
@@ -420,7 +422,7 @@ export default function ContentMapSection({ signals, talks, bookshelf, picks }: 
     applyPreset("default");
   }, [applyPreset]);
 
-  const stats = { signals, talks, bookshelf, picks };
+  const stats = { signals, talks, bookshelf, picks, insights };
 
   /* ── Light-bg conditional style helpers ── */
   const eyebrowColor = isLightBg ? "rgba(60,50,30,0.85)" : "rgba(255,255,255,0.72)";
@@ -505,7 +507,7 @@ export default function ContentMapSection({ signals, talks, bookshelf, picks }: 
             transition: "border-color 0.6s ease",
           }}
         >
-          <div className="grid grid-cols-4">
+          <div className="grid grid-cols-5 max-md:grid-cols-3 max-sm:grid-cols-2">
             {STAT_META.map(({ key, title, copy }) => (
               <article key={key} className="py-7 px-5 max-md:py-5 max-md:px-3.5 max-sm:py-4 max-sm:px-2">
                 <span

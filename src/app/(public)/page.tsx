@@ -1,5 +1,6 @@
-import { getFeaturedNews, getFeaturedVideos, getFeaturedBooks, getFeaturedPicks, getNews, getVideos, getBooks, getPicks } from "@/lib/content";
+import { getFeaturedNews, getFeaturedVideos, getFeaturedBooks, getFeaturedPicks, getFeaturedInsights, getNews, getVideos, getBooks, getPicks, getInsights } from "@/lib/content";
 import Hero from "@/components/public/Hero";
+import InsightsSection from "@/components/public/InsightsSection";
 import PicksSection from "@/components/public/PicksSection";
 import BooksSection from "@/components/public/BooksSection";
 import VideosSection from "@/components/public/VideosSection";
@@ -7,25 +8,26 @@ import NewsSection from "@/components/public/NewsSection";
 import ContentMapSection from "@/components/public/ContentMapSection";
 
 /**
- * Homepage — curated content first, bio lives on /about.
- * Order: Hero → Picks → Books → Talks → News
- * Shows ALL featured items (no limit — CMS controls what's featured).
+ * Homepage — Hero → Insights → Picks → Books → Talks → News → Content Atlas
  */
 export default async function HomePage() {
-  const [news, videos, books, picks, allNews, allVideos, allBooks, allPicks] = await Promise.all([
+  const [news, videos, books, picks, insights, allNews, allVideos, allBooks, allPicks, allInsights] = await Promise.all([
     getFeaturedNews(),
     getFeaturedVideos(),
     getFeaturedBooks(),
     getFeaturedPicks(),
+    getFeaturedInsights(1),
     getNews(),
     getVideos(),
     getBooks(),
     getPicks(),
+    getInsights(),
   ]);
 
   return (
     <>
       <Hero />
+      <InsightsSection items={insights} />
       <PicksSection items={picks} />
       <BooksSection items={books} />
       <VideosSection items={videos} />
@@ -35,6 +37,7 @@ export default async function HomePage() {
         talks={allVideos.length}
         bookshelf={allBooks.length}
         picks={allPicks.length}
+        insights={allInsights.length}
       />
     </>
   );

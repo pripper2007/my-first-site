@@ -5,6 +5,11 @@
  * plus next/server NextResponse.
  */
 
+// Mock next/cache — revalidatePath is server-only
+jest.mock("next/cache", () => ({
+  revalidatePath: jest.fn(),
+}));
+
 // Mock next/server — jsdom lacks global Response
 jest.mock("next/server", () => ({
   NextResponse: {

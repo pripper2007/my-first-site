@@ -90,6 +90,27 @@ export interface Pick {
   updatedAt: string;
 }
 
+export interface Insight {
+  id: string;
+  title: string;
+  titlePt?: string; // Portuguese title (optional)
+  slug: string;
+  excerpt: string;
+  excerptPt?: string; // Portuguese excerpt (optional)
+  content: string; // Markdown content (primary language)
+  contentPt?: string; // Portuguese Markdown content (optional)
+  language: "en" | "pt"; // primary language
+  coverImage?: string;
+  tags: string[];
+  date: string; // YYYY-MM-DD
+  readingTime?: string; // e.g. "5 min read"
+  visible?: boolean;
+  featured: boolean;
+  order: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface BioHighlight {
   icon: "chart" | "globe" | "book" | "star" | "rocket" | "users";
   title: string;
