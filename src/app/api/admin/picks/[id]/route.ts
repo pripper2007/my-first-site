@@ -23,11 +23,20 @@ export async function PUT(
   if (!(await isAuthenticated())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  const { id } = await params;
-  const body = await request.json();
-  const pick = await updatePick(id, body);
-  if (!pick) return NextResponse.json({ error: "Not found" }, { status: 404 });
-  revalidatePath("/"); revalidatePath("/picks"); return NextResponse.json(pick);
+  try {
+    const { id } = await params;
+    const body = await request.json();
+    const pick = await updatePick(id, body);
+    if (!pick) return NextResponse.json({ error: "Not found" }, { status: 404 });
+    revalidatePath("/");
+    revalidatePath("/picks");
+    return NextResponse.json(pick);
+  } catch (e) {
+    return NextResponse.json(
+      { error: e instanceof Error ? e.message : "Failed to update pick" },
+      { status: 500 }
+    );
+  }
 }
 
 export async function DELETE(

@@ -105,7 +105,8 @@ export default function PickForm({ pick }: PickFormProps) {
       router.refresh();
     } else {
       setSaving(false);
-      alert("Failed to save pick");
+      const err = await res.json().catch(() => null);
+      alert(err?.error || `Failed to save pick (${res.status})`);
     }
   }
 

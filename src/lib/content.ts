@@ -1,9 +1,16 @@
 /**
- * Content layer — reads/writes JSON files from src/content/.
- * Used by both public pages (read-only) and admin API routes (read/write).
+ * Content layer — reads/writes JSON data for the CMS.
+ *
+ * Storage backend is chosen automatically:
+ *   - If BLOB_READ_WRITE_TOKEN is set → Vercel Blob (works in production)
+ *   - Otherwise → local filesystem in src/content/ (local development)
+ *
+ * Only the two low-level helpers (readJsonFile / writeJsonFile) are aware
+ * of the backend. Every CRUD function above them stays the same.
  */
 import { promises as fs } from "fs";
 import path from "path";
+import { put, list } from "@vercel/blob";
 import type {
   NewsItem,
   VideoItem,
@@ -16,31 +23,47 @@ import type {
 
 const CONTENT_DIR = path.join(process.cwd(), "src", "content");
 
-/* Simple per-file write lock to prevent concurrent writes from corrupting JSON */
-const writeLocks = new Map<string, Promise<void>>();
+/** True when a Vercel Blob token is available (production / preview deploys). */
+const useBlob = !!process.env.BLOB_READ_WRITE_TOKEN;
+
+/* ── Blob-backed helpers ─────────────────────── */
 
 async function readJsonFile<T>(filename: string): Promise<T> {
+  if (useBlob) {
+    /* Find the blob by its path prefix and fetch its contents */
+    const { blobs } = await list({ prefix: `content/${filename}`, limit: 1 });
+    if (blobs.length === 0) {
+      throw new Error(`Content not found in blob store: ${filename}`);
+    }
+    const res = await fetch(blobs[0].url, { cache: "no-store" });
+    if (!res.ok) throw new Error(`Failed to fetch blob: ${filename}`);
+    return res.json();
+  }
+
+  /* Local filesystem fallback */
   const filepath = path.join(CONTENT_DIR, filename);
   const data = await fs.readFile(filepath, "utf-8");
   return JSON.parse(data);
 }
 
 async function writeJsonFile<T>(filename: string, data: T): Promise<void> {
-  const filepath = path.join(CONTENT_DIR, filename);
   const json = JSON.stringify(data, null, 2);
 
-  /* Wait for any in-flight write to the same file */
-  const existing = writeLocks.get(filename);
-  if (existing) await existing;
+  if (useBlob) {
+    /* put() with addRandomSuffix: false replaces the blob at that path */
+    await put(`content/${filename}`, json, {
+      access: "public",
+      addRandomSuffix: false,
+      contentType: "application/json",
+    });
+    return;
+  }
 
-  /* Write atomically: write to temp file, then rename */
+  /* Local filesystem — atomic write via temp file */
+  const filepath = path.join(CONTENT_DIR, filename);
   const tempPath = filepath + ".tmp";
-  const writeOp = fs.writeFile(tempPath, json, "utf-8")
-    .then(() => fs.rename(tempPath, filepath));
-
-  writeLocks.set(filename, writeOp);
-  await writeOp;
-  writeLocks.delete(filename);
+  await fs.writeFile(tempPath, json, "utf-8");
+  await fs.rename(tempPath, filepath);
 }
 
 /* ── News ────────────────────────────────────── */
