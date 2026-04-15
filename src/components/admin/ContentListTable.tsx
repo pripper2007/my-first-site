@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import type { DropResult } from "@hello-pangea/dnd";
@@ -63,6 +63,12 @@ export default function ContentListTable({
   const [updatingIds, setUpdatingIds] = useState<Set<string>>(new Set());
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [deletingIds, setDeletingIds] = useState<Set<string>>(new Set());
+
+  /* Sync client state when server data changes (e.g. after playlist import) */
+  const initialIds = useMemo(() => initialItems.map((i) => i.id).join(","), [initialItems]);
+  useEffect(() => {
+    setItems(initialItems);
+  }, [initialIds]); // eslint-disable-line react-hooks/exhaustive-deps
 
   /* ── Persist a single field update via PUT ── */
   const persistUpdate = useCallback(
