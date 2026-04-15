@@ -54,6 +54,7 @@ async function writeJsonFile<T>(filename: string, data: T): Promise<void> {
     await put(`content/${filename}`, json, {
       access: "public",
       addRandomSuffix: false,
+      allowOverwrite: true,
       contentType: "application/json",
     });
     return;
@@ -65,6 +66,34 @@ async function writeJsonFile<T>(filename: string, data: T): Promise<void> {
   await fs.writeFile(tempPath, json, "utf-8");
   await fs.rename(tempPath, filepath);
 }
+
+/**
+ * Batch-reorder items in a JSON file.
+ * Accepts an array of {id, order} pairs and applies them all in a single
+ * read-modify-write cycle — avoids the race condition of concurrent PUTs.
+ */
+async function reorderItems(
+  filename: string,
+  orders: { id: string; order: number }[]
+): Promise<void> {
+  const items = await readJsonFile<{ id: string; order: number }[]>(filename);
+  const orderMap = new Map(orders.map((o) => [o.id, o.order]));
+  const updated = items.map((item) =>
+    orderMap.has(item.id) ? { ...item, order: orderMap.get(item.id)! } : item
+  );
+  await writeJsonFile(filename, updated);
+}
+
+export const reorderNews = (orders: { id: string; order: number }[]) =>
+  reorderItems("news.json", orders);
+export const reorderVideos = (orders: { id: string; order: number }[]) =>
+  reorderItems("videos.json", orders);
+export const reorderBooks = (orders: { id: string; order: number }[]) =>
+  reorderItems("books.json", orders);
+export const reorderPicks = (orders: { id: string; order: number }[]) =>
+  reorderItems("picks.json", orders);
+export const reorderInsights = (orders: { id: string; order: number }[]) =>
+  reorderItems("insights.json", orders);
 
 /* ── News ────────────────────────────────────── */
 

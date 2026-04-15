@@ -52,9 +52,7 @@ export default function PickForm({ pick }: PickFormProps) {
         if (data.date) setDate(data.date);
         if (data.channelName) setChannelName(data.channelName);
         if (data.channelUrl) setChannelUrl(data.channelUrl);
-        if (data.embedUrl) {
-          /* Store embed URL in thumbnail gradient field for now, or just set thumbnail */
-        }
+        if (data.duration) setDuration(data.duration);
       } else {
         setFetchError("Could not fetch metadata from this URL.");
       }

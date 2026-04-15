@@ -55,6 +55,7 @@ export async function POST() {
       const blob = await put(blobPath, content, {
         access: "public",
         addRandomSuffix: false,
+        allowOverwrite: true,
         contentType: "application/json",
       });
       results.push({ file, status: "uploaded", url: blob.url });

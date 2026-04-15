@@ -161,13 +161,20 @@ export default function ContentListTable({
       const updated = reordered.map((item, idx) => ({ ...item, order: idx }));
       setItems(updated);
 
+      /* Batch reorder — single PATCH instead of many PUTs to avoid race conditions */
       const minIdx = Math.min(srcIdx, destIdx);
       const maxIdx = Math.max(srcIdx, destIdx);
-      for (let i = minIdx; i <= maxIdx; i++) {
-        persistUpdate(updated[i].id, { order: updated[i].order });
-      }
+      const orders = updated.slice(minIdx, maxIdx + 1).map((item) => ({
+        id: item.id,
+        order: item.order,
+      }));
+      fetch(apiPath, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ orders }),
+      });
     },
-    [items, persistUpdate],
+    [items, apiPath],
   );
 
   /* ── Selection ── */

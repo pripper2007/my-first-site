@@ -1,6 +1,6 @@
 import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
-import { getPicks, createPick } from "@/lib/content";
+import { getPicks, createPick, reorderPicks } from "@/lib/content";
 import { isAuthenticated } from "@/lib/auth";
 
 export async function GET() {
@@ -24,6 +24,24 @@ export async function POST(request: Request) {
   } catch (e) {
     return NextResponse.json(
       { error: e instanceof Error ? e.message : "Failed to create pick" },
+      { status: 500 }
+    );
+  }
+}
+
+export async function PATCH(request: Request) {
+  if (!(await isAuthenticated())) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+  try {
+    const { orders } = await request.json();
+    await reorderPicks(orders);
+    revalidatePath("/");
+    revalidatePath("/picks");
+    return NextResponse.json({ success: true });
+  } catch (e) {
+    return NextResponse.json(
+      { error: e instanceof Error ? e.message : "Failed to reorder" },
       { status: 500 }
     );
   }
