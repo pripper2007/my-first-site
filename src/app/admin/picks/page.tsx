@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getAllPicks } from "@/lib/content";
+import { getAllPicks, getSettings } from "@/lib/content";
 import ContentListTable from "@/components/admin/ContentListTable";
 import type { Column } from "@/components/admin/ContentListTable";
 import PlaylistImport from "@/components/admin/PlaylistImport";
@@ -12,7 +12,7 @@ const columns: Column[] = [
 ];
 
 export default async function AdminPicksPage() {
-  const picks = await getAllPicks();
+  const [picks, settings] = await Promise.all([getAllPicks(), getSettings()]);
 
   return (
     <div>
@@ -22,7 +22,7 @@ export default async function AdminPicksPage() {
           <p className="text-sm text-gray-500">{picks.length} picks</p>
         </div>
         <div className="flex items-center gap-2">
-          <PlaylistImport />
+          <PlaylistImport defaultPlaylistUrl={settings.youtubePlaylistUrl} />
           <Link
             href="/admin/picks/new"
             className="px-4 py-2.5 text-sm font-medium text-white bg-gray-700 border border-gray-700 rounded-lg hover:bg-gray-600 transition-colors"

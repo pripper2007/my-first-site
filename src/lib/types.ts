@@ -140,4 +140,5 @@ export interface Settings {
     title: string;
     description: string;
   };
+  youtubePlaylistUrl?: string;
 }

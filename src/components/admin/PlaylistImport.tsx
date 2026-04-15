@@ -3,15 +3,19 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+interface PlaylistImportProps {
+  defaultPlaylistUrl?: string;
+}
+
 /**
  * "Import from Playlist" panel for the admin picks page.
- * Accepts a YouTube playlist URL or ID, calls the import API,
- * and shows results.
+ * Pre-fills with the saved playlist URL from site settings.
+ * On first use, saves the URL to settings for future imports.
  */
-export default function PlaylistImport() {
+export default function PlaylistImport({ defaultPlaylistUrl }: PlaylistImportProps) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
-  const [playlistInput, setPlaylistInput] = useState("");
+  const [playlistInput, setPlaylistInput] = useState(defaultPlaylistUrl ?? "");
   const [importing, setImporting] = useState(false);
   const [result, setResult] = useState<{
     imported: number;
@@ -29,6 +33,15 @@ export default function PlaylistImport() {
     setResult(null);
 
     try {
+      /* Save playlist URL to settings if it changed */
+      if (playlistInput.trim() !== defaultPlaylistUrl) {
+        await fetch("/api/admin/settings", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ youtubePlaylistUrl: playlistInput.trim() }),
+        });
+      }
+
       const res = await fetch("/api/admin/picks/import-playlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -81,8 +94,9 @@ export default function PlaylistImport() {
       </div>
 
       <p className="text-xs text-amber-700 mb-3">
-        Paste a playlist URL or ID. New videos will be imported at the top of
-        your picks list. Duplicates are skipped automatically.
+        {defaultPlaylistUrl
+          ? "Your playlist is saved. Click Import to pull new videos."
+          : "Paste a playlist URL. It will be saved for future imports."}
       </p>
 
       <div className="flex gap-2">
