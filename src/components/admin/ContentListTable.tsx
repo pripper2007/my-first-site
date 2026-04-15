@@ -161,10 +161,8 @@ export default function ContentListTable({
       const updated = reordered.map((item, idx) => ({ ...item, order: idx }));
       setItems(updated);
 
-      /* Batch reorder — single PATCH instead of many PUTs to avoid race conditions */
-      const minIdx = Math.min(srcIdx, destIdx);
-      const maxIdx = Math.max(srcIdx, destIdx);
-      const orders = updated.slice(minIdx, maxIdx + 1).map((item) => ({
+      /* Send ALL items' orders so the blob gets fully normalized */
+      const orders = updated.map((item) => ({
         id: item.id,
         order: item.order,
       }));
