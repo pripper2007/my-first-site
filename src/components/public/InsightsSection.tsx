@@ -20,15 +20,6 @@ export default function InsightsSection({ items }: InsightsSectionProps) {
   return (
     <section id="insights" className="py-[120px]">
       <div className="max-w-[1200px] mx-auto px-5 md:px-12">
-        <ScrollReveal>
-          <SectionHeader
-            label="Insights"
-            title="Writing"
-            subtitle="Original thoughts on AI, payments, technology, and leadership."
-            seeMoreHref="/insights"
-          />
-        </ScrollReveal>
-
         {/* BASE kit CTA — health knowledge-base playbook + prompt */}
         <ScrollReveal>
           <Link
@@ -61,6 +52,15 @@ export default function InsightsSection({ items }: InsightsSectionProps) {
               </svg>
             </span>
           </Link>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <SectionHeader
+            label="Insights"
+            title="Writing"
+            subtitle="Original thoughts on AI, payments, technology, and leadership."
+            seeMoreHref="/insights"
+          />
         </ScrollReveal>
 
         <ScrollReveal>
