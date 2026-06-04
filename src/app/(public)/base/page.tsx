@@ -6,7 +6,7 @@ import CopyPromptButton from "./CopyPromptButton";
 const TITLE = "BASE — uma base de conhecimento viva para a sua saúde";
 const DESCRIPTION =
   "O playbook e o prompt para montar, com IA, uma base de conhecimento viva sobre a sua saúde. Inspirado no padrão LLM Wiki de Andrej Karpathy.";
-const OG_IMAGE = "/articles/images/base-de-conhecimento/cover.png";
+const OG_IMAGE = "/articles/images/base-de-conhecimento/cover-hd.png";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: "https://pedroripper.com/base",
     siteName: "Pedro Ripper",
     type: "website",
-    images: [{ url: OG_IMAGE, width: 944, height: 640, alt: TITLE }],
+    images: [{ url: OG_IMAGE, width: 1888, height: 1280, alt: TITLE }],
   },
   twitter: {
     card: "summary_large_image",

@@ -4,7 +4,7 @@ const TITLE =
   "O projeto de IA que mudou o meu jogo: da minha saúde ao futuro da Bemobi";
 const DESCRIPTION =
   "Como o padrão de base de conhecimento (LLM Wiki, de Andrej Karpathy) virou um motor de correlação para a minha saúde — e estratégia na Bemobi.";
-const OG_IMAGE = "/articles/images/base-de-conhecimento/cover.png";
+const OG_IMAGE = "/articles/images/base-de-conhecimento/cover-hd.png";
 const URL = "https://pedroripper.com/insights/base-de-conhecimento";
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: URL,
     siteName: "Pedro Ripper",
     type: "article",
-    images: [{ url: OG_IMAGE, width: 944, height: 640, alt: TITLE }],
+    images: [{ url: OG_IMAGE, width: 1888, height: 1280, alt: TITLE }],
   },
   twitter: {
     card: "summary_large_image",
