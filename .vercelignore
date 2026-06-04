@@ -1,0 +1,6 @@
+ai-summaries/
+.firecrawl/
+.claude/
+docs/
+coverage/
+.swc/

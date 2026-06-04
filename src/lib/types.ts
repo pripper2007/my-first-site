@@ -101,6 +101,7 @@ export interface Insight {
   contentPt?: string; // Portuguese Markdown content (optional)
   language: "en" | "pt"; // primary language
   coverImage?: string;
+  coverVideo?: string; // optional looping MP4 shown instead of the image in listings
   tags: string[];
   date: string; // YYYY-MM-DD
   readingTime?: string; // e.g. "5 min read"

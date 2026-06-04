@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>O caminho seguro, confortável e ERRADO | Pedro Ripper</title>
+<meta name="description" content="Reflexões de uma semana entre o LATAM Tech Forum e a Brazil Week sobre o ruído, as distorções e as perguntas sobre IA que todo CEO deveria estar se fazendo em 2026." />
+
+<!-- Fonts: match pedroripper.com -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #ececec;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --accent: #c8a251;
+    --accent-soft: rgba(200, 162, 81, 0.12);
+    --hairline: rgba(26, 26, 26, 0.12);
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    --measure: 640px;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg); color: var(--text);
+    font-family: var(--sans); font-size: 17.6px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--accent); color: #fff; }
+  a { color: inherit; }
+
+  /* Top bar — matches site chrome */
+  .topbar { position: sticky; top: 0; z-index: 10;
+    background: rgba(250,250,250,0.82);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--hairline); }
+  .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 16px 32px;
+    display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-family: var(--serif); font-weight: 800; font-size: 22px;
+    letter-spacing: -0.02em; text-decoration: none; }
+  .brand .dot { color: var(--accent); }
+  .back { font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; text-decoration: none; opacity: 0.75; }
+  .back:hover { opacity: 1; }
+
+  article { max-width: 1200px; margin: 0 auto; padding: 64px 32px 120px; }
+  .hero { max-width: 860px; margin: 0 auto 40px; }
+  .kicker { display: inline-block; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent);
+    margin-bottom: 22px; }
+  .kicker::after { content: ""; display: inline-block; width: 28px; height: 1px;
+    background: var(--accent); vertical-align: middle; margin-left: 12px; transform: translateY(-2px); }
+  h1.title { font-family: var(--serif); font-weight: 800;
+    font-size: clamp(34px, 5vw, 60px); line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 22px; }
+  .meta { display: flex; gap: 14px; align-items: center; color: var(--text-muted);
+    font-size: 14px; }
+  .meta .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); opacity: .5; }
+
+  .cover { max-width: var(--measure); margin: 0 auto 44px; }
+  .cover img { width: 100%; height: auto; display: block; border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03); }
+
+  .body { max-width: var(--measure); margin: 0 auto; }
+  .body p { margin: 0 0 1.4em; }
+  .body p.lead { font-size: 20px; line-height: 1.5; color: #2a2a2a; }
+  .body strong { font-weight: 600; }
+  .body h2 { font-family: var(--serif); font-weight: 700; font-size: 28px; letter-spacing: -0.02em; line-height: 1.2; margin: 1.8em 0 0.6em; }
+  .body ul { font-size: 17.6px; margin: 0 0 1.4em; padding-left: 1.2em; }
+  .body li { margin: 0 0 0.4em; }
+  .body .endnote { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--hairline);
+    font-size: 14px; color: var(--text-muted); }
+  .body .endnote a { color: var(--accent); text-decoration: none; }
+  .body .endnote a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="https://pedroripper.com">Pedro<span class="dot">.</span></a>
+      <a class="back" href="/insights">← Insights</a>
+    </div>
+  </header>
+
+  <article>
+    <div class="hero">
+      <span class="kicker">IA &amp; Estratégia</span>
+      <h1 class="title">O caminho seguro, confortável e ERRADO</h1>
+      <div class="meta">
+        <span>Pedro Ripper</span><span class="sep"></span>
+        <span>19 de maio de 2026</span><span class="sep"></span>
+        <span>7 min de leitura</span>
+      </div>
+    </div>
+
+    <figure class="cover">
+      <img src="/articles/images/caminho-seguro-confortavel-errado/hero.png" alt="Comfortable/Familiar versus Reinvent/Adapt &amp; Lead — dois executivos diante de uma encruzilhada estratégica." />
+    </figure>
+
+    <div class="body">
+      <p class="lead">Reflexões de uma semana entre o LATAM Tech Forum em Miami e a Brazil Week em Nova York, sobre o ruído, as distorções e as perguntas sobre IA que todo CEO deveria estar se fazendo em 2026.</p>
+
+      <p>Há um ano, apesar de IA já estar no centro das minhas atenções, o tema quase não apareceu nas minhas reuniões com investidores em Nova York. Foi tangenciado, no máximo, em uma ou outra pergunta pontual de investidores com maior foco em tecnologia.</p>
+
+      <p>Esta semana, ocupou quase metade do tempo de discussão com analistas e gestores que avaliam e investem na Bemobi.</p>
+
+      <p>É a observação mais nítida de que o diálogo está mudando entre Wall Street, Faria Lima e o mundo das techs. Mas é também um ambiente com muito ruído a ser filtrado para navegar uma mudança acelerada.</p>
+
+      <h2>O mapa de 2025</h2>
+
+      <p>Há cerca de um ano, eu voltava do Brazil Week em NY depois de ter passado, duas semanas antes, alguns dias em Miami no LATAM Tech Forum. Voltei na época com a impressão de que existiam dois mundos paralelos quando o assunto era IA.</p>
+
+      <p>No LTF, mesmo então, IA já era o tema central de quase todas as pautas.</p>
+
+      <p>Já na Brazil Week, fora dos painéis dedicados a tech, o tom era outro. A agenda era ancorada em macroeconomia, juros, fiscal, fluxos de capital e leitura de eleição. A IA aparecia, sim, mas como tema secundário, pano de fundo de uma conversa muito mais focada no curto e médio prazo do Brasil.</p>
+
+      <p>Esse era o mapa de 2025.</p>
+
+      <h2>O mapa de 2026</h2>
+
+      <p>Volto hoje, em 2026, novamente da Brazil Week em NY, somada à passagem pelo LATAM Tech Forum em Miami duas semanas antes. O mapa mudou.</p>
+
+      <p>No LTF, o tema central continua o mesmo, mas as conversas estão mais maduras e profundas. As maiores empresas de tech da LatAm estão tentando transformar de fato seus negócios com IA, inovar e evitar virar o próximo incumbent disruptado pela nova onda de start-ups que se forma agora.</p>
+
+      <p>Já na Brazil Week, a IA migrou pela primeira vez da última para a primeira fileira das conversas. E não apenas nos painéis dedicados a tech. Entrou no pitch de empresas que não se descrevem como "tech". Entrou na leitura de gestores macro. Entrou nas reflexões, ainda incipientes, que CEOs de setores tradicionais começam a se fazer.</p>
+
+      <p>Em uma das reuniões desta semana, depois de uma apresentação detalhada dos resultados, o primeiro bloco de perguntas não foi sobre números ou projeções. Foi sobre como estávamos pensando IA, que riscos enxergávamos, como estamos nos posicionando e que oportunidades vemos pela frente. Um diálogo dramaticamente diferente do que tínhamos há doze meses.</p>
+
+      <p>Ainda há muita dúvida sobre como precificar esse novo mundo. Quem ganha, quem perde, como alocar capital, como identificar moats e diferenciais reais em um ambiente que muda rápido e ainda carrega muita incerteza.</p>
+
+      <p>Também foi interessante ver gestores institucionais e individuais avaliando aumentar alocação defensiva em ativos físicos, como real estate e commodities, justamente em um momento de menor clareza sobre como o valor será transferido entre indústrias e players.</p>
+
+      <h2>Ruídos e distorções que tiram a atenção do que importa</h2>
+
+      <p>A comunidade financeira tradicional está começando a precificar, ou ao menos tentar precificar, uma mudança estrutural que a comunidade tech vinha sinalizando há anos. Mas a falta de clareza sobre o tema cria distorções: prêmios potencialmente excessivos de um lado e, do outro, narrativas convenientes que merecem mais ceticismo.</p>
+
+      <p>Quatro delas se repetiram com frequência nesta semana:</p>
+
+      <p><strong>AI washing.</strong> Muitas empresas se reposicionando como "AI-native" sem nada estrutural por trás. Uma variação do "greenwashing" da era ESG, agora com timing de mercado mais agressivo e capital esperando ser convencido.</p>
+
+      <p><strong>A demissão atribuída à IA.</strong> Tem sido comum que qualquer redução de quadro seja agora justificada como ganho de produtividade via IA. Em muitos casos, o que está sendo corrigido é overhiring de ciclos anteriores, ajuste que seria necessário independentemente da nova tecnologia. A narrativa de produtividade soa melhor para o mercado e para a comunicação interna, mas obscurece o que realmente aconteceu.</p>
+
+      <p><strong>A corrida pelo uso indiscriminado de tokens.</strong> Não há dúvida de que o uso de IA tem potencial de transformar e reinventar negócios. Mas o volume de tokens consumidos tem sido tratado como proxy grosseiro da maturidade de IA das empresas. É uma métrica útil para acompanhar, mas sozinha diz muito pouco. E pior, gera incentivos perversos com pouca correlação com o valor gerado.</p>
+
+      <p><strong>A disrupção universal, "one size fits all".</strong> A leitura de que indústrias inteiras estão sendo desmontadas em bloco, como aconteceu no episódio do SaaSpocalipse, em que todo o setor de software sofreu corte brusco de precificação de forma pouco seletiva e pouco profunda, sem avaliação de moats, dados proprietários, efeitos de rede e outras dimensões que serão decisivas neste novo mundo. A disrupção real existe, mas raramente vem em ondas uniformes que possam ser previstas em análises tão simplistas.</p>
+
+      <p>Reconhecer essas distorções não diminui a relevância da transformação. Pelo contrário, ajuda a separar sinal de ruído em um momento em que ambos estão se intensificando.</p>
+
+      <h2>As perguntas que importam</h2>
+
+      <p>Para quem opera negócios com elementos digitais, e em breve físicos também, a pergunta deixou de ser "IA é importante?". Essa resposta é óbvia há algum tempo para quase qualquer empresa.</p>
+
+      <p>No meu ponto de vista, as perguntas mais úteis, e também mais incômodas, hoje são outras. E variam por indústria.</p>
+
+      <p>Se eu fosse começar meu negócio do zero em um mundo com IA forte e disseminada, como faria? O que delegaria para agentes de IA, o que manteria com pessoas e como me organizaria? Algo como um orçamento base zero, mas pensando no redesenho da empresa inteira.</p>
+
+      <p>Para a Bemobi, essa pergunta tem sido bem concreta. Se estivéssemos começando hoje, qual seria a participação de agentes autônomos na arquitetura do produto desde o primeiro dia? Como mudaria a composição dos times de engenharia, operações e customer success? Quanto da nossa estrutura atual existe por inércia organizacional e quanto por necessidade real, dado o que a IA hoje nos permite alcançar? E como adaptar uma empresa com mais de mil colaboradores e R$ 1 bilhão de faturamento para esse novo desenho, em especial quando o negócio está indo bem e crescendo rápido?</p>
+
+      <p>Como será o meu negócio, e minha indústria, em 2 ou 3 anos em um mundo pós-AGI? E, uma vez tendo uma visão direcional, que papel quero ocupar na nova cadeia de valor e qual passa a ser a nova definição de sucesso?</p>
+
+      <p>Para o nosso setor especificamente, isso significa pensar em um mundo no qual agentes de IA passam a transacionar em nome de consumidores e empresas. Em que o moat de integração com biller, telco ou utility, forte hoje, pode valer mais ou menos dependendo de quem se torna a contraparte da transação. Se o agente do consumidor passa a negociar diretamente com o agente do merchant, onde se cria valor e onde se captura? Além disso, se o checkout vira "headless" e passa a ser operado por agentes, que efeitos de rede continuam relevantes no nosso negócio? Quais dados proprietários podem ser usados para nos diferenciar?</p>
+
+      <p>Em ambos os grupos de perguntas acima, o conveniente seria continuar fazendo mais do mesmo. Afinal, "em time que está ganhando não se mexe". Tenho convicção de que, dado o novo mundo em que estamos entrando, esse seria o caminho seguro, confortável e errado.</p>
+
+      <p>Não tenho todas as respostas. Mas as perguntas em si já reorganizam a forma como temos olhado o nosso negócio. E algumas das respostas já começam a ganhar forma e a nortear nossos investimentos e apostas.</p>
+
+      <h2>O papel do CEO</h2>
+
+      <p>Tenho refletido muito sobre essas perguntas, em especial nos últimos dois anos, tentando fazer as melhores escolhas para navegar uma transformação que ainda vejo poucas empresas preparadas para enfrentar, e muitas das quais sequer estão se fazendo as perguntas certas.</p>
+
+      <p>O papel de um CEO, entre outros, é tentar ver as coisas como elas são, não como gostaríamos que fossem. E, a partir daí, tomar as decisões, por mais difíceis que sejam, para que capital e talentos estejam alocados em torno do que será sucesso neste novo mundo.</p>
+
+      <p>Em 2026, talvez a pergunta mais perigosa para um CEO não seja "o que a IA pode fazer pelo meu negócio?", mas quanto do meu negócio atual só existe porque ainda não fomos obrigados a redesenhá-lo?</p>
+
+      <p>Qual pergunta sobre IA tem ocupado mais espaço nas suas conversas em 2026? E o que ela mudou, na prática, na sua estratégia?</p>
+
+      <p class="endnote">Publicado originalmente no <a href="https://www.linkedin.com/in/pedroripper" target="_blank" rel="noopener">LinkedIn</a> de Pedro Ripper.</p>
+    </div>
+  </article>
+</body>
+</html>

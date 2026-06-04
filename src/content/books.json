@@ -3001,5 +3001,19 @@
     "order": 200,
     "createdAt": "2026-04-05T05:00:00Z",
     "updatedAt": "2026-04-05T05:00:00Z"
+  },
+  {
+    "id": "book-201",
+    "title": "The Infinity Machine: Demis Hassabis, DeepMind and the Quest for Superintelligence",
+    "author": "Sebastian Mallaby",
+    "tag": "Biography",
+    "description": "A revelatory portrait of Demis Hassabis — the visionary behind Google DeepMind — and the race to control the future. A chess prodigy and wizard coder from working-class North London, Hassabis turned down a seven-figure game-studio offer to study science at Cambridge, then founded DeepMind to pursue a single audacious goal: artificial superintelligence capable of solving humanity's hardest problems. For three years, Pulitzer finalist Sebastian Mallaby had unprecedented access to Hassabis and his inner circle, as well as his rivals, producing the most insightful portrait of him to date and a historic reckoning with the AI revolution. Winner of the 2024 Nobel Prize, Hassabis has stayed in Britain chasing scientific enlightenment rather than wealth and power — yet, haunted by the memory of Oppenheimer, he aims to control a technology that may ultimately control us all.",
+    "coverImage": "https://m.media-amazon.com/images/I/91ojfkX6thL.jpg",
+    "notes": "Hassabis is, to me, the most compelling figure in AI — a scientist chasing understanding, not just scale, which is the spirit I try to bring to how we build at Bemobi. Mallaby had the access to make this the definitive portrait, and the Oppenheimer parallel he keeps returning to is the question I sit with too: how do you push something this powerful forward while staying responsible for where it lands.",
+    "publishedDate": "2026-03-31",
+    "featured": true,
+    "order": 1,
+    "createdAt": "2026-06-03T00:00:00.000Z",
+    "updatedAt": "2026-06-03T00:00:00.000Z"
   }
 ]

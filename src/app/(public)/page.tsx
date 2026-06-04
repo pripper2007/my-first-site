@@ -16,7 +16,7 @@ export default async function HomePage() {
     getFeaturedVideos(),
     getFeaturedBooks(),
     getFeaturedPicks(),
-    getFeaturedInsights(1),
+    getFeaturedInsights(5),
     getNews(),
     getVideos(),
     getBooks(),

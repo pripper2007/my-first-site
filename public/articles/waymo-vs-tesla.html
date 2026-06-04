@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Waymo vs Tesla: duas filosofias para chegar ao mesmo destino | Pedro Ripper</title>
+<meta name="description" content="Andei de Waymo e de Tesla com FSD na mesma viagem: duas filosofias radicalmente diferentes de direção autônoma e as perguntas que definirão o futuro da mobilidade." />
+
+<!-- Fonts: match pedroripper.com -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #ececec;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --accent: #c8a251;
+    --accent-soft: rgba(200, 162, 81, 0.12);
+    --hairline: rgba(26, 26, 26, 0.12);
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    --measure: 640px;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg); color: var(--text);
+    font-family: var(--sans); font-size: 17.6px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--accent); color: #fff; }
+  a { color: inherit; }
+
+  /* Top bar — matches site chrome */
+  .topbar { position: sticky; top: 0; z-index: 10;
+    background: rgba(250,250,250,0.82);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--hairline); }
+  .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 16px 32px;
+    display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-family: var(--serif); font-weight: 800; font-size: 22px;
+    letter-spacing: -0.02em; text-decoration: none; }
+  .brand .dot { color: var(--accent); }
+  .back { font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; text-decoration: none; opacity: 0.75; }
+  .back:hover { opacity: 1; }
+
+  article { max-width: 1200px; margin: 0 auto; padding: 64px 32px 120px; }
+  .hero { max-width: 860px; margin: 0 auto 40px; }
+  .kicker { display: inline-block; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent);
+    margin-bottom: 22px; }
+  .kicker::after { content: ""; display: inline-block; width: 28px; height: 1px;
+    background: var(--accent); vertical-align: middle; margin-left: 12px; transform: translateY(-2px); }
+  h1.title { font-family: var(--serif); font-weight: 800;
+    font-size: clamp(34px, 5vw, 60px); line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 22px; }
+  .meta { display: flex; gap: 14px; align-items: center; color: var(--text-muted);
+    font-size: 14px; }
+  .meta .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); opacity: .5; }
+
+  .cover { max-width: var(--measure); margin: 0 auto 44px; }
+  .cover img { width: 100%; height: auto; display: block; border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03); }
+
+  .figgrid { max-width: var(--measure); margin: 0 auto 1.6em; display: grid; gap: 12px; }
+  .figgrid.cols-2 { grid-template-columns: 1fr 1fr; }
+  .figgrid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .figgrid img { width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03); display: block; }
+  .figgrid.crop img { height: 100%; object-fit: cover; aspect-ratio: 3/4; }
+  .figgrid.natural img { height: auto; }
+  @media (max-width: 560px) { .figgrid.cols-3 { grid-template-columns: 1fr 1fr; } }
+
+  .body { max-width: var(--measure); margin: 0 auto; }
+  .body p { margin: 0 0 1.4em; }
+  .body p.lead { font-size: 20px; line-height: 1.5; color: #2a2a2a; }
+  .body strong { font-weight: 600; }
+  .body ul { font-size: 17.6px; margin: 0 0 1.4em; padding-left: 1.2em; }
+  .body li { margin: 0 0 0.4em; }
+  .body .endnote { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--hairline);
+    font-size: 14px; color: var(--text-muted); }
+  .body .endnote a { color: var(--accent); text-decoration: none; }
+  .body .endnote a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="https://pedroripper.com">Pedro<span class="dot">.</span></a>
+      <a class="back" href="/insights">← Insights</a>
+    </div>
+  </header>
+
+  <article>
+    <div class="hero">
+      <span class="kicker">IA &amp; Mobilidade</span>
+      <h1 class="title">Waymo vs Tesla: duas filosofias para chegar ao mesmo destino</h1>
+      <div class="meta">
+        <span>Pedro Ripper</span><span class="sep"></span>
+        <span>24 de abril de 2026</span><span class="sep"></span>
+        <span>3 min de leitura</span>
+      </div>
+    </div>
+
+    <figure class="cover">
+      <img src="/articles/images/waymo-vs-tesla/cover.png" alt="Família ao lado do Waymo, veículo 100% autônomo, em Miami." />
+    </figure>
+
+    <div class="body">
+      <p class="lead">No post anterior, contei sobre a experiência de rodar com um Tesla Cybertruck usando FSD (Full Self-Driving) em Miami. Na mesma viagem, fiz questão de testar outra abordagem concorrente: andei com a família em um Waymo, sem motorista humano, 100% autônomo.</p>
+
+      <p>Duas experiências impressionantes. E duas filosofias radicalmente diferentes para resolver o mesmo problema</p>
+
+      <p><strong>O Waymo aposta em redundância e controle:</strong></p>
+      <ul>
+        <li>LiDAR + radar + câmeras trabalhando em conjunto</li>
+        <li>Cidades pré-mapeadas com precisão centimétrica</li>
+        <li>Operação restrita a áreas geocercadas e aprovadas previamente</li>
+      </ul>
+
+      <p><strong>A Tesla aposta em generalização e escala:</strong></p>
+      <ul>
+        <li>Apenas câmeras (Tesla Vision) + redes neurais</li>
+        <li>Sem mapas de alta definição: o carro aprende em tempo real</li>
+        <li>Disponível em qualquer Tesla, em qualquer lugar, mas ainda com supervisão humana</li>
+      </ul>
+
+      <p>Do ponto de vista do usuário, a experiência do Waymo é mais impactante no primeiro momento: o assento do motorista vazio e o volante girando sozinho param o coração. Mas é também uma experiência mais "comportada" com pontos de embarque e desembarque predefinidos, corridas restritas a perímetros aprovados da cidade. A Tesla, mesmo ainda exigindo motorista atento ao volante, é totalmente livre, vai onde você quiser, do jeito que você quiser e o carro vai aprendendo. Duas experiências impressionantes, cada uma à sua maneira.</p>
+
+      <div class="figgrid cols-2 natural">
+        <img src="/articles/images/waymo-vs-tesla/interior.png" alt="Interior do Waymo, com o assento do motorista vazio." />
+        <img src="/articles/images/waymo-vs-tesla/familia-dentro.png" alt="Família dentro do Waymo durante a corrida autônoma." />
+      </div>
+
+      <p>Hoje, o Waymo está à frente em um ponto crítico: já opera sem motorista em várias cidades americanas, com aprovação regulatória consolidada. A Tesla precisa de menos hardware, custa menos por carro e tem uma frota gigantesca gerando dados, mas ainda exige mãos no volante.</p>
+
+      <figure class="cover">
+        <img src="/articles/images/waymo-vs-tesla/infografico.png" alt="Infográfico comparativo Waymo vs Tesla: sensores, mapeamento e modelo de operação." />
+      </figure>
+
+      <p><strong>Ficam as perguntas:</strong></p>
+      <ul>
+        <li>Vence a abordagem mais controlada e comprovada (Waymo) ou a mais ambiciosa e escalável (Tesla)?</li>
+        <li>Redundância de sensores é pré-requisito de segurança ou um custo que a IA vai tornar obsoleto?</li>
+        <li>Pré-mapear cidades é um ativo estratégico ou um gargalo de escalabilidade?</li>
+      </ul>
+
+      <p>Talvez o futuro da mobilidade autônoma não tenha um único vencedor. O Waymo pode dominar a operação de robotáxis em grandes centros urbanos, enquanto a Tesla democratiza a autonomia em cada carro vendido.</p>
+
+      <p>Duas estratégias opostas empurrando a mesma fronteira.</p>
+
+      <p class="endnote">Publicado originalmente no <a href="https://www.linkedin.com/in/pedroripper" target="_blank" rel="noopener">LinkedIn</a> de Pedro Ripper.</p>
+    </div>
+  </article>
+</body>
+</html>

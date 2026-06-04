@@ -1,5 +1,51 @@
 [
   {
+    "id": "rAdU_Z4_aSc",
+    "title": "Bemobi aposta em IA para revolucionar pagamentos e ações disparam após virada estratégica",
+    "description": "Entrevista ao Times Brasil (CNBC) sobre a aposta da Bemobi em IA para reinventar pagamentos e a virada estratégica da companhia.",
+    "type": "interview",
+    "event": "Times Brasil (CNBC)",
+    "date": "2026-05-13",
+    "duration": "11min",
+    "youtubeUrl": "https://www.youtube.com/watch?v=rAdU_Z4_aSc",
+    "embedUrl": "https://www.youtube.com/embed/rAdU_Z4_aSc",
+    "thumbnailUrl": "https://i.ytimg.com/vi/rAdU_Z4_aSc/maxresdefault.jpg",
+    "categories": [
+      "interview",
+      "ai",
+      "payments"
+    ],
+    "contentType": "interview",
+    "channelName": "TIMES BRASIL - LICENCIADO EXCLUSIVO CNBC",
+    "featured": true,
+    "order": -1,
+    "createdAt": "2026-06-03T00:00:00.000Z",
+    "updatedAt": "2026-06-03T00:00:00.000Z"
+  },
+  {
+    "id": "kv6tJxcTkhg",
+    "title": "Pix contra golpes: novo rastreamento aumenta chances de recuperação",
+    "description": "Entrevista ao Times Brasil (CNBC) sobre os impactos do MED 2.0 do Pix: o novo mecanismo de rastreamento e devolução que aumenta as chances de recuperação em casos de golpe.",
+    "type": "interview",
+    "event": "Times Brasil (CNBC)",
+    "date": "2026-02-05",
+    "duration": "5min",
+    "youtubeUrl": "https://www.youtube.com/watch?v=kv6tJxcTkhg",
+    "embedUrl": "https://www.youtube.com/embed/kv6tJxcTkhg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/kv6tJxcTkhg/maxresdefault.jpg",
+    "categories": [
+      "interview",
+      "payments",
+      "pix"
+    ],
+    "contentType": "interview",
+    "channelName": "TIMES BRASIL - LICENCIADO EXCLUSIVO CNBC",
+    "featured": true,
+    "order": 1.5,
+    "createdAt": "2026-06-03T00:00:00.000Z",
+    "updatedAt": "2026-06-03T00:00:00.000Z"
+  },
+  {
     "id": "YNKNWgJZfV0",
     "title": "CEO da Bemobi (BMOB3): Novas TECNOLOGIA e SISTEMAS de PAGAMENTOS",
     "description": "Neste episódio do Expert Talks - Na mesa com CEOs, o estrategista-chefe da XP, Fernando Ferreira, ao lado do Bernardo Guttmann, head dos setores financeiro e de tecnologia, conversam com Pedro Ripper, CEO da Bemobi, sobre novas tecnologias e sistemas de pagamentos.",
