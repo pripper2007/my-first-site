@@ -1,11 +1,29 @@
 import type { Metadata } from "next";
 import CopyCommandButton from "./CopyCommandButton";
 
+const TITLE = "IRPF Anual — Skill para Claude";
+const DESCRIPTION =
+  "A skill que conduz a sua Declaração de Ajuste Anual do IRPF em 5 rounds com Claude — do perfil simples ao complexo. GitHub, download ZIP ou instalação via terminal.";
+const OG_IMAGE = "/articles/images/irpf-agente-ia-10x/hero.png";
+
 export const metadata: Metadata = {
-  title: "IRPF Anual — Skill para Claude",
-  description:
-    "A skill que conduz a sua Declaração de Ajuste Anual do IRPF em 5 rounds com Claude — do perfil simples ao complexo. GitHub, download ZIP ou instalação via terminal.",
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: { canonical: "https://pedroripper.com/irpf-skill" },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: "https://pedroripper.com/irpf-skill",
+    siteName: "Pedro Ripper",
+    type: "website",
+    images: [{ url: OG_IMAGE, alt: TITLE }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
 };
 
 const GITHUB = "https://github.com/pripper2007/irpf-anual-skill";

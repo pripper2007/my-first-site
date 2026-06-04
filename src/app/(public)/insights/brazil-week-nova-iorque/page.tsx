@@ -1,10 +1,29 @@
 import type { Metadata } from "next";
 
+const TITLE = "Para falar do Brasil, precisamos ir para Nova Iorque?";
+const DESCRIPTION =
+  "Pela quarta vez na Brazil Week em Nova York: por que o Brasil produz um tipo de troca quando sai de si mesmo que não consegue gerar em casa.";
+const OG_IMAGE = "/articles/images/brazil-week-nova-iorque/cover.jpeg";
+const URL = "https://pedroripper.com/insights/brazil-week-nova-iorque";
+
 export const metadata: Metadata = {
-  title: "Para falar do Brasil, precisamos ir para Nova Iorque?",
-  description:
-    "Pela quarta vez na Brazil Week em Nova York: por que o Brasil produz um tipo de troca quando sai de si mesmo que não consegue gerar em casa.",
-  alternates: { canonical: "https://pedroripper.com/insights/brazil-week-nova-iorque" },
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: URL },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
+    siteName: "Pedro Ripper",
+    type: "article",
+    images: [{ url: OG_IMAGE, width: 1400, height: 1050, alt: TITLE }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
 };
 
 /**

@@ -3,11 +3,29 @@ import path from "path";
 import type { Metadata } from "next";
 import CopyPromptButton from "./CopyPromptButton";
 
+const TITLE = "BASE — uma base de conhecimento viva para a sua saúde";
+const DESCRIPTION =
+  "O playbook e o prompt para montar, com IA, uma base de conhecimento viva sobre a sua saúde. Inspirado no padrão LLM Wiki de Andrej Karpathy.";
+const OG_IMAGE = "/articles/images/base-de-conhecimento/hero.png";
+
 export const metadata: Metadata = {
-  title: "BASE — uma base de conhecimento viva para a sua saúde",
-  description:
-    "O playbook e o prompt para montar, com IA, uma base de conhecimento viva sobre a sua saúde. Inspirado no padrão LLM Wiki de Andrej Karpathy.",
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: { canonical: "https://pedroripper.com/base" },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: "https://pedroripper.com/base",
+    siteName: "Pedro Ripper",
+    type: "website",
+    images: [{ url: OG_IMAGE, width: 944, height: 640, alt: TITLE }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
 };
 
 const PDF = "/base/playbook-base-de-conhecimento.pdf";

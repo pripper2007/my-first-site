@@ -13,10 +13,27 @@ export async function generateMetadata({
   const insight = await getInsightBySlug(slug);
   if (!insight) return { title: "Not Found" };
 
+  const url = `https://pedroripper.com/insights/${insight.slug}`;
   return {
     title: insight.title,
     description: insight.excerpt,
-    alternates: { canonical: `https://pedroripper.com/insights/${insight.slug}` },
+    alternates: { canonical: url },
+    openGraph: {
+      title: insight.title,
+      description: insight.excerpt,
+      url,
+      siteName: "Pedro Ripper",
+      type: "article",
+      ...(insight.coverImage
+        ? { images: [{ url: insight.coverImage, alt: insight.title }] }
+        : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: insight.title,
+      description: insight.excerpt,
+      ...(insight.coverImage ? { images: [insight.coverImage] } : {}),
+    },
   };
 }
 

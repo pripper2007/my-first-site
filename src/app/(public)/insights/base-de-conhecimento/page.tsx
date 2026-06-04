@@ -1,11 +1,29 @@
 import type { Metadata } from "next";
 
+const TITLE =
+  "O projeto de IA que mudou o meu jogo: da minha saúde ao futuro da Bemobi";
+const DESCRIPTION =
+  "Como o padrão de base de conhecimento (LLM Wiki, de Andrej Karpathy) virou um motor de correlação para a minha saúde — e estratégia na Bemobi.";
+const OG_IMAGE = "/articles/images/base-de-conhecimento/hero.png";
+const URL = "https://pedroripper.com/insights/base-de-conhecimento";
+
 export const metadata: Metadata = {
-  title: "O projeto de IA que mudou o meu jogo: da minha saúde ao futuro da Bemobi",
-  description:
-    "Como o padrão de base de conhecimento (LLM Wiki, de Andrej Karpathy) virou um motor de correlação para a minha saúde — e estratégia na Bemobi.",
-  alternates: {
-    canonical: "https://pedroripper.com/insights/base-de-conhecimento",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: URL },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
+    siteName: "Pedro Ripper",
+    type: "article",
+    images: [{ url: OG_IMAGE, width: 944, height: 640, alt: TITLE }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
   },
 };
 

@@ -1,10 +1,29 @@
 import type { Metadata } from "next";
 
+const TITLE = "Dá pra terceirizar o IRPF pra um agente de AI?";
+const DESCRIPTION =
+  "Um desafio de fim de semana: usar Claude Code (ou Codex com computer use) para fazer e revisar o imposto de renda, da extração dos informes à transmissão.";
+const OG_IMAGE = "/articles/images/irpf-agente-ia-desafio/hero.png";
+const URL = "https://pedroripper.com/insights/irpf-agente-ia-desafio";
+
 export const metadata: Metadata = {
-  title: "Dá pra terceirizar o IRPF pra um agente de AI?",
-  description:
-    "Um desafio de fim de semana: usar Claude Code (ou Codex com computer use) para fazer e revisar o imposto de renda, da extração dos informes à transmissão.",
-  alternates: { canonical: "https://pedroripper.com/insights/irpf-agente-ia-desafio" },
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: URL },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
+    siteName: "Pedro Ripper",
+    type: "article",
+    images: [{ url: OG_IMAGE, width: 1280, height: 778, alt: TITLE }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
 };
 
 /**

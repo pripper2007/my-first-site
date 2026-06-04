@@ -1,10 +1,29 @@
 import type { Metadata } from "next";
 
+const TITLE = "OpenClaw, PRIP e o futuro dos agentes pessoais";
+const DESCRIPTION =
+  "O que eu aprendi construindo o PRIP, meu agente pessoal baseado no OpenClaw, e para onde os agentes de IA estão caminhando.";
+const OG_IMAGE = "/images/insights/openclaw-prip-cover.jpg";
+const URL = "https://pedroripper.com/insights/openclaw-prip";
+
 export const metadata: Metadata = {
-  title: "OpenClaw, PRIP e o futuro dos agentes pessoais",
-  description:
-    "O que eu aprendi construindo o PRIP, meu agente pessoal baseado no OpenClaw, e para onde os agentes de IA estão caminhando.",
-  alternates: { canonical: "https://pedroripper.com/insights/openclaw-prip" },
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: URL },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: URL,
+    siteName: "Pedro Ripper",
+    type: "article",
+    images: [{ url: OG_IMAGE, width: 1400, height: 781, alt: TITLE }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
 };
 
 /**
