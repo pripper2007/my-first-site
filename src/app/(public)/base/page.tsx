@@ -6,7 +6,7 @@ import CopyPromptButton from "./CopyPromptButton";
 const TITLE = "BASE — uma base de conhecimento viva para a sua saúde";
 const DESCRIPTION =
   "O playbook e o prompt para montar, com IA, uma base de conhecimento viva sobre a sua saúde. Inspirado no padrão LLM Wiki de Andrej Karpathy.";
-const OG_IMAGE = "/articles/images/base-de-conhecimento/hero.png";
+const OG_IMAGE = "/articles/images/base-de-conhecimento/cover.png";
 
 export const metadata: Metadata = {
   title: TITLE,
