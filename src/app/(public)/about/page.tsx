@@ -4,8 +4,23 @@ import AboutSection from "@/components/public/AboutSection";
 
 export const metadata = {
   title: "About",
-  description: "Pedro Ripper is co-founder and CEO of Bemobi (BMOB3), a Brazilian public technology company with operations in more than 50 countries.",
+  description:
+    "Pedro Ripper is co-founder and CEO of Bemobi (BMOB3), a Brazilian public technology company with operations in more than 50 countries.",
   alternates: { canonical: "https://pedroripper.com/about" },
+  openGraph: {
+    title: "About | Pedro Ripper",
+    description: "Pedro Ripper is co-founder and CEO of Bemobi (BMOB3), a Brazilian public technology company with operations in more than 50 countries.",
+    url: "https://pedroripper.com/about",
+    siteName: "Pedro Ripper",
+    type: "website",
+    images: [{ url: "/images/og-preview.png", width: 1200, height: 630, alt: "About | Pedro Ripper" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About | Pedro Ripper",
+    description: "Pedro Ripper is co-founder and CEO of Bemobi (BMOB3), a Brazilian public technology company with operations in more than 50 countries.",
+    images: ["/images/og-preview.png"],
+  },
 };
 
 /**

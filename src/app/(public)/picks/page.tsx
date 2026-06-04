@@ -5,8 +5,23 @@ import PicksPageGrid from "@/components/public/PicksPageGrid";
 
 export const metadata = {
   title: "Picks",
-  description: "Curated videos, podcasts, articles, and channels on AI, fintech, and technology — selected by Pedro Ripper.",
+  description:
+    "Curated videos, podcasts, articles, and channels on AI, fintech, and technology — selected by Pedro Ripper.",
   alternates: { canonical: "https://pedroripper.com/picks" },
+  openGraph: {
+    title: "Picks | Pedro Ripper",
+    description: "Curated videos, podcasts, articles, and channels on AI, fintech, and technology — selected by Pedro Ripper.",
+    url: "https://pedroripper.com/picks",
+    siteName: "Pedro Ripper",
+    type: "website",
+    images: [{ url: "/images/og-preview.png", width: 1200, height: 630, alt: "Picks | Pedro Ripper" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Picks | Pedro Ripper",
+    description: "Curated videos, podcasts, articles, and channels on AI, fintech, and technology — selected by Pedro Ripper.",
+    images: ["/images/og-preview.png"],
+  },
 };
 
 /**

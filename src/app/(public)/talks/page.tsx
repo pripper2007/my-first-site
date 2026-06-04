@@ -5,8 +5,23 @@ import VideosPageList from "@/components/public/VideosPageList";
 
 export const metadata = {
   title: "Talks & Interviews",
-  description: "Video appearances, keynotes, panels, and podcast interviews featuring Pedro Ripper, CEO of Bemobi.",
+  description:
+    "Video appearances, keynotes, panels, and podcast interviews featuring Pedro Ripper, CEO of Bemobi.",
   alternates: { canonical: "https://pedroripper.com/talks" },
+  openGraph: {
+    title: "Talks & Interviews | Pedro Ripper",
+    description: "Video appearances, keynotes, panels, and podcast interviews featuring Pedro Ripper, CEO of Bemobi.",
+    url: "https://pedroripper.com/talks",
+    siteName: "Pedro Ripper",
+    type: "website",
+    images: [{ url: "/images/og-preview.png", width: 1200, height: 630, alt: "Talks & Interviews | Pedro Ripper" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Talks & Interviews | Pedro Ripper",
+    description: "Video appearances, keynotes, panels, and podcast interviews featuring Pedro Ripper, CEO of Bemobi.",
+    images: ["/images/og-preview.png"],
+  },
 };
 
 export default async function TalksPage() {

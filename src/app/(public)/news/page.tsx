@@ -5,8 +5,23 @@ import NewsCard from "@/components/public/NewsCard";
 
 export const metadata = {
   title: "News",
-  description: "Press coverage and news about Bemobi and Pedro Ripper from leading business and technology publications.",
+  description:
+    "Press coverage and news about Bemobi and Pedro Ripper from leading business and technology publications.",
   alternates: { canonical: "https://pedroripper.com/news" },
+  openGraph: {
+    title: "News | Pedro Ripper",
+    description: "Press coverage and news about Bemobi and Pedro Ripper from leading business and technology publications.",
+    url: "https://pedroripper.com/news",
+    siteName: "Pedro Ripper",
+    type: "website",
+    images: [{ url: "/images/og-preview.png", width: 1200, height: 630, alt: "News | Pedro Ripper" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "News | Pedro Ripper",
+    description: "Press coverage and news about Bemobi and Pedro Ripper from leading business and technology publications.",
+    images: ["/images/og-preview.png"],
+  },
 };
 
 export default async function NewsPage() {

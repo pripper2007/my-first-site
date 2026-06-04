@@ -5,8 +5,23 @@ import InsightListRow from "@/components/public/InsightListRow";
 
 export const metadata = {
   title: "Insights",
-  description: "Original thoughts on AI, payments, technology, and leadership by Pedro Ripper.",
+  description:
+    "Original thoughts on AI, payments, technology, and leadership by Pedro Ripper.",
   alternates: { canonical: "https://pedroripper.com/insights" },
+  openGraph: {
+    title: "Insights | Pedro Ripper",
+    description: "Original thoughts on AI, payments, technology, and leadership by Pedro Ripper.",
+    url: "https://pedroripper.com/insights",
+    siteName: "Pedro Ripper",
+    type: "website",
+    images: [{ url: "/images/og-preview.png", width: 1200, height: 630, alt: "Insights | Pedro Ripper" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Insights | Pedro Ripper",
+    description: "Original thoughts on AI, payments, technology, and leadership by Pedro Ripper.",
+    images: ["/images/og-preview.png"],
+  },
 };
 
 /**

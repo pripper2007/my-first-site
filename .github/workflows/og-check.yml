@@ -1,0 +1,23 @@
+# OG tags guard — runs after every push to master (waiting for the Vercel
+# auto-deploy), plus weekly and on demand. If any public page ships the
+# generic homepage Open Graph card, the job fails and GitHub emails the
+# repo owner automatically. Zero manual intervention.
+name: OG tags check
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+  schedule:
+    - cron: "23 9 * * 1" # weekly, Monday 09:23 UTC
+
+jobs:
+  check-og:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for Vercel auto-deploy to go live
+        if: github.event_name == 'push'
+        run: sleep 120
+      - name: Check Open Graph tags on production
+        run: node scripts/check-og.mjs
