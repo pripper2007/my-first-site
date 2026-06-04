@@ -1,5 +1,6 @@
 import { getFeaturedNews, getFeaturedVideos, getFeaturedBooks, getFeaturedPicks, getFeaturedInsights, getNews, getVideos, getBooks, getPicks, getInsights } from "@/lib/content";
 import Hero from "@/components/public/Hero";
+import ProjectsSection from "@/components/public/ProjectsSection";
 import InsightsSection from "@/components/public/InsightsSection";
 import PicksSection from "@/components/public/PicksSection";
 import BooksSection from "@/components/public/BooksSection";
@@ -27,6 +28,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
+      <ProjectsSection />
       <InsightsSection items={insights} />
       <PicksSection items={picks} />
       <BooksSection items={books} />

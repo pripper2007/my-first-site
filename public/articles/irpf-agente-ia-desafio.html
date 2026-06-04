@@ -76,6 +76,16 @@
     font-size: 14px; color: var(--text-muted); }
   .body .endnote a { color: var(--accent); text-decoration: none; }
   .body .endnote a:hover { text-decoration: underline; }
+  .cta-skill { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 14px; margin: 8px 0 1.6em; padding: 18px 20px;
+    background: var(--accent-soft); border: 1px solid var(--accent);
+    border-radius: 14px; }
+  .cta-skill .txt { font-size: 15.5px; }
+  .cta-skill .txt b { font-weight: 650; }
+  .cta-skill a.btn { flex-shrink: 0; background: var(--accent); color: #fff;
+    text-decoration: none; font-weight: 650; font-size: 14.5px;
+    padding: 10px 16px; border-radius: 10px; }
+  .cta-skill a.btn:hover { filter: brightness(.95); }
 </style>
 </head>
 <body>
@@ -122,7 +132,12 @@
 
       <p>P.S. Antes que perguntem se não tenho receio de vazamento de dados e privacidade: tenho, mas acho que o benefício aqui é maior que o risco. Os modelos de AI já sabem da minha saúde, do meu trabalho, e meu patrimônio não chega a ser o tema mais sensível.</p>
 
-      <p class="endnote">Publicado originalmente no <a href="https://www.linkedin.com/in/pedroripper" target="_blank" rel="noopener">LinkedIn</a> de Pedro Ripper.</p>
+            <div class="cta-skill">
+        <span class="txt">🧾 <b>A skill IRPF Anual está disponível:</b> o passo a passo completo — GitHub, download ZIP ou instalação via terminal.</span>
+        <a class="btn" href="https://pedroripper.com/irpf-skill">Acessar a skill →</a>
+      </div>
+
+<p class="endnote">Publicado originalmente no <a href="https://www.linkedin.com/in/pedroripper" target="_blank" rel="noopener">LinkedIn</a> de Pedro Ripper.</p>
     </div>
   </article>
 </body>
