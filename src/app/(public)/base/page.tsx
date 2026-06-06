@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import type { Metadata } from "next";
 import CopyPromptButton from "./CopyPromptButton";
+import NewsletterSignup from "@/components/public/NewsletterSignup";
 
 const TITLE = "BASE — uma base de conhecimento viva para a sua saúde";
 const DESCRIPTION =
@@ -178,6 +179,11 @@ export default function BasePage() {
             .
           </p>
         </section>
+
+        {/* Newsletter */}
+        <div className="mt-14">
+          <NewsletterSignup />
+        </div>
 
         {/* Credit */}
         <p className="mt-14 pt-8 border-t border-[var(--color-border)] text-[0.85rem] text-[var(--color-text-secondary)] leading-[1.6]">

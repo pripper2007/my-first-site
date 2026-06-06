@@ -1,3 +1,5 @@
+import NewsletterSignup from "@/components/public/NewsletterSignup";
+
 /**
  * Footer — light background, brand name + tagline on the left,
  * social icon circles on the right, bottom bar with copyright.
@@ -44,6 +46,11 @@ export default function Footer() {
               </svg>
             </a>
           </div>
+        </div>
+
+        {/* Newsletter */}
+        <div className="mb-16">
+          <NewsletterSignup variant="compact" />
         </div>
 
         {/* Nav links */}

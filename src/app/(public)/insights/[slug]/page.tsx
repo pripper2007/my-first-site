@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getInsightBySlug } from "@/lib/content";
 import InsightArticleContent from "@/components/public/InsightArticleContent";
+import NewsletterSignup from "@/components/public/NewsletterSignup";
 import type { Metadata } from "next";
 
 export async function generateMetadata({
@@ -133,6 +134,9 @@ export default async function InsightArticlePage({
             className="article-doc"
             dangerouslySetInnerHTML={{ __html: fragment }}
           />
+          <div className="max-w-[640px] mx-auto px-5 md:px-0 mt-4 mb-10">
+            <NewsletterSignup />
+          </div>
         </div>
       ) : (
         <article className="pt-[120px] pb-[120px]">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CopyCommandButton from "./CopyCommandButton";
+import NewsletterSignup from "@/components/public/NewsletterSignup";
 
 const TITLE = "IRPF Anual — Skill para Claude";
 const DESCRIPTION =
@@ -188,6 +189,11 @@ export default function IrpfSkillPage() {
             </div>
           </div>
         </section>
+
+        {/* Newsletter */}
+        <div className="mt-14">
+          <NewsletterSignup />
+        </div>
 
         {/* Credit */}
         <p className="mt-14 pt-8 border-t border-[var(--color-border)] text-[0.85rem] text-[var(--color-text-secondary)] leading-[1.6]">
