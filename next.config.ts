@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Bundle the pre-converted article fragments with the dynamic insights route
+  outputFileTracingIncludes: {
+    "/insights/[slug]": ["./src/content/articles/**/*"],
+  },
   images: {
     remotePatterns: [
       {

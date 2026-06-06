@@ -1,0 +1,125 @@
+<style>
+.article-doc { --bg: #ececec;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --accent: #c8a251;
+    --accent-soft: rgba(200, 162, 81, 0.12);
+    --hairline: rgba(26, 26, 26, 0.12);
+    --serif: var(--font-playfair-display), Georgia, serif;
+    --sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    --measure: 640px; }
+.article-doc * { box-sizing: border-box; }
+.article-doc { margin: 0; padding: 0;
+    background: var(--bg); color: var(--text);
+    font-family: var(--sans); font-size: 17.6px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+.article-doc ::selection { background: var(--accent); color: #fff; }
+.article-doc a { color: inherit; }
+.article-doc /* Top bar — matches site chrome */
+  .topbar { position: sticky; top: 0; z-index: 10;
+    background: rgba(250,250,250,0.82);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--hairline); }
+.article-doc .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 16px 32px;
+    display: flex; align-items: center; justify-content: space-between; }
+.article-doc .brand { font-family: var(--serif); font-weight: 800; font-size: 22px;
+    letter-spacing: -0.02em; text-decoration: none; }
+.article-doc .brand .dot { color: var(--accent); }
+.article-doc .back { font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; text-decoration: none; opacity: 0.75; }
+.article-doc .back:hover { opacity: 1; }
+.article-doc article { max-width: 1200px; margin: 0 auto; padding: 64px 32px 120px; }
+.article-doc .hero { max-width: 860px; margin: 0 auto 40px; }
+.article-doc .kicker { display: inline-block; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent);
+    margin-bottom: 22px; }
+.article-doc .kicker::after { content: ""; display: inline-block; width: 28px; height: 1px;
+    background: var(--accent); vertical-align: middle; margin-left: 12px; transform: translateY(-2px); }
+.article-doc h1.title { font-family: var(--serif); font-weight: 800;
+    font-size: clamp(34px, 5vw, 60px); line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 22px; }
+.article-doc .meta { display: flex; gap: 14px; align-items: center; color: var(--text-muted);
+    font-size: 14px; }
+.article-doc .meta .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); opacity: .5; }
+.article-doc .cover { max-width: var(--measure); margin: 0 auto 44px; }
+.article-doc .cover img { width: 100%; height: auto; display: block; border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03); }
+.article-doc .figgrid { max-width: var(--measure); margin: 0 auto 1.6em; display: grid; gap: 12px; }
+.article-doc .figgrid.cols-2 { grid-template-columns: 1fr 1fr; }
+.article-doc .figgrid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.article-doc .figgrid img { width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03); display: block; }
+.article-doc .figgrid.crop img { height: 100%; object-fit: cover; aspect-ratio: 3/4; }
+.article-doc .figgrid.natural img { height: auto; }
+@media (max-width: 560px) {
+.article-doc .figgrid.cols-3 { grid-template-columns: 1fr 1fr; }
+
+}
+.article-doc .body { max-width: var(--measure); margin: 0 auto; }
+.article-doc .body p { margin: 0 0 1.4em; }
+.article-doc .body p.lead { font-size: 20px; line-height: 1.5; color: #2a2a2a; }
+.article-doc .body strong { font-weight: 600; }
+.article-doc .body ul { font-size: 17.6px; margin: 0 0 1.4em; padding-left: 1.2em; }
+.article-doc .body li { margin: 0 0 0.4em; }
+.article-doc .body .endnote { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--hairline);
+    font-size: 14px; color: var(--text-muted); }
+.article-doc .body .endnote a { color: var(--accent); text-decoration: none; }
+.article-doc .body .endnote a:hover { text-decoration: underline; }
+</style>
+<article>
+    <div class="hero">
+      <span class="kicker">IA &amp; Mobilidade</span>
+      <h1 class="title">Dirigi Teslas por 12 anos. Essa semana, o carro finalmente dirigiu por mim.</h1>
+      <div class="meta">
+        <span>Pedro Ripper</span><span class="sep"></span>
+        <span>24 de abril de 2026</span><span class="sep"></span>
+        <span>4 min de leitura</span>
+      </div>
+    </div>
+
+    <figure class="cover">
+      <img src="/articles/images/tesla-fsd-12-anos/cover.png" alt="Selfie da família com o Tesla Cybertruck." />
+    </figure>
+
+    <div class="body">
+      <p class="lead">No final de semana aluguei um Cybertruck com FSD v14.3 e Grok mode para rodar com a família.</p>
+
+      <p>Passei o destino por voz para o Grok. O Cybertruck saiu sozinho do estacionamento do shopping, manobrou entre as vagas, seguiu as placas de saída, desceu a rampa, rodou 20 minutos no trânsito até o destino, encontrou uma vaga livre e estacionou. Pela primeira vez em mais de uma década dirigindo Teslas, não toquei no volante uma única vez. Incrivel 😮!</p>
+
+      <figure class="cover">
+        <img src="/articles/images/tesla-fsd-12-anos/familia-dentro.png" alt="Família dentro do Tesla Cybertruck durante o trajeto autônomo." />
+      </figure>
+
+      <p>Testei os diversos modos de direção que variam do Sloth (bicho-preguiça) até o Mad Max, e o carro dirigiu melhor do que eu (o que, convenhamos, não é grande vantagem).</p>
+
+      <div class="figgrid cols-2 natural">
+        <img src="/articles/images/tesla-fsd-12-anos/tela-dia.png" alt="Tela do FSD do Tesla durante o dia." />
+        <img src="/articles/images/tesla-fsd-12-anos/tela-noite.png" alt="Tela do FSD do Tesla à noite." />
+      </div>
+
+      <p>Sou fã da marca desde 2012. Sempre foi menos pela eletrificação e mais pela promessa do carro autônomo.</p>
+
+      <p>Por muito tempo, foi só promessa. Há uns 6 anos, em uma road trip pela Califórnia, percorremos 1.600 km em 10 dias com Autopilot. Impressionante para a época, mas longe do que Elon prometia.</p>
+
+      <div class="figgrid cols-3 crop">
+        <img src="/articles/images/tesla-fsd-12-anos/2018.png" alt="2018 — Tesla Model S." style="aspect-ratio: 4/3;" />
+        <img src="/articles/images/tesla-fsd-12-anos/2023.png" alt="2023 — Tesla Model X." style="aspect-ratio: 4/3;" />
+        <img src="/articles/images/tesla-fsd-12-anos/2026.png" alt="2026 — Tesla Cybertruck." style="aspect-ratio: 4/3;" />
+      </div>
+
+      <p>A virada começa a partir de 2020, sob a liderança de Andrej Karpathy (diretor de IA da Tesla entre 2017 e 2022): a empresa abandona o sistema especialista baseado em regras e faz um giro de 180 graus rumo a redes neurais end-to-end.</p>
+
+      <p>Em 2023, com o FSD v12, 300 mil linhas de código em C++ foram substituídas por ~3 mil que apenas ativam o modelo. O carro aprende a dirigir assistindo humanos. Software 2.0 na prática.</p>
+
+      <p>É um dos melhores exemplos de IA indo muito além dos LLMs e entrando nos "world models", sistemas que entendem e reagem ao mundo físico em tempo real. Peça fundamental para os robôs autônomos, uma das próximas grandes ondas da IA.</p>
+
+      <p>Tecnicamente, finalmente chegamos lá. Agora falta a regulação correr atrás:</p>
+      <ul>
+        <li>Quando teremos FSD sem precisar manter o olhar na estrada?</li>
+        <li>Quantas cidades fora dos EUA vão ter isso nos próximos 2 anos?</li>
+        <li>Esses sistemas vão conseguir lidar com o trânsito brasileiro?</li>
+      </ul>
+
+      <p class="endnote">Publicado originalmente no <a href="https://www.linkedin.com/in/pedroripper" target="_blank" rel="noopener">LinkedIn</a> de Pedro Ripper.</p>
+    </div>
+  </article>

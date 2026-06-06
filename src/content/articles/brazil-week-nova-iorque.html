@@ -1,0 +1,115 @@
+<style>
+.article-doc { --bg: #ececec;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --accent: #c8a251;
+    --accent-soft: rgba(200, 162, 81, 0.12);
+    --hairline: rgba(26, 26, 26, 0.12);
+    --serif: var(--font-playfair-display), Georgia, serif;
+    --sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    --measure: 640px; }
+.article-doc * { box-sizing: border-box; }
+.article-doc { margin: 0; padding: 0;
+    background: var(--bg); color: var(--text);
+    font-family: var(--sans); font-size: 17.6px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+.article-doc ::selection { background: var(--accent); color: #fff; }
+.article-doc a { color: inherit; }
+.article-doc /* Top bar — matches site chrome */
+  .topbar { position: sticky; top: 0; z-index: 10;
+    background: rgba(250,250,250,0.82);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--hairline); }
+.article-doc .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 16px 32px;
+    display: flex; align-items: center; justify-content: space-between; }
+.article-doc .brand { font-family: var(--serif); font-weight: 800; font-size: 22px;
+    letter-spacing: -0.02em; text-decoration: none; }
+.article-doc .brand .dot { color: var(--accent); }
+.article-doc .back { font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; text-decoration: none; opacity: 0.75; }
+.article-doc .back:hover { opacity: 1; }
+.article-doc article { max-width: 1200px; margin: 0 auto; padding: 64px 32px 120px; }
+.article-doc .hero { max-width: 860px; margin: 0 auto 40px; }
+.article-doc .kicker { display: inline-block; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent);
+    margin-bottom: 22px; }
+.article-doc .kicker::after { content: ""; display: inline-block; width: 28px; height: 1px;
+    background: var(--accent); vertical-align: middle; margin-left: 12px; transform: translateY(-2px); }
+.article-doc h1.title { font-family: var(--serif); font-weight: 800;
+    font-size: clamp(34px, 5vw, 60px); line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 22px; }
+.article-doc .meta { display: flex; gap: 14px; align-items: center; color: var(--text-muted);
+    font-size: 14px; }
+.article-doc .meta .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); opacity: .5; }
+.article-doc .cover { max-width: var(--measure); margin: 0 auto 44px; }
+.article-doc .cover img { width: 100%; height: auto; display: block; border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03); }
+.article-doc .figgrid { max-width: var(--measure); margin: 0 auto 1.6em; display: grid; gap: 12px; }
+.article-doc .figgrid.cols-2 { grid-template-columns: 1fr 1fr; }
+.article-doc .figgrid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.article-doc .figgrid img { width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03); display: block; }
+.article-doc .figgrid.crop img { height: 100%; object-fit: cover; aspect-ratio: 3/4; }
+.article-doc .figgrid.natural img { height: auto; }
+@media (max-width: 560px) {
+.article-doc .figgrid.cols-3 { grid-template-columns: 1fr 1fr; }
+
+}
+.article-doc .body { max-width: var(--measure); margin: 0 auto; }
+.article-doc .body p { margin: 0 0 1.4em; }
+.article-doc .body p.lead { font-size: 20px; line-height: 1.5; color: #2a2a2a; }
+.article-doc .body strong { font-weight: 600; }
+.article-doc .body ul { font-size: 17.6px; margin: 0 0 1.4em; padding-left: 1.2em; }
+.article-doc .body li { margin: 0 0 0.4em; }
+.article-doc .body .endnote { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--hairline);
+    font-size: 14px; color: var(--text-muted); }
+.article-doc .body .endnote a { color: var(--accent); text-decoration: none; }
+.article-doc .body .endnote a:hover { text-decoration: underline; }
+</style>
+<article>
+    <div class="hero">
+      <span class="kicker">Negócios &amp; Brasil</span>
+      <h1 class="title">Para falar do Brasil, precisamos ir para Nova Iorque?</h1>
+      <div class="meta">
+        <span>Pedro Ripper</span><span class="sep"></span>
+        <span>15 de maio de 2026</span><span class="sep"></span>
+        <span>3 min de leitura</span>
+      </div>
+    </div>
+
+    <figure class="cover">
+      <img src="/articles/images/brazil-week-nova-iorque/cover.jpeg" alt="Brazil Week em Nova York." />
+    </figure>
+
+    <div class="body">
+      <p class="lead">Pela quarta vez participo da Brazil Week. E novamente volto com a mesma constatação irônica: atravessei 13 horas de voo para encontrar, primordialmente, brasileiros.</p>
+
+      <p>Não sei dizer qual é o evento âncora oficial da semana. Mas sei qual é o meu: a CEO Conference do Itaú, agora na sua 19ª edição. Talvez o único encontro fora do país capaz da façanha de concentrar, em um único auditório, os CEOs das 100 maiores empresas do Brasil.</p>
+
+      <p>Em torno dela, a semana se multiplica. Itau BBA Next 100 Years, Brasil em Pauta do ESTADÃO, Nasdaq Reception, Esfera Brasil, LIDE Brasil, BTG Pactual Tech Day, BTG Brazil &amp; the Economy, Financial Times Brazil Summit, XP Inc. Real Estate Breakfast, Person of the Year, encontro do Bank of America. Some a isso happy hours, jantares e palestras nos mais variados temas, e tem-se a dimensão da agenda.</p>
+
+      <div class="figgrid cols-3 crop">
+        <img src="/articles/images/brazil-week-nova-iorque/g1.png" alt="Brazil Week — registro da semana em Nova York." />
+        <img src="/articles/images/brazil-week-nova-iorque/g2.png" alt="Brazil Week — registro da semana em Nova York." />
+        <img src="/articles/images/brazil-week-nova-iorque/g3.png" alt="Brazil Week — registro da semana em Nova York." />
+      </div>
+
+      <p>Para a Bemobi, é uma janela rara de exposição direta a investidores brasileiros e internacionais. Para mim, pessoalmente, é uma das melhores oportunidades no ano de reencontrar colegas e CEOs de outras indústrias que respeito e admiro.</p>
+
+      <p>Mas a pergunta que volto a me fazer é outra: por que precisamos de Nova York como ponto de encontro?</p>
+
+      <p>Estar fora de casa, sem reuniões internas, sem agenda corporativa local, libera as pessoas para conversas que simplesmente não acontecem em São Paulo ou no Rio. Há algo no deslocamento que muda a qualidade da troca.</p>
+
+      <p>A semana é uma maratona. Double booking de almoço, double booking de jantar, reuniões em ritmo industrial. Foram mais de 50 reuniões em 5 dias. Volto exausto, sempre. Mas volto também com novos contatos, visões e reflexões que muitas vezes não conseguiria em casa, e a convicção de que esse formato de "Brasil deslocado" gera um tipo de troca que o Brasil em casa não consegue produzir.</p>
+
+      <div class="figgrid cols-3 crop">
+        <img src="/articles/images/brazil-week-nova-iorque/g4.jpeg" alt="Brazil Week — registro da semana em Nova York." />
+        <img src="/articles/images/brazil-week-nova-iorque/g5.png" alt="Brazil Week — registro da semana em Nova York." />
+        <img src="/articles/images/brazil-week-nova-iorque/g6.png" alt="Brazil Week — registro da semana em Nova York." />
+      </div>
+
+      <p>Talvez seja isso que a Brazil Week realmente entrega. Menos sobre Nova York. Mais sobre o que o Brasil é quando sai de si mesmo.</p>
+
+      <p class="endnote">Publicado originalmente no <a href="https://www.linkedin.com/in/pedroripper" target="_blank" rel="noopener">LinkedIn</a> de Pedro Ripper.</p>
+    </div>
+  </article>
