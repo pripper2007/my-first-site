@@ -51,6 +51,7 @@ export default function Footer() {
           {[
             { href: "/", label: "Home" },
             { href: "/about", label: "About" },
+            { href: "/pedro-ripper", label: "Profile" },
             { href: "/insights", label: "Insights" },
             { href: "/#picks", label: "Picks" },
             { href: "/#books", label: "Books" },

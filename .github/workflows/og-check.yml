@@ -2,7 +2,7 @@
 # auto-deploy), plus weekly and on demand. If any public page ships the
 # generic homepage Open Graph card, the job fails and GitHub emails the
 # repo owner automatically. Zero manual intervention.
-name: OG tags check
+name: SEO & OG checks
 
 on:
   push:
@@ -21,3 +21,5 @@ jobs:
         run: sleep 120
       - name: Check Open Graph tags on production
         run: node scripts/check-og.mjs
+      - name: Validate AI-SEO contract on production
+        run: node scripts/validate-seo.mjs

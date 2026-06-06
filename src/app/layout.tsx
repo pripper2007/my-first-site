@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GLOBAL_LD } from "@/lib/jsonld";
 import { Playfair_Display, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -53,50 +54,6 @@ export const metadata: Metadata = {
   },
 };
 
-/* JSON-LD structured data for search engines */
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      name: "Pedro Ripper",
-      url: "https://pedroripper.com",
-    },
-    {
-      "@type": "Person",
-      name: "Pedro Ripper",
-      url: "https://pedroripper.com",
-      image: "https://pedroripper.com/images/og-preview.png",
-      jobTitle: "Co-founder & CEO",
-      worksFor: {
-        "@type": "Organization",
-        name: "Bemobi",
-        url: "https://bemobi.com",
-        tickerSymbol: "BMOB3",
-      },
-      alumniOf: [
-        { "@type": "CollegeOrUniversity", name: "PUC-Rio" },
-        { "@type": "CollegeOrUniversity", name: "Harvard Business School" },
-        { "@type": "CollegeOrUniversity", name: "Singularity University" },
-      ],
-      sameAs: [
-        "https://linkedin.com/in/pedroripper",
-        "https://x.com/ripper_pedro",
-      ],
-      knowsAbout: [
-        "Digital Payments",
-        "Artificial Intelligence",
-        "Financial Technology",
-        "Enterprise Software",
-        "Technology Leadership",
-      ],
-      nationality: {
-        "@type": "Country",
-        name: "Brazil",
-      },
-    },
-  ],
-};
 
 export default function RootLayout({
   children,
@@ -118,7 +75,7 @@ export default function RootLayout({
       <body>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(GLOBAL_LD) }}
         />
         {children}
         <Analytics />
