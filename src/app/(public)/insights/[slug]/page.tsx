@@ -22,6 +22,9 @@ export async function generateMetadata({
     title: insight.title,
     description: insight.excerpt,
     alternates: { canonical: url },
+    ...(insight.visible === false
+      ? { robots: { index: false, follow: false } }
+      : {}),
     openGraph: {
       title: insight.title,
       description: insight.excerpt,

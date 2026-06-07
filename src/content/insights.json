@@ -1,5 +1,29 @@
 [
   {
+    "id": "insight-draft-album",
+    "title": "Copa do Mundo, minha filha de 11 anos e a IA",
+    "titlePt": "Copa do Mundo, minha filha de 11 anos e a IA",
+    "slug": "album-da-manu",
+    "excerpt": "Como usar IA — na construção de um app e no coração do produto — para apresentar a IA a uma criança, de forma lúdica. O caso do Álbum da Manu.",
+    "excerptPt": "Como usar IA — na construção de um app e no coração do produto — para apresentar a IA a uma criança, de forma lúdica. O caso do Álbum da Manu.",
+    "content": "Rascunho. [Abrir →](/insights/album-da-manu)",
+    "contentPt": "Rascunho. [Abrir →](/insights/album-da-manu)",
+    "language": "pt",
+    "coverImage": "/articles/images/album-da-manu/capa.png",
+    "tags": [
+      "AI",
+      "Education",
+      "Product"
+    ],
+    "date": "2026-06-07",
+    "readingTime": "7 min de leitura",
+    "visible": false,
+    "featured": false,
+    "order": -2,
+    "createdAt": "2026-06-07T00:00:00Z",
+    "updatedAt": "2026-06-07T00:00:00Z"
+  },
+  {
     "id": "insight-013",
     "title": "A IA conquistou o mundo digital. Falta o físico.",
     "titlePt": "A IA conquistou o mundo digital. Falta o físico.",

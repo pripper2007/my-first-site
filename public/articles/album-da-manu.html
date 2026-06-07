@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<link rel="canonical" href="https://pedroripper.com/insights/album-da-manu" />
+<meta name="robots" content="noindex, nofollow" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Copa do Mundo, minha filha de 11 anos e a IA | Pedro Ripper</title>
+<meta name="description" content="Como usar IA — na construção de um app e no coração do produto — para apresentar a IA a uma criança, de forma lúdica. O caso do Álbum da Manu." />
+
+<!-- Fonts: match pedroripper.com -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #ececec;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --accent: #c8a251;
+    --accent-soft: rgba(200, 162, 81, 0.12);
+    --hairline: rgba(26, 26, 26, 0.12);
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    --measure: 640px;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg); color: var(--text);
+    font-family: var(--sans); font-size: 17.6px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--accent); color: #fff; }
+  a { color: inherit; }
+
+  /* Top bar — matches site chrome */
+  .topbar { position: sticky; top: 0; z-index: 10;
+    background: rgba(250,250,250,0.82);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--hairline); }
+  .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 16px 32px;
+    display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-family: var(--serif); font-weight: 800; font-size: 22px;
+    letter-spacing: -0.02em; text-decoration: none; }
+  .brand .dot { color: var(--accent); }
+  .back { font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; text-decoration: none; opacity: 0.75; }
+  .back:hover { opacity: 1; }
+
+  article { max-width: 1200px; margin: 0 auto; padding: 64px 32px 120px; }
+  .hero { max-width: 860px; margin: 0 auto 40px; }
+  .kicker { display: inline-block; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent);
+    margin-bottom: 22px; }
+  .kicker::after { content: ""; display: inline-block; width: 28px; height: 1px;
+    background: var(--accent); vertical-align: middle; margin-left: 12px; transform: translateY(-2px); }
+  h1.title { font-family: var(--serif); font-weight: 800;
+    font-size: clamp(34px, 5vw, 60px); line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 22px; }
+  .meta { display: flex; gap: 14px; align-items: center; color: var(--text-muted);
+    font-size: 14px; }
+  .meta .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); opacity: .5; }
+
+  .body { max-width: var(--measure); margin: 0 auto; }
+  .body p { margin: 0 0 1.4em; }
+  .body p.lead { font-size: 20px; line-height: 1.5; color: #2a2a2a; font-style: italic; }
+  .body strong { font-weight: 600; }
+  .body ul { margin: 0 0 1.4em; padding-left: 1.2em; }
+  .body li { margin: 0 0 0.6em; line-height: 1.6; }
+  .body h2 { font-family: var(--serif); font-weight: 700; font-size: 28px;
+    letter-spacing: -0.02em; line-height: 1.2; margin: 1.8em 0 0.6em; }
+  .body hr { border: 0; border-top: 1px solid var(--hairline); margin: 2.6em 0; }
+  .body figure { margin: 2em 0; }
+  .body figure img { width: 100%; height: auto; display: block; border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03); }
+  .body figcaption { font-size: 13.5px; color: var(--text-muted); margin-top: 12px;
+    line-height: 1.55; font-style: italic; }
+  .figgrid { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; margin: 2em 0; }
+  .figgrid figure { margin: 0; }
+  @media (max-width: 560px) { .figgrid { grid-template-columns: 1fr; } }
+  .annex { margin-top: 16px; font-size: 15px; color: var(--text-muted); }
+  .annex h2 { font-size: 22px; color: var(--text); }
+  .annex p { margin: 0 0 1em; line-height: 1.6; }
+  .body .endnote { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--hairline);
+    font-size: 14px; color: var(--text-muted); }
+  .body .endnote a { color: var(--accent); text-decoration: none; }
+  .body .endnote a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="https://pedroripper.com">Pedro<span class="dot">.</span></a>
+      <a class="back" href="/insights">← Insights</a>
+    </div>
+  </header>
+
+  <article>
+    <div class="hero">
+      <span class="kicker">IA &amp; Educação</span>
+      <h1 class="title">Copa do Mundo, minha filha de 11 anos e a IA</h1>
+      <div class="meta">
+        <span>Pedro Ripper</span><span class="sep"></span>
+        <span>7 de junho de 2026</span><span class="sep"></span>
+        <span>7 min de leitura</span>
+      </div>
+    </div>
+
+    <div class="body">
+      <p class="lead">Esta combinação inusitada deu origem a um projeto divertido de pai e filha — e a uma boa maneira de introduzir o poder da IA para uma criança.</p>
+
+      <figure>
+        <img src="/articles/images/album-da-manu/capa.png" alt="O Álbum da Manu — montagem de telas do app" />
+        <figcaption>O Álbum da Manu: um brinquedo digital criado com IA. (Telas do design do app.)</figcaption>
+      </figure>
+
+      <hr />
+
+      <p>A pergunta que motivou este artigo é simples: <strong>como apresentar IA para uma criança?</strong></p>
+
+      <p>Não com aula. Não com palestra sobre &ldquo;o futuro do trabalho&rdquo;. E definitivamente não entregando um chatbot que faz a lição de casa por ela. A resposta que encontrei foi outra: <strong>com um projeto que ela ama, criado junto.</strong></p>
+
+      <h2>A faísca: a Copa e o ritual das figurinhas</h2>
+
+      <p>Minha filha Manu tem 11 anos e, junto com 99% das crianças da mesma faixa etária (e alguns adultos também, rs), está viciada no álbum de figurinhas da Copa.</p>
+
+      <p>O álbum é uma tradição de décadas, 100% analógica — e com um efeito colateral bonito: ele <em>força</em> interação social. Colar, repetir, caçar as que faltam e, principalmente, trocar com os amigos na busca de todos completarem seus álbuns.</p>
+
+      <p>A ideia nasceu daí. Em vez de só colecionar, por que não criar o nosso próprio álbum digital — e, de quebra, um mecanismo para facilitar as trocas entre as crianças com o poder do mundo digital?</p>
+
+      <p>Não um app genérico de loja. Um app criado especificamente para ela, baseado em pesquisa de mercado que fizemos juntos e, mais importante, no que <strong>ela</strong> queria e sentia falta.</p>
+
+      <figure>
+        <img src="/articles/images/album-da-manu/home.png" alt="Tela inicial do Álbum da Manu" />
+        <figcaption>A tela inicial: o álbum é nominalmente dela.</figcaption>
+      </figure>
+
+      <p>E aqui está o primeiro ponto que quero defender: a porta de entrada da IA para uma criança não é a tecnologia. <strong>É um projeto concreto, dela, com começo, meio e fim.</strong> A Copa e o álbum foram só uma boa desculpa.</p>
+
+      <h2>O planejamento (100% por voz)</h2>
+
+      <p>A primeira etapa foi planejar — e planejar <em>conversando</em>.</p>
+
+      <p>Fizemos uma discussão exploratória inteira por voz: pesquisamos o que já existia de álbuns digitais como ponto de partida, fizemos um brainstorm de ideias — algumas boas, algumas muito doidas — e, depois de várias idas e vindas batendo papo com a IA, desenhamos um projeto em <strong>três fases</strong>, com ambições bem distintas:</p>
+
+      <ul>
+        <li><strong>Fase 1 — um app só pra ela.</strong> Quase um gêmeo digital do álbum físico: tracking de tudo que ela tem, lista do que sobra e do que falta, mensagem pronta de WhatsApp para compartilhar com os amigos e facilitar trocas, e um acompanhamento lúdico das estatísticas de preenchimento.</li>
+        <li><strong>Fase 2 — o álbum para os amiguinhos.</strong> Multiusuário: cada criança preenche a própria coleção e usa as mesmas funcionalidades para ajudar nas trocas do mundo físico. Ninguém vê o álbum do outro — mas você fica sabendo o que cada amigo tem sobrando e o que está faltando.</li>
+        <li><strong>Fase 3 — a mágica.</strong> Algoritmos que indicam qual amigo tem as figurinhas que você procura, e algumas brincadeiras que ainda estamos desenvolvendo — como easter eggs com animações e uma <em>seleção invisível da família</em>, que só aparece quando o álbum está completo.</li>
+      </ul>
+
+      <p>Com o plano na mão, partimos para a execução.</p>
+
+      <h2>Mão na massa: criando o álbum digital inteligente</h2>
+
+      <p>Para construir, usamos o Claude Code — mas, para ficar mais acessível para ela, saímos do terminal e fomos para o aplicativo do Mac. E mantivemos tudo por áudio (usamos o Wispr Flow para ditar), o que derruba a barreira de usabilidade para uma criança.</p>
+
+      <p>O ritmo era simples: a gente dirigia, a IA fazia, e nós testávamos — passo a passo. Testamos no iPad antigo que repassei pra ela, no meu iPhone (ela ainda não tem smartphone) e no browser do desktop. Um dos requisitos que desenhamos juntos: o app tinha que ser <strong>multi-device</strong> — nem todos os amiguinhos dela têm smartphone ainda (ainda bem!).</p>
+
+      <p>Para os técnicos aqui: optamos por um aplicativo web (PWA), que tem cara de app nativo mas dispensa instalação por loja — muito mais prático para uma criança.</p>
+
+      <p>O que importa para esta história é o que a Manu viu: <strong>uma ideia da nossa mesa de jantar virando um produto real, no ar, em dias.</strong></p>
+
+      <p>Essa é uma mensagem que nenhuma aula transmite: dá para criar coisas de verdade com essas ferramentas. Não só consumir o que os outros criaram.</p>
+
+      <h2>A IA dentro do brinquedo</h2>
+
+      <p>Além de construir o álbum, a IA mora dentro dele — e essa segunda camada ensina outra coisa.</p>
+
+      <p>No modo adicionar &ldquo;Por foto&rdquo;, a Manu fotografa páginas do próprio álbum físico (completas ou parciais) ou várias figurinhas de uma vez, frente ou verso. A IA reconhece e cadastra automaticamente no álbum digital. Para uma criança, é um gesto mágico: apontar a câmera e ver as figurinhas aparecerem.</p>
+
+      <figure>
+        <img src="/articles/images/album-da-manu/adicionar.png" alt="Modo adicionar por foto" />
+        <figcaption>O modo &ldquo;Por foto&rdquo;: a criança fotografa, a IA reconhece — e a criança confirma.</figcaption>
+      </figure>
+
+      <p>É um exemplo bacana de IA nas duas pontas: a IA <em>construiu</em> o álbum, e o álbum <em>usa</em> IA para criar uma usabilidade que não existia antes.</p>
+
+      <p>Mas o detalhe mais importante desse recurso não é a mágica. É a regra de produto que vem junto: <strong>a IA sugere, e a Manu confirma antes de adicionar.</strong></p>
+
+      <p>Porque a IA erra. Jogadores e especiais ela acerta praticamente sempre; escudos de times, às vezes confunde. E está tudo bem — esse é exatamente o ponto pedagógico. A Manu aprende, brincando, que a IA é uma parceira poderosa <em>e</em> falível. Que a palavra final é dela.</p>
+
+      <div class="figgrid">
+        <figure>
+          <img src="/articles/images/album-da-manu/card-estados.png" alt="Os três estados da figurinha: falta, tenho, repetida" />
+          <figcaption>Falta, tenho, repetida. A gramática do álbum de papel, na tela.</figcaption>
+        </figure>
+        <figure>
+          <img src="/articles/images/album-da-manu/trocas.png" alt="Mensagem de trocas pronta para o WhatsApp" />
+          <figcaption>Repetidas e faltantes viram mensagem pronta — para trocar na escola.</figcaption>
+        </figure>
+      </div>
+
+      <h2>A lição escondida: comunicação clara</h2>
+
+      <p>Uma história rápida do desenvolvimento que virou a minha favorita.</p>
+
+      <p>Quando montamos o reconhecimento por foto, o modelo de IA se recusava a &ldquo;identificar jogadores&rdquo; nas imagens. A solução não foi trocar de tecnologia. Foi <strong>mudar a pergunta</strong>: em vez de &ldquo;identifique o jogador&rdquo;, pedimos &ldquo;transcreva o texto impresso na figurinha&rdquo;.</p>
+
+      <p>Mesma IA, mesma foto, resultado completamente diferente.</p>
+
+      <p>De forma simples: trabalhar com IA é, antes de tudo, um exercício de comunicação. Saber explicar o que você quer, dar contexto, reformular quando não funciona. <strong>Essa é talvez a habilidade mais transferível que uma criança pode começar a desenvolver agora</strong> — e ela se desenvolve criando, não só assistindo.</p>
+
+      <p>Diga-se de passagem: a capacidade de se comunicar com clareza, de forma não ambígua, e de manter um raciocínio lógico estruturado continua absolutamente relevante no mundo da IA — independentemente da sua idade e do seu nível de sofisticação.</p>
+
+      <h2>Cocriar sem atrofiar o raciocínio</h2>
+
+      <p>Aqui está a minha maior convicção — e também a minha maior preocupação — sobre crianças e IA.</p>
+
+      <p>A diferença entre usar IA para <strong>amplificar</strong> o raciocínio e usá-la para <strong>substituí-lo</strong> vai definir como essa geração vai pensar. E o risco cresce na medida em que as ferramentas melhoram — para as crianças e para os adultos também.</p>
+
+      <p>O antídoto que esse projeto me mostrou não é limitar o acesso. É <strong>desenhar o papel da criança dentro da experiência</strong>:</p>
+
+      <ul>
+        <li>A IA faz o trabalho pesado e repetitivo; a criança fica com as decisões.</li>
+        <li>A IA propõe; a criança confere, corrige e confirma. Sempre.</li>
+        <li>O projeto tem um objetivo que é <em>dela</em> — completar o álbum, trocar na escola, se divertir e inventar — e a IA é meio, nunca fim.</li>
+        <li>O erro da IA não é escondido: é parte do jogo, e treina o senso crítico.</li>
+      </ul>
+
+      <p>É o mesmo padrão que usei com os agentes que construíram o app: eles executam, eu decido. A Manu, com 11 anos, opera na mesma lógica dentro do produto. <strong>IA propõe, humano dispõe — em qualquer idade.</strong></p>
+
+      <h2>O que fica</h2>
+
+      <p>O álbum está no ar e a Manu usa todo dia, no ritmo da Copa. Mas o produto é o menos importante.</p>
+
+      <p>Uma cena resume bem. Eu, empolgadíssimo com as funcionalidades: sincronização em tempo real, multi-device, interface caprichada. E a Manu? Morrendo de rir dos easter eggs que estamos preparando — onde as fotos sérias e estáticas dos jogadores passam a fazer caretas quando você destrava o código secreto.</p>
+
+      <p>Realmente, a cabeça das crianças é diferente. Eu celebrava a engenharia; ela, as caretas. E ela tem razão: brinquedo bom se mede pela risada, não pela ficha técnica.</p>
+
+      <p>O que fica é o repertório: minha filha viu uma ideia virar produto, interage diariamente com uma IA que ela sabe que erra, e participou de um projeto em que a tecnologia de ponta serviu a uma brincadeira de criança — e não o contrário.</p>
+
+      <h2>E o que isso tem a ver com o mundo empresarial?</h2>
+
+      <p>Este é um projeto de pai e filha. Mas não é difícil trazer os paralelos.</p>
+
+      <p><strong>Primeiro: aprende-se IA com projetos concretos, não com treinamentos genéricos.</strong> O nível de entendimento técnico das pessoas varia enormemente. Projetos relevantes para quem participa — guardadas as proporções, o &ldquo;álbum de figurinhas&rdquo; de cada área — são um instrumento poderoso de aprendizado.</p>
+
+      <p><strong>Segundo: os riscos óbvios na criança valem para nós.</strong> A comunicação clara e não ambígua é uma competência central com IA, em qualquer idade. E o risco de atrofia também: delegar à IA não só a execução, mas também os checks de sanidade, é abrir mão do pensamento crítico. O que é fácil de enxergar numa criança de 11 anos vale igualmente para um comitê executivo.</p>
+
+      <h2>Crie o seu</h2>
+
+      <p>Para quem tiver interesse, deixo dois caminhos:</p>
+
+      <ul>
+        <li><strong>Criar o próprio álbum</strong>, para o seu filho ou para você mesmo: o app está em produção, e leva segundos — sem login. <em>(Link nos comentários.)</em></li>
+        <li><strong>Criar o próprio projeto</strong>: o repositório com tudo que construímos, para quem quiser se divertir sem partir do zero. <em>(repositório em breve)</em></li>
+      </ul>
+
+      <figure>
+        <img src="/articles/images/album-da-manu/onboarding.png" alt="Onboarding do app" />
+        <figcaption>As boas-vindas do app: marcar num toque, ver o que falta e o que sobra, acompanhar o progresso.</figcaption>
+      </figure>
+
+      <hr />
+
+      <div class="annex">
+        <h2>Anexo técnico (para quem quiser ir fundo)</h2>
+        <p>O app está no ar em <strong>album.pedroripper.com</strong> — qualquer pessoa pode criar o próprio álbum em segundos, sem login: é só dar um nome e guardar o código de restauração, que sincroniza a coleção entre aparelhos.</p>
+        <p>Web app responsiva (PWA) construída com Next.js + React + TypeScript + Tailwind; dados locais no aparelho (IndexedDB) com espelho na nuvem (Supabase) via código de restauração — sem cadastro e sem dados pessoais de criança. O reconhecimento por foto roda no servidor, com a criança confirmando cada sugestão. O catálogo tem 980 figurinhas em 49 seções.</p>
+        <p><em>Nota: as imagens deste artigo são telas do pacote de design de alta fidelidade do app.</em></p>
+      </div>
+
+      <p class="endnote">Publicado em <a href="https://pedroripper.com">pedroripper.com</a>.</p>
+    </div>
+  </article>
+</body>
+</html>

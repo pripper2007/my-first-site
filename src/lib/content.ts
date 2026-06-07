@@ -425,7 +425,9 @@ export async function getInsightById(id: string): Promise<Insight | null> {
 }
 
 export async function getInsightBySlug(slug: string): Promise<Insight | null> {
-  const insights = await getInsights();
+  /* Uses getAllInsights (not getInsights) so unlisted drafts (visible:false)
+     are reachable by direct URL while staying out of every listing. */
+  const insights = await getAllInsights();
   return insights.find((i) => i.slug === slug) ?? null;
 }
 
