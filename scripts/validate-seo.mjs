@@ -28,8 +28,18 @@ const JSONLD_PAGES = ["/", "/pedro-ripper", "/insights/base-de-conhecimento"];
 
 const failures = [];
 const get = async (path) => {
-  const res = await fetch(`${BASE}${path}`, { redirect: "follow" });
-  return { ok: res.ok, status: res.status, text: res.ok ? await res.text() : "" };
+  // up to 3 attempts — production content reads can hiccup for a moment
+  // during blob writes/deploy alias switches; don't fail CI on a blip
+  for (let attempt = 1; ; attempt++) {
+    try {
+      const res = await fetch(`${BASE}${path}`, { redirect: "follow" });
+      if (res.ok) return { ok: true, status: res.status, text: await res.text() };
+      if (attempt >= 3) return { ok: false, status: res.status, text: "" };
+    } catch (e) {
+      if (attempt >= 3) return { ok: false, status: 0, text: "" };
+    }
+    await new Promise((r) => setTimeout(r, 10000));
+  }
 };
 
 // 1 + 4: main pages 200 with title + description
