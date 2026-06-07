@@ -22,6 +22,13 @@ Pedro Ripper is a Brazilian technology executive, co-founder and CEO of Bemobi (
 - External sources (identity verification): https://pedroripper.com/sources
 - Full index for agents: https://pedroripper.com/llms-full.txt
 
+## Topic pages
+
+- IA & Agentes: https://pedroripper.com/topics/ai-agents
+- Pagamentos digitais & fintech: https://pedroripper.com/topics/digital-payments
+- Liderança & construção de empresas: https://pedroripper.com/topics/company-building
+- Livros & aprendizado: https://pedroripper.com/topics/books-and-learning
+
 ## Main topics
 
 - Artificial intelligence

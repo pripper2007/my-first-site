@@ -128,17 +128,25 @@ export default function PedroRipperProfilePage() {
         <section className={section}>
           <h2 className={h2}>Main topics</h2>
           <ul className="list-disc pl-5 flex flex-col gap-2">
-            {[
-              "Artificial intelligence and AI agents",
-              "Personal AI systems and knowledge bases",
-              "Digital payments and fintech",
-              "Enterprise software",
-              "Brazilian public technology companies",
-              "Leadership and company building",
-              "Books and learning",
-            ].map((t) => (
+            {(
+              [
+                ["Artificial intelligence and AI agents", "/topics/ai-agents"],
+                ["Personal AI systems and knowledge bases", "/topics/ai-agents"],
+                ["Digital payments and fintech", "/topics/digital-payments"],
+                ["Enterprise software", null],
+                ["Brazilian public technology companies", null],
+                ["Leadership and company building", "/topics/company-building"],
+                ["Books and learning", "/topics/books-and-learning"],
+              ] as [string, string | null][]
+            ).map(([t, href]) => (
               <li key={t} className={li}>
-                {t}
+                {href ? (
+                  <Link href={href} className="text-[var(--color-accent)] hover:underline">
+                    {t}
+                  </Link>
+                ) : (
+                  t
+                )}
               </li>
             ))}
           </ul>
