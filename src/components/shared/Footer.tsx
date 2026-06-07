@@ -59,6 +59,7 @@ export default function Footer() {
             { href: "/", label: "Home" },
             { href: "/about", label: "Sobre" },
             { href: "/pedro-ripper", label: "Perfil" },
+            { href: "/press-kit", label: "Imprensa" },
             { href: "/insights", label: "Insights" },
             { href: "/#picks", label: "Picks" },
             { href: "/#books", label: "Livros" },

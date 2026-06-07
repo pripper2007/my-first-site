@@ -156,6 +156,8 @@ export default function PedroRipperProfilePage() {
               ["/picks", "Picks — curated videos, podcasts and articles"],
               ["/base", "BASE — health knowledge-base kit (playbook + prompt)"],
               ["/irpf-skill", "IRPF Anual — a Claude Skill for Brazilian tax returns"],
+              ["/press-kit", "Press kit — official bios, photo and topics"],
+              ["/sources", "External sources — identity verification"],
             ].map(([href, label]) => (
               <li key={href} className={li}>
                 <Link
