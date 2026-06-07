@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 
 /**
  * "Diário de Bordo" signup — collects an email and triggers the
@@ -33,6 +34,7 @@ export default function NewsletterSignup({
       });
       const data = await res.json().catch(() => ({}));
       if (res.ok) {
+        track("newsletter_subscribe", { variant });
         setState("sent");
         setMessage(
           "Quase lá! Te mandei um e-mail de confirmação — clica no link pra entrar a bordo."

@@ -3,6 +3,7 @@ import path from "path";
 import type { Metadata } from "next";
 import CopyPromptButton from "./CopyPromptButton";
 import NewsletterSignup from "@/components/public/NewsletterSignup";
+import TrackedLink from "@/components/public/TrackedLink";
 
 const TITLE = "BASE — uma base de conhecimento viva para a sua saúde";
 const DESCRIPTION =
@@ -109,13 +110,14 @@ export default function BasePage() {
 
         {/* CTA — read the playbook first, then grab the prompt */}
         <div className="flex flex-wrap gap-3 mt-7">
-          <a
+          <TrackedLink
             href={PDF}
+            event="base_pdf_download"
             download
             className="inline-flex items-center gap-2 font-semibold text-[0.95rem] px-5 py-3.5 rounded-[var(--radius-sm)] bg-[var(--color-accent)] text-white hover:brightness-95 transition-all duration-300"
           >
             <span aria-hidden>📄</span> Baixar o playbook (PDF)
-          </a>
+          </TrackedLink>
           <CopyPromptButton
             prompt={prompt}
             label="Copiar o prompt"
@@ -161,21 +163,23 @@ export default function BasePage() {
           </pre>
           <p className="text-[0.88rem] text-[var(--color-text-secondary)] mt-4 leading-[1.6]">
             Prefere o arquivo?{" "}
-            <a
+            <TrackedLink
               href={PROMPT_MD}
+              event="base_prompt_md_download"
               download
               className="text-[var(--color-accent)] hover:underline"
             >
               Baixar o prompt (.md)
-            </a>{" "}
+            </TrackedLink>{" "}
             · Para entender tudo antes, comece pelo{" "}
-            <a
+            <TrackedLink
               href={PDF}
+              event="base_pdf_download"
               download
               className="text-[var(--color-accent)] hover:underline"
             >
               playbook (PDF)
-            </a>
+            </TrackedLink>
             .
           </p>
         </section>

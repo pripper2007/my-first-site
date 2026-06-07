@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CopyCommandButton from "./CopyCommandButton";
 import NewsletterSignup from "@/components/public/NewsletterSignup";
+import TrackedLink from "@/components/public/TrackedLink";
 
 const TITLE = "IRPF Anual — Skill para Claude";
 const DESCRIPTION =
@@ -86,22 +87,24 @@ export default function IrpfSkillPage() {
 
         {/* How to get it */}
         <div className="flex flex-wrap gap-3 mt-8">
-          <a
+          <TrackedLink
             href={GITHUB}
+            event="irpf_github_click"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-semibold text-[0.95rem] px-5 py-3.5 rounded-[var(--radius-sm)] bg-[var(--color-accent)] text-white hover:brightness-95 transition-all duration-300"
           >
             <span aria-hidden>↗</span> Ver no GitHub
-          </a>
-          <a
+          </TrackedLink>
+          <TrackedLink
             href={ZIP}
+            event="irpf_zip_download"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-semibold text-[0.95rem] px-5 py-3.5 rounded-[var(--radius-sm)] border-[1.5px] border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent-light)] transition-all duration-300"
           >
             <span aria-hidden>⬇</span> Baixar o ZIP
-          </a>
+          </TrackedLink>
         </div>
 
         {/* Terminal install */}

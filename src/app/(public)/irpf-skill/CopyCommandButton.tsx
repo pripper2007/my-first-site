@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 
 /**
  * Copies a terminal command to the clipboard and shows a transient toast.
@@ -12,6 +13,7 @@ export default function CopyCommandButton({ command }: { command: string }) {
   async function copy() {
     try {
       await navigator.clipboard.writeText(command);
+      track("irpf_copy_command");
       flash("Comando copiado! Cole no seu terminal.");
     } catch {
       const ta = document.createElement("textarea");
@@ -23,6 +25,7 @@ export default function CopyCommandButton({ command }: { command: string }) {
       ta.select();
       try {
         document.execCommand("copy");
+        track("irpf_copy_command");
         flash("Comando copiado! Cole no seu terminal.");
       } catch {
         flash("Selecione e copie manualmente.");

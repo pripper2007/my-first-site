@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 
 /**
  * Copies the Health Vault setup prompt to the clipboard and shows a
@@ -21,6 +22,7 @@ export default function CopyPromptButton({
   async function copy() {
     try {
       await navigator.clipboard.writeText(prompt);
+      track("base_copy_prompt");
       flash("Prompt copiado! Cole no seu agente.");
     } catch {
       // Fallback for browsers without the async clipboard API
@@ -33,6 +35,7 @@ export default function CopyPromptButton({
       ta.select();
       try {
         document.execCommand("copy");
+        track("base_copy_prompt");
         flash("Prompt copiado! Cole no seu agente.");
       } catch {
         flash("Selecione e copie manualmente.");
