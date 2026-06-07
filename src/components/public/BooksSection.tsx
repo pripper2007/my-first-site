@@ -24,9 +24,9 @@ export default function BooksSection({ items }: BooksSectionProps) {
         <div className="max-w-[1200px] mx-auto px-5 md:px-12">
           <ScrollReveal>
             <SectionHeader
-              label="Reading List"
-              title="Books I've Read"
-              subtitle="A curated selection of books that have shaped my thinking on technology, business, and leadership."
+              label="Lista de Leitura"
+              title="Livros que li"
+              subtitle="Uma seleção de livros que moldaram meu modo de pensar sobre tecnologia, negócios e liderança."
               seeMoreHref="/books"
             />
           </ScrollReveal>

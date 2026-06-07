@@ -19,19 +19,19 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Pedro Ripper — Co-founder & CEO, Bemobi",
+    default: "Pedro Ripper — Co-fundador & CEO da Bemobi",
     template: "%s | Pedro Ripper",
   },
   description:
-    "Building Bemobi, exploring AI, sharing what I read. Co-founder & CEO of Bemobi (BMOB3), a Brazilian public tech company operating in 50+ countries.",
+    "Construindo a Bemobi, explorando IA, compartilhando o que leio. Co-fundador e CEO da Bemobi (BMOB3), empresa brasileira de tecnologia listada na B3, com operação em mais de 50 países.",
   metadataBase: new URL("https://pedroripper.com"),
   alternates: {
     canonical: "https://pedroripper.com",
   },
   openGraph: {
-    title: "Pedro Ripper — Co-founder & CEO, Bemobi",
+    title: "Pedro Ripper — Co-fundador & CEO da Bemobi",
     description:
-      "Building Bemobi, exploring AI, sharing what I read. Co-founder & CEO of Bemobi (BMOB3), a Brazilian public tech company operating in 50+ countries.",
+      "Construindo a Bemobi, explorando IA, compartilhando o que leio. Co-fundador e CEO da Bemobi (BMOB3), empresa brasileira de tecnologia listada na B3.",
     url: "https://pedroripper.com",
     siteName: "Pedro Ripper",
     images: [
@@ -39,17 +39,17 @@ export const metadata: Metadata = {
         url: "/images/og-preview.png",
         width: 1200,
         height: 630,
-        alt: "Pedro Ripper — Co-founder & CEO, Bemobi",
+        alt: "Pedro Ripper — Co-fundador & CEO da Bemobi",
       },
     ],
-    locale: "en_US",
+    locale: "pt_BR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pedro Ripper — Co-founder & CEO, Bemobi",
+    title: "Pedro Ripper — Co-fundador & CEO da Bemobi",
     description:
-      "Building Bemobi, exploring AI, sharing what I read.",
+      "Construindo a Bemobi, explorando IA, compartilhando o que leio.",
     images: ["/images/og-preview.png"],
   },
 };
@@ -62,7 +62,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="pt-BR"
       className={`${playfairDisplay.variable} ${inter.variable} antialiased`}
     >
       <head>

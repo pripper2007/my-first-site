@@ -16,9 +16,9 @@ export default function NewsSection({ items }: NewsSectionProps) {
       <div className="max-w-[1200px] mx-auto px-5 md:px-12">
         <ScrollReveal>
           <SectionHeader
-            label="In the Press"
-            title="Recent News"
-            subtitle="Latest coverage and mentions from leading business and technology publications."
+            label="Na Imprensa"
+            title="Notícias Recentes"
+            subtitle="Cobertura e menções recentes nos principais veículos de negócios e tecnologia."
             seeMoreHref="/news"
           />
         </ScrollReveal>

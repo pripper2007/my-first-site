@@ -39,7 +39,7 @@ export default function SectionHeader({ label, title, subtitle, seeMoreHref }: S
           href={seeMoreHref}
           className="inline-flex items-center gap-2 text-[0.88rem] font-medium text-[var(--color-accent)] hover:gap-3 transition-all duration-[400ms] whitespace-nowrap shrink-0 pb-1"
         >
-          See More...
+          Ver mais…
           <svg
             width="16"
             height="16"

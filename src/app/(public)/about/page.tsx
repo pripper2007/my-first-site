@@ -3,22 +3,22 @@ import BackToHome from "@/components/shared/BackToHome";
 import AboutSection from "@/components/public/AboutSection";
 
 export const metadata = {
-  title: "About",
+  title: "Sobre",
   description:
-    "Pedro Ripper is co-founder and CEO of Bemobi (BMOB3), a Brazilian public technology company with operations in more than 50 countries.",
+    "Pedro Ripper é co-fundador e CEO da Bemobi (BMOB3), uma empresa de tecnologia brasileira de capital aberto com operações em mais de 50 países.",
   alternates: { canonical: "https://pedroripper.com/about" },
   openGraph: {
-    title: "About | Pedro Ripper",
-    description: "Pedro Ripper is co-founder and CEO of Bemobi (BMOB3), a Brazilian public technology company with operations in more than 50 countries.",
+    title: "Sobre | Pedro Ripper",
+    description: "Pedro Ripper é co-fundador e CEO da Bemobi (BMOB3), uma empresa de tecnologia brasileira de capital aberto com operações em mais de 50 países.",
     url: "https://pedroripper.com/about",
     siteName: "Pedro Ripper",
     type: "website",
-    images: [{ url: "/images/og-preview.png", width: 1200, height: 630, alt: "About | Pedro Ripper" }],
+    images: [{ url: "/images/og-preview.png", width: 1200, height: 630, alt: "Sobre | Pedro Ripper" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About | Pedro Ripper",
-    description: "Pedro Ripper is co-founder and CEO of Bemobi (BMOB3), a Brazilian public technology company with operations in more than 50 countries.",
+    title: "Sobre | Pedro Ripper",
+    description: "Pedro Ripper é co-fundador e CEO da Bemobi (BMOB3), uma empresa de tecnologia brasileira de capital aberto com operações em mais de 50 países.",
     images: ["/images/og-preview.png"],
   },
 };

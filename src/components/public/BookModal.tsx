@@ -46,7 +46,7 @@ export default function BookModal({ book, onClose }: BookModalProps) {
           onClose();
         }}
         className="absolute top-5 right-5 z-[210] w-11 h-11 rounded-full bg-white/15 hover:bg-[var(--color-accent)] flex items-center justify-center text-white backdrop-blur-sm transition-all duration-300 shadow-[0_2px_12px_rgba(0,0,0,0.3)]"
-        aria-label="Close"
+        aria-label="Fechar"
       >
         <svg
           width="22"
@@ -126,7 +126,7 @@ export default function BookModal({ book, onClose }: BookModalProps) {
             {book.title}
           </h3>
           <p className="text-[1.05rem] text-[var(--color-text-secondary)] mb-8">
-            by {book.author}
+            por {book.author}
           </p>
 
           {/* Notes / personal comments */}
@@ -145,7 +145,7 @@ export default function BookModal({ book, onClose }: BookModalProps) {
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
                 <span className="text-[0.78rem] font-semibold tracking-[0.06em] uppercase text-[var(--color-accent)]">
-                  My Take
+                  Minha Opinião
                 </span>
               </div>
               <p className="text-[0.95rem] text-[var(--color-text-secondary)] leading-[1.8] font-light italic">
@@ -162,7 +162,7 @@ export default function BookModal({ book, onClose }: BookModalProps) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-8 text-[0.85rem] font-semibold text-[var(--color-accent)] hover:gap-3 transition-all duration-[400ms]"
             >
-              View on Amazon
+              Ver na Amazon
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M7 17L17 7M17 7H7M17 7v10" />
               </svg>

@@ -4,22 +4,22 @@ import BackToHome from "@/components/shared/BackToHome";
 import BooksPageGrid from "@/components/public/BooksPageGrid";
 
 export const metadata = {
-  title: "Books",
+  title: "Livros",
   description:
-    "201 books on technology, business, leadership, and science fiction that shaped Pedro Ripper's thinking as a CEO and entrepreneur.",
+    "201 livros sobre tecnologia, negócios, liderança e ficção científica que moldaram o modo de pensar de Pedro Ripper como CEO e empreendedor.",
   alternates: { canonical: "https://pedroripper.com/books" },
   openGraph: {
-    title: "Books | Pedro Ripper",
-    description: "201 books on technology, business, leadership, and science fiction that shaped Pedro Ripper's thinking as a CEO and entrepreneur.",
+    title: "Livros | Pedro Ripper",
+    description: "201 livros sobre tecnologia, negócios, liderança e ficção científica que moldaram o modo de pensar de Pedro Ripper como CEO e empreendedor.",
     url: "https://pedroripper.com/books",
     siteName: "Pedro Ripper",
     type: "website",
-    images: [{ url: "/images/og-preview.png", width: 1200, height: 630, alt: "Books | Pedro Ripper" }],
+    images: [{ url: "/images/og-preview.png", width: 1200, height: 630, alt: "Livros | Pedro Ripper" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Books | Pedro Ripper",
-    description: "201 books on technology, business, leadership, and science fiction that shaped Pedro Ripper's thinking as a CEO and entrepreneur.",
+    title: "Livros | Pedro Ripper",
+    description: "201 livros sobre tecnologia, negócios, liderança e ficção científica que moldaram o modo de pensar de Pedro Ripper como CEO e empreendedor.",
     images: ["/images/og-preview.png"],
   },
 };
@@ -35,9 +35,9 @@ export default async function BooksPage() {
       <div className="max-w-[1200px] mx-auto px-5 md:px-12">
         <BackToHome />
         <SectionHeader
-          label="Reading List"
-          title="All Books"
-          subtitle="Books that have shaped my thinking on technology, business, and leadership."
+          label="Lista de Leitura"
+          title="Todos os Livros"
+          subtitle="Livros que moldaram meu modo de pensar sobre tecnologia, negócios e liderança."
         />
         <BooksPageGrid items={books} tags={tags} />
       </div>

@@ -6,11 +6,11 @@ import PicksPageGrid from "@/components/public/PicksPageGrid";
 export const metadata = {
   title: "Picks",
   description:
-    "Curated videos, podcasts, articles, and channels on AI, fintech, and technology — selected by Pedro Ripper.",
+    "Vídeos, podcasts, artigos e canais selecionados sobre IA, fintech e tecnologia — escolhidos por Pedro Ripper.",
   alternates: { canonical: "https://pedroripper.com/picks" },
   openGraph: {
     title: "Picks | Pedro Ripper",
-    description: "Curated videos, podcasts, articles, and channels on AI, fintech, and technology — selected by Pedro Ripper.",
+    description: "Vídeos, podcasts, artigos e canais selecionados sobre IA, fintech e tecnologia — escolhidos por Pedro Ripper.",
     url: "https://pedroripper.com/picks",
     siteName: "Pedro Ripper",
     type: "website",
@@ -19,7 +19,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Picks | Pedro Ripper",
-    description: "Curated videos, podcasts, articles, and channels on AI, fintech, and technology — selected by Pedro Ripper.",
+    description: "Vídeos, podcasts, artigos e canais selecionados sobre IA, fintech e tecnologia — escolhidos por Pedro Ripper.",
     images: ["/images/og-preview.png"],
   },
 };
@@ -36,13 +36,13 @@ export default async function PicksPage() {
       <div className="max-w-[1200px] mx-auto px-5 md:px-12">
         <BackToHome />
         <SectionHeader
-          label="Curated by Pedro"
+          label="Selecionado por Pedro"
           title="Picks"
         />
         <PicksPageGrid items={picks} />
         {picks.length === 0 && (
           <p className="text-[var(--color-text-secondary)] text-center py-12">
-            No picks yet.
+            Nada por aqui ainda.
           </p>
         )}
       </div>

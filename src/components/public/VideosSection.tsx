@@ -111,9 +111,9 @@ export default function VideosSection({ items }: VideosSectionProps) {
         <div className="max-w-[1200px] mx-auto px-5 md:px-12">
           <ScrollReveal>
             <SectionHeader
-              label="Talks"
-              title="Talks &amp; Interviews"
-              subtitle="Selected keynotes, panel discussions, and interviews on technology, fintech, and leadership."
+              label="Palestras"
+              title="Palestras &amp; Entrevistas"
+              subtitle="Palestras, painéis e entrevistas selecionados sobre tecnologia, fintech e liderança."
               seeMoreHref="/talks"
             />
           </ScrollReveal>

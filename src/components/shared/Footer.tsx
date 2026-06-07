@@ -16,8 +16,8 @@ export default function Footer() {
               Pedro Ripper<span className="text-[var(--color-accent)]">.</span>
             </div>
             <p className="text-[0.9rem] text-[var(--color-text-secondary)] max-w-xs leading-relaxed font-light">
-              Co-founder &amp; CEO of Bemobi. Building the future of digital
-              payments and software platforms across 50+ countries.
+              Co-fundador &amp; CEO da Bemobi. Construindo o futuro de
+              pagamentos digitais e plataformas de software em mais de 50 países.
             </p>
           </div>
           <div className="flex gap-3">
@@ -57,13 +57,13 @@ export default function Footer() {
         <div className="flex flex-wrap gap-7 mb-16">
           {[
             { href: "/", label: "Home" },
-            { href: "/about", label: "About" },
-            { href: "/pedro-ripper", label: "Profile" },
+            { href: "/about", label: "Sobre" },
+            { href: "/pedro-ripper", label: "Perfil" },
             { href: "/insights", label: "Insights" },
             { href: "/#picks", label: "Picks" },
-            { href: "/#books", label: "Books" },
-            { href: "/#talks", label: "Talks" },
-            { href: "/#news", label: "News" },
+            { href: "/#books", label: "Livros" },
+            { href: "/#talks", label: "Palestras" },
+            { href: "/#news", label: "Notícias" },
           ].map((link) => (
             <a
               key={link.label}
@@ -78,14 +78,14 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-[var(--color-border)] gap-4">
           <span className="text-[0.8rem] text-[var(--color-text-secondary)]">
-            &copy; {new Date().getFullYear()} Pedro Ripper. All rights reserved.
+            &copy; {new Date().getFullYear()} Pedro Ripper. Todos os direitos reservados.
           </span>
           <div className="flex gap-7">
             <a href="#" className="text-[0.8rem] text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors duration-[400ms]">
-              Privacy
+              Privacidade
             </a>
             <a href="#" className="text-[0.8rem] text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors duration-[400ms]">
-              Terms
+              Termos
             </a>
           </div>
         </div>

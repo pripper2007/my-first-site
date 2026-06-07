@@ -126,11 +126,11 @@ const PRESETS: Record<string, Preset> = {
 
 /* ── Stat descriptions ── */
 const STAT_META: { key: keyof ContentMapSectionProps; title: string; copy: string }[] = [
-  { key: "signals", title: "Signals", copy: "News, articles, and current ideas worth tracking." },
-  { key: "talks", title: "Talks", copy: "Talks, interviews, and selected video appearances." },
-  { key: "bookshelf", title: "Bookshelf", copy: "Books that informed the journey and stayed relevant." },
-  { key: "picks", title: "Picks", copy: "A curated selection of standout recommendations." },
-  { key: "insights", title: "Insights", copy: "Original essays on AI, payments, and leadership." },
+  { key: "signals", title: "Sinais", copy: "Notícias, artigos e ideias do momento que vale a pena acompanhar." },
+  { key: "talks", title: "Palestras", copy: "Palestras, entrevistas e aparições em vídeo selecionadas." },
+  { key: "bookshelf", title: "Estante", copy: "Livros que marcaram a jornada e continuam relevantes." },
+  { key: "picks", title: "Picks", copy: "Uma seleção das melhores recomendações." },
+  { key: "insights", title: "Insights", copy: "Ensaios originais sobre IA, pagamentos e liderança." },
 ];
 
 /* ── Helpers ── */
@@ -481,20 +481,20 @@ export default function ContentMapSection({ signals, talks, bookshelf, picks, in
               className="text-[0.72rem] font-semibold tracking-[0.18em] uppercase"
               style={{ color: "#C8A251" }}
             >
-              Overview
+              Visão Geral
             </span>
           </div>
           <h2
             className="font-display font-bold tracking-[-0.03em] leading-[1.15]"
             style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", color: isLightBg ? "var(--color-text)" : "rgba(255,255,255,0.96)" }}
           >
-            Content Atlas
+Atlas de Conteúdo
           </h2>
           <p
             className="text-[1.05rem] mt-4 max-w-[560px] leading-[1.7] font-light"
             style={{ color: subtitleColor }}
           >
-            An overview with the real time number of books, videos, picks, and signals that shape this website.
+            Uma visão em tempo real do número de livros, vídeos, picks e sinais que dão forma a este site.
           </p>
         </div>
 
@@ -547,7 +547,7 @@ export default function ContentMapSection({ signals, talks, bookshelf, picks, in
             {/* Pause / Play */}
             <button
               onClick={() => setPaused((p) => !p)}
-              title="Pause / Play"
+              title="Pausar / Reproduzir"
               className="w-9 h-9 rounded-lg flex items-center justify-center cursor-pointer"
               style={{
                 border: `1px solid ${btnBorder}`,
@@ -575,7 +575,7 @@ export default function ContentMapSection({ signals, talks, bookshelf, picks, in
             {/* Theme toggle */}
             <button
               onClick={() => setPresetPanelOpen((o) => !o)}
-              title="Toggle theme"
+              title="Alternar tema"
               className="w-9 h-9 rounded-lg flex items-center justify-center cursor-pointer"
               style={{
                 border: `1px solid ${btnBorder}`,

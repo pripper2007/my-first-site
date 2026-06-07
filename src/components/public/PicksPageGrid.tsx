@@ -27,11 +27,11 @@ export default function PicksPageGrid({ items }: PicksPageGridProps) {
   };
 
   const tabs: { key: FilterTab; label: string }[] = [
-    { key: "all", label: "All" },
-    { key: "video", label: "Videos" },
+    { key: "all", label: "Todos" },
+    { key: "video", label: "Vídeos" },
     { key: "podcast", label: "Podcasts" },
-    { key: "article", label: "Articles" },
-    { key: "channel", label: "Channels" },
+    { key: "article", label: "Artigos" },
+    { key: "channel", label: "Canais" },
   ];
 
   const filtered =
@@ -90,7 +90,7 @@ export default function PicksPageGrid({ items }: PicksPageGridProps) {
 
         {filtered.length === 0 && (
           <p className="text-[var(--color-text-secondary)] text-center py-12">
-            No picks in this category.
+            Nenhum pick nesta categoria.
           </p>
         )}
       </div>

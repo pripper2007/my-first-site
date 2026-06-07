@@ -41,7 +41,7 @@ export default function PickVideoModal({ youtubeId, youtubeUrl, onClose }: PickV
       <button
         onClick={(e) => { e.stopPropagation(); onClose(); }}
         className="absolute top-5 right-5 z-[210] w-11 h-11 rounded-full bg-white/15 hover:bg-[var(--color-accent)] flex items-center justify-center text-white backdrop-blur-sm transition-all duration-300 shadow-[0_2px_12px_rgba(0,0,0,0.3)]"
-        aria-label="Close"
+        aria-label="Fechar"
       >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <line x1="18" y1="6" x2="6" y2="18" />
@@ -59,7 +59,7 @@ export default function PickVideoModal({ youtubeId, youtubeUrl, onClose }: PickV
           <iframe
             className="absolute inset-0 w-full h-full rounded-lg"
             src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`}
-            title="Video player"
+            title="Player de vídeo"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
@@ -76,14 +76,14 @@ export default function PickVideoModal({ youtubeId, youtubeUrl, onClose }: PickV
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
             </svg>
-            Watch on YouTube
+Assistir no YouTube
           </a>
         </div>
       </div>
 
       {/* Hint */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-[210] text-white/40 text-[0.75rem] font-medium tracking-wide">
-        Press Esc or click outside to close
+Pressione Esc ou clique fora para fechar
       </div>
     </div>
   );

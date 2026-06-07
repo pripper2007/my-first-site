@@ -45,17 +45,17 @@ function MediaIcon({ type }: { type: Pick["mediaType"] }) {
 }
 
 function mediaLabel(type: Pick["mediaType"]): string {
-  if (type === "video") return "Video";
+  if (type === "video") return "Vídeo";
   if (type === "podcast") return "Podcast";
-  if (type === "channel") return "Channel";
-  return "Article";
+  if (type === "channel") return "Canal";
+  return "Artigo";
 }
 
 function ctaLabel(type: Pick["mediaType"]): string {
-  if (type === "video") return "Watch";
-  if (type === "podcast") return "Listen";
-  if (type === "channel") return "Subscribe";
-  return "Read";
+  if (type === "video") return "Assistir";
+  if (type === "podcast") return "Ouvir";
+  if (type === "channel") return "Inscrever-se";
+  return "Ler";
 }
 
 /** Extract YouTube video ID from URL */

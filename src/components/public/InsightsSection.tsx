@@ -23,8 +23,8 @@ export default function InsightsSection({ items }: InsightsSectionProps) {
         <ScrollReveal>
           <SectionHeader
             label="Insights"
-            title="Writing"
-            subtitle="Original thoughts on AI, payments, technology, and leadership."
+            title="Escrita"
+            subtitle="Pensamentos originais sobre IA, pagamentos, tecnologia e liderança."
             seeMoreHref="/insights"
           />
         </ScrollReveal>

@@ -46,7 +46,7 @@ export default function NewsCard({ item, index }: NewsCardProps) {
           {/* Body */}
           <div className="p-7 flex-1 flex flex-col">
             <div className="text-[0.75rem] text-[var(--color-text-secondary)] font-medium tracking-[0.04em] mb-2.5">
-              {new Date(item.date).toLocaleDateString("en-US", {
+              {new Date(item.date).toLocaleDateString("pt-BR", {
                 year: "numeric",
                 month: "long",
               })}
@@ -58,7 +58,7 @@ export default function NewsCard({ item, index }: NewsCardProps) {
               {item.excerpt}
             </p>
             <span className="inline-flex items-center gap-1.5 text-[0.82rem] font-semibold text-[var(--color-accent)] mt-5 group-hover:gap-2.5 transition-[gap] duration-[400ms]">
-              Read article
+              Ler matéria
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>

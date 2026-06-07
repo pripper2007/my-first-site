@@ -18,7 +18,7 @@ export default function Hero() {
             <div className="flex items-center gap-3 mb-6 max-lg:justify-center">
               <span className="w-10 h-[1.5px] bg-[var(--color-accent)]" />
               <span className="text-[0.78rem] font-semibold tracking-[0.2em] uppercase text-[var(--color-accent)]">
-                Tech Builder, Investor &amp; CEO
+                Tech Builder, Investidor &amp; CEO
               </span>
             </div>
 
@@ -26,18 +26,18 @@ export default function Hero() {
               className="font-display font-[800] tracking-[-0.04em] leading-[1.05] mb-6"
               style={{ fontSize: "clamp(3rem, 5.5vw, 4.8rem)" }}
             >
-              Building Bemobi, exploring AI, sharing what I read.
+              Construindo a Bemobi, explorando IA, compartilhando o que leio.
             </h1>
 
             <p className="text-[1.1rem] text-[var(--color-text-secondary)] font-light leading-[1.6] mb-4">
-              Pedro Ripper: Co-founder &amp; CEO, Bemobi (BMOB3) &middot; Rio de Janeiro.
+              Pedro Ripper: Co-fundador &amp; CEO da Bemobi (BMOB3) &middot; Rio de Janeiro.
             </p>
 
             <Link
               href="/about"
               className="inline-flex items-center gap-2 text-[0.88rem] font-medium text-[var(--color-accent)] hover:gap-3 transition-all duration-[400ms]"
             >
-              See more...
+              Ver mais…
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>

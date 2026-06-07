@@ -28,9 +28,9 @@ export default function PicksSection({ items }: PicksSectionProps) {
         <div className="max-w-[1200px] mx-auto px-5 md:px-12">
           <ScrollReveal>
             <SectionHeader
-              label="Curated by Pedro"
+              label="Selecionado por Pedro"
               title="Picks"
-              subtitle="Podcasts, videos, and articles on AI, payments, and technology that I find worth sharing."
+              subtitle="Podcasts, vídeos e artigos sobre IA, pagamentos e tecnologia que vale a pena compartilhar."
               seeMoreHref="/picks"
             />
           </ScrollReveal>

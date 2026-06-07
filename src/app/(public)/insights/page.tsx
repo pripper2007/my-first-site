@@ -6,11 +6,11 @@ import InsightListRow from "@/components/public/InsightListRow";
 export const metadata = {
   title: "Insights",
   description:
-    "Original thoughts on AI, payments, technology, and leadership by Pedro Ripper.",
+    "Pensamentos originais sobre IA, pagamentos, tecnologia e liderança, por Pedro Ripper.",
   alternates: { canonical: "https://pedroripper.com/insights" },
   openGraph: {
     title: "Insights | Pedro Ripper",
-    description: "Original thoughts on AI, payments, technology, and leadership by Pedro Ripper.",
+    description: "Pensamentos originais sobre IA, pagamentos, tecnologia e liderança, por Pedro Ripper.",
     url: "https://pedroripper.com/insights",
     siteName: "Pedro Ripper",
     type: "website",
@@ -19,7 +19,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Insights | Pedro Ripper",
-    description: "Original thoughts on AI, payments, technology, and leadership by Pedro Ripper.",
+    description: "Pensamentos originais sobre IA, pagamentos, tecnologia e liderança, por Pedro Ripper.",
     images: ["/images/og-preview.png"],
   },
 };
@@ -38,8 +38,8 @@ export default async function InsightsPage() {
         <BackToHome />
         <SectionHeader
           label="INSIGHTS"
-          title="Writing"
-          subtitle="Original thoughts on AI, payments, technology, and leadership."
+          title="Escrita"
+          subtitle="Pensamentos originais sobre IA, pagamentos, tecnologia e liderança."
         />
 
         <div className="flex flex-col">
@@ -50,7 +50,7 @@ export default async function InsightsPage() {
 
         {insights.length === 0 && (
           <p className="text-[var(--color-text-secondary)] text-center py-12">
-            No insights yet.
+            Nada por aqui ainda.
           </p>
         )}
       </div>

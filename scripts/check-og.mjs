@@ -14,7 +14,7 @@
  * Usage: node scripts/check-og.mjs   (SITE_URL env overrides the target)
  */
 const BASE = (process.env.SITE_URL || "https://pedroripper.com").replace(/\/$/, "");
-const GENERIC_TITLE = "Pedro Ripper — Co-founder & CEO, Bemobi";
+const GENERIC_TITLE = "Pedro Ripper — Co-fundador & CEO da Bemobi";
 const MUST_CHECK = ["/", "/base", "/irpf-skill", "/insights"];
 
 function og(html, prop) {

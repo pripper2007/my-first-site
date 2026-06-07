@@ -58,7 +58,7 @@ export default function InsightListRow({
       <div className="flex-1 min-w-0 flex flex-col justify-center">
         <div className="flex items-center gap-3 mb-2.5">
           <span className="text-[0.8rem] text-[var(--color-text-secondary)]">
-            {new Date(item.date + "T00:00:00").toLocaleDateString("en-US", {
+            {new Date(item.date + "T00:00:00").toLocaleDateString("pt-BR", {
               year: "numeric",
               month: "long",
               day: "numeric",
@@ -83,7 +83,7 @@ export default function InsightListRow({
         </p>
 
         <span className="mt-3 inline-flex items-center gap-2 text-[0.85rem] font-medium text-[var(--color-accent)] group-hover:gap-3 transition-all duration-[400ms]">
-          Read
+          Ler
           <svg
             width="13"
             height="13"

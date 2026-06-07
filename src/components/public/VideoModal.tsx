@@ -43,7 +43,7 @@ export default function VideoModal({ youtubeId, onClose }: VideoModalProps) {
           onClose();
         }}
         className="absolute top-5 right-5 z-[210] w-11 h-11 rounded-full bg-white/15 hover:bg-[var(--color-accent)] flex items-center justify-center text-white backdrop-blur-sm transition-all duration-300 shadow-[0_2px_12px_rgba(0,0,0,0.3)]"
-        aria-label="Close video"
+        aria-label="Fechar vídeo"
       >
         <svg
           width="22"
@@ -62,7 +62,7 @@ export default function VideoModal({ youtubeId, onClose }: VideoModalProps) {
 
       {/* "Press Esc to close" hint */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-[210] text-white/40 text-[0.75rem] font-medium tracking-wide">
-        Press Esc or click outside to close
+Pressione Esc ou clique fora para fechar
       </div>
 
       {/* Video player */}
@@ -74,7 +74,7 @@ export default function VideoModal({ youtubeId, onClose }: VideoModalProps) {
           <iframe
             className="absolute inset-0 w-full h-full rounded-lg"
             src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`}
-            title="Video player"
+            title="Player de vídeo"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />

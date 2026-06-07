@@ -65,13 +65,13 @@ export default function BooksPageGrid({ items, tags }: BooksPageGridProps) {
         {/* Sort */}
         <div className="flex items-center gap-2">
           <span className="text-[0.75rem] font-medium text-[var(--color-text-secondary)] uppercase tracking-wider">
-            Sort
+            Ordenar
           </span>
           <div className="flex border border-[var(--color-border)] rounded-lg overflow-hidden">
             {([
               ["order", "Manual"],
               ["alpha", "A–Z"],
-              ["date", "Date"],
+              ["date", "Data"],
             ] as [SortMode, string][]).map(([value, label]) => (
               <button
                 key={value}
@@ -92,7 +92,7 @@ export default function BooksPageGrid({ items, tags }: BooksPageGridProps) {
         {tags.length > 0 && (
           <div className="flex items-center gap-2">
             <span className="text-[0.75rem] font-medium text-[var(--color-text-secondary)] uppercase tracking-wider">
-              Subject
+              Assunto
             </span>
             <div className="flex flex-wrap gap-1.5">
               <button
@@ -103,7 +103,7 @@ export default function BooksPageGrid({ items, tags }: BooksPageGridProps) {
                     : "border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-accent)]"
                 }`}
               >
-                All
+                Todos
               </button>
               {tags.map((tag) => (
                 <button
@@ -124,7 +124,7 @@ export default function BooksPageGrid({ items, tags }: BooksPageGridProps) {
 
         {/* Count */}
         <span className="ml-auto text-[0.78rem] text-[var(--color-text-secondary)]">
-          {filtered.length} book{filtered.length !== 1 ? "s" : ""}
+          {filtered.length} livro{filtered.length !== 1 ? "s" : ""}
         </span>
       </div>
 
@@ -200,15 +200,15 @@ export default function BooksPageGrid({ items, tags }: BooksPageGridProps) {
             onClick={() => setVisibleCount((prev) => prev + PAGE_SIZE)}
             className="px-8 py-3 text-[0.88rem] font-medium border border-[var(--color-border)] rounded-lg text-[var(--color-text-secondary)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors"
           >
-            Load more ({Math.min(PAGE_SIZE, filtered.length - visibleCount)} of{" "}
-            {filtered.length - visibleCount} remaining)
+            Carregar mais ({Math.min(PAGE_SIZE, filtered.length - visibleCount)} de{" "}
+            {filtered.length - visibleCount} restantes)
           </button>
         </div>
       )}
 
       {filtered.length === 0 && (
         <p className="text-[var(--color-text-secondary)] text-center py-12">
-          No books match this filter.
+          Nenhum livro corresponde a este filtro.
         </p>
       )}
 

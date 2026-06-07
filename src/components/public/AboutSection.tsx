@@ -58,8 +58,8 @@ export default function AboutSection({ bio }: AboutSectionProps) {
       <div className="max-w-[1200px] mx-auto px-5 md:px-12">
         <ScrollReveal>
           <SectionHeader
-            label="About"
-            title="Building digital payments<br>and AI at scale"
+            label="Sobre"
+            title="Construindo pagamentos digitais<br>e IA em escala"
           />
         </ScrollReveal>
 

@@ -19,12 +19,12 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: "/about", label: "About" },
+    { href: "/about", label: "Sobre" },
     { href: "/#insights", label: "Insights" },
     { href: "/#picks", label: "Picks", badge: true },
-    { href: "/#books", label: "Books" },
-    { href: "/#talks", label: "Talks" },
-    { href: "/#news", label: "News" },
+    { href: "/#books", label: "Livros" },
+    { href: "/#talks", label: "Palestras" },
+    { href: "/#news", label: "Notícias" },
   ];
 
   return (

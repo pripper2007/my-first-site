@@ -4,22 +4,22 @@ import BackToHome from "@/components/shared/BackToHome";
 import VideosPageList from "@/components/public/VideosPageList";
 
 export const metadata = {
-  title: "Talks & Interviews",
+  title: "Palestras & Entrevistas",
   description:
-    "Video appearances, keynotes, panels, and podcast interviews featuring Pedro Ripper, CEO of Bemobi.",
+    "Aparições em vídeo, palestras, painéis e entrevistas em podcasts com Pedro Ripper, CEO da Bemobi.",
   alternates: { canonical: "https://pedroripper.com/talks" },
   openGraph: {
-    title: "Talks & Interviews | Pedro Ripper",
-    description: "Video appearances, keynotes, panels, and podcast interviews featuring Pedro Ripper, CEO of Bemobi.",
+    title: "Palestras & Entrevistas | Pedro Ripper",
+    description: "Aparições em vídeo, palestras, painéis e entrevistas em podcasts com Pedro Ripper, CEO da Bemobi.",
     url: "https://pedroripper.com/talks",
     siteName: "Pedro Ripper",
     type: "website",
-    images: [{ url: "/images/og-preview.png", width: 1200, height: 630, alt: "Talks & Interviews | Pedro Ripper" }],
+    images: [{ url: "/images/og-preview.png", width: 1200, height: 630, alt: "Palestras & Entrevistas | Pedro Ripper" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Talks & Interviews | Pedro Ripper",
-    description: "Video appearances, keynotes, panels, and podcast interviews featuring Pedro Ripper, CEO of Bemobi.",
+    title: "Palestras & Entrevistas | Pedro Ripper",
+    description: "Aparições em vídeo, palestras, painéis e entrevistas em podcasts com Pedro Ripper, CEO da Bemobi.",
     images: ["/images/og-preview.png"],
   },
 };
@@ -32,14 +32,14 @@ export default async function TalksPage() {
       <div className="max-w-[1200px] mx-auto px-5 md:px-12">
         <BackToHome />
         <SectionHeader
-          label="Talks"
-          title="All Talks &amp; Interviews"
-          subtitle="Keynotes, panel discussions, and interviews on technology, fintech, and leadership."
+          label="Palestras"
+          title="Todas as Palestras &amp; Entrevistas"
+          subtitle="Palestras, painéis e entrevistas sobre tecnologia, fintech e liderança."
         />
         <VideosPageList items={videos} />
         {videos.length === 0 && (
           <p className="text-[var(--color-text-secondary)] text-center py-12">
-            No talks yet.
+            Nada por aqui ainda.
           </p>
         )}
       </div>
