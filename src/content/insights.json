@@ -1,5 +1,29 @@
 [
   {
+    "id": "insight-013",
+    "title": "A IA conquistou o mundo digital. Falta o físico.",
+    "titlePt": "A IA conquistou o mundo digital. Falta o físico.",
+    "slug": "ia-mundo-fisico",
+    "excerpt": "World models: a fronteira que ainda separa os chatbots dos robôs autônomos.",
+    "excerptPt": "World models: a fronteira que ainda separa os chatbots dos robôs autônomos.",
+    "content": "Este artigo está disponível como uma página standalone. [Leia o artigo completo →](/insights/ia-mundo-fisico)",
+    "contentPt": "Este artigo está disponível como uma página standalone. [Leia o artigo completo →](/insights/ia-mundo-fisico)",
+    "language": "pt",
+    "coverImage": "/articles/images/ia-mundo-fisico/humanoid-robots-race.jpg",
+    "tags": [
+      "AI",
+      "Robotics",
+      "World Models"
+    ],
+    "date": "2026-06-07",
+    "readingTime": "11 min de leitura",
+    "visible": true,
+    "featured": true,
+    "order": -1,
+    "createdAt": "2026-06-07T00:00:00Z",
+    "updatedAt": "2026-06-07T00:00:00Z"
+  },
+  {
     "id": "insight-004",
     "title": "O projeto de IA que mudou o meu jogo: da minha saúde ao futuro da Bemobi",
     "titlePt": "O projeto de IA que mudou o meu jogo: da minha saúde ao futuro da Bemobi",

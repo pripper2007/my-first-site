@@ -13,7 +13,7 @@ interface InsightsSectionProps {
 }
 
 export default function InsightsSection({ items }: InsightsSectionProps) {
-  const featured = items.slice(0, 5);
+  const featured = items.slice(0, 6);
   if (featured.length === 0) return null;
 
   return (

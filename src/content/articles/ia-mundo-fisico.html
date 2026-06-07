@@ -1,0 +1,194 @@
+<style>
+.article-doc { --bg: #ececec;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --accent: #c8a251;
+    --accent-soft: rgba(200, 162, 81, 0.12);
+    --hairline: rgba(26, 26, 26, 0.12);
+    --serif: var(--font-playfair-display), Georgia, serif;
+    --sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    --measure: 640px; }
+.article-doc * { box-sizing: border-box; }
+.article-doc { margin: 0; padding: 0;
+    background: var(--bg); color: var(--text);
+    font-family: var(--sans); font-size: 17.6px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+.article-doc ::selection { background: var(--accent); color: #fff; }
+.article-doc a { color: inherit; }
+.article-doc /* Top bar — matches site chrome */
+  .topbar { position: sticky; top: 0; z-index: 10;
+    background: rgba(250,250,250,0.82);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--hairline); }
+.article-doc .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 16px 32px;
+    display: flex; align-items: center; justify-content: space-between; }
+.article-doc .brand { font-family: var(--serif); font-weight: 800; font-size: 22px;
+    letter-spacing: -0.02em; text-decoration: none; }
+.article-doc .brand .dot { color: var(--accent); }
+.article-doc .back { font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; text-decoration: none; opacity: 0.75; }
+.article-doc .back:hover { opacity: 1; }
+.article-doc article { max-width: 1200px; margin: 0 auto; padding: 64px 32px 120px; }
+.article-doc .hero { max-width: 860px; margin: 0 auto 40px; }
+.article-doc .kicker { display: inline-block; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent);
+    margin-bottom: 22px; }
+.article-doc .kicker::after { content: ""; display: inline-block; width: 28px; height: 1px;
+    background: var(--accent); vertical-align: middle; margin-left: 12px; transform: translateY(-2px); }
+.article-doc h1.title { font-family: var(--serif); font-weight: 800;
+    font-size: clamp(34px, 5vw, 60px); line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 22px; }
+.article-doc .meta { display: flex; gap: 14px; align-items: center; color: var(--text-muted);
+    font-size: 14px; }
+.article-doc .meta .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); opacity: .5; }
+.article-doc .body { max-width: var(--measure); margin: 0 auto; }
+.article-doc .body p { margin: 0 0 1.4em; }
+.article-doc .body p.lead { font-size: 20px; line-height: 1.5; color: #2a2a2a; font-style: italic; }
+.article-doc .body strong { font-weight: 600; }
+.article-doc .body h2 { font-family: var(--serif); font-weight: 700; font-size: 28px;
+    letter-spacing: -0.02em; line-height: 1.2; margin: 1.8em 0 0.6em; }
+.article-doc .body h3 { font-family: var(--serif); font-weight: 700; font-size: 21px;
+    letter-spacing: -0.01em; line-height: 1.25; margin: 1.6em 0 0.5em; }
+.article-doc .body hr { border: 0; border-top: 1px solid var(--hairline); margin: 2.6em 0; }
+.article-doc .body figure { margin: 2em 0; }
+.article-doc .body figure img { width: 100%; height: auto; display: block; border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03); }
+.article-doc .body figcaption { font-size: 13.5px; color: var(--text-muted); margin-top: 12px;
+    line-height: 1.55; font-style: italic; }
+.article-doc .body .endnote { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--hairline);
+    font-size: 14px; color: var(--text-muted); }
+.article-doc .body .endnote a { color: var(--accent); text-decoration: none; }
+.article-doc .body .endnote a:hover { text-decoration: underline; }
+</style>
+<article>
+    <div class="hero">
+      <span class="kicker">IA &amp; Robótica</span>
+      <h1 class="title">A IA conquistou o mundo digital. Falta o físico.</h1>
+      <div class="meta">
+        <span>Pedro Ripper</span><span class="sep"></span>
+        <span>7 de junho de 2026</span><span class="sep"></span>
+        <span>11 min de leitura</span>
+      </div>
+    </div>
+
+    <div class="body">
+      <p class="lead">World models: a fronteira que ainda separa os chatbots dos robôs autônomos.</p>
+
+      <p>Há alguns anos escuto a mesma profecia: &ldquo;o ano que vem é o ano dos robôs&rdquo;. Já ouvi tantas vezes que virou quase uma piada do setor de tecnologia. Mas, pela primeira vez, tenho a sensação de que estamos chegando perto de ela valer, e que os próximos 24 meses podem ser o ponto de inflexão. Não é tão diferente da história dos carros autônomos: passamos quase duas décadas dizendo que o self-driving era &ldquo;ano que vem&rdquo; e, ao menos em operações específicas como os robotáxis em algumas cidades, ele finalmente chegou (escrevi sobre a última versão do <a href="/insights/tesla-fsd-12-anos" style="color:var(--accent);">Tesla FSD</a> e o <a href="/insights/waymo-vs-tesla" style="color:var(--accent);">Waymo</a> no mês passado).</p>
+
+      <p>Para entender onde estamos de verdade, é preciso parar de olhar a robótica só pelo hardware. Hoje existem duas revoluções acontecendo em paralelo, em velocidades muito diferentes, e quem confunde as duas erra o diagnóstico.</p>
+
+      <p>A primeira é a revolução do <strong>&ldquo;corpo&rdquo;</strong>: mecânica, atuadores, mãos, articulações, baterias e, principalmente, a capacidade fabril de produzir tudo isso em escala e a preço decrescente. A segunda é a revolução do <strong>cérebro</strong>: a capacidade de uma IA entender o mundo físico ao redor e decidir o que fazer de forma autônoma. São jogos distintos, com líderes distintos. Mas não são mundos isolados.</p>
+
+      <p>Separá-los ajuda a enxergar onde está o gargalo; é um recurso de análise, não uma fronteira real. Um world model pode até ser pré-treinado de forma relativamente independente de qualquer robô específico, aprendendo a &ldquo;física&rdquo; do mundo a partir de vídeo. Mas, para virar utilidade, ele tem que aterrissar num corpo: traduzir esse entendimento nos comandos elétricos contínuos que movem as juntas e os atuadores daquele robô, em resposta ao que ele encontra no ambiente. Não existe inteligência física descolada do hardware que vai executá-la.</p>
+
+      <p>Por isso o ponto mais difícil não está em nenhuma das duas frentes isoladamente, e sim onde elas se encontram: onde a compreensão do mundo precisa virar ação precisa e confiável num corpo físico. É essa distância, entre entender e fazer, que define o estado atual da robótica.</p>
+
+      <p>Nas próximas três seções, mapeio cada lado e arrisco uma resposta para a pergunta que todo mundo faz: quando isso vira realidade?</p>
+
+      <hr />
+
+      <h2>Parte 1: O corpo abundante, barato e, hoje, majoritariamente chinês</h2>
+
+      <figure>
+        <img src="/articles/images/ia-mundo-fisico/humanoid-robots-race.jpg" alt="The Humanoid Robots Race: os principais humanoides em escala real" />
+        <figcaption>Os principais humanoides em escala real, do Atlas (1,50 m) à Unitree H1 (1,80 m). O corpo ficou abundante e barato; a China lidera as remessas.</figcaption>
+      </figure>
+
+      <p>Se você assistiu àqueles vídeos impressionantes de humanoides dançando, dando cambalhota ou correndo, provavelmente viu hardware chinês. E provavelmente viu coreografia.</p>
+
+      <h3>A China abriu uma vantagem estrutural</h3>
+
+      <p>O dado é difícil de ignorar: estimativas de 2026 apontam que a China responde por algo entre 80% e 90% das instalações globais de humanoides, e que duas empresas, Unitree e AgiBot, concentram quase 80% das remessas chinesas projetadas para o ano. A Unitree teria embarcado, no ano passado, cerca de 36 vezes mais unidades do que Figure e Tesla somadas.</p>
+
+      <p>Não é só volume, é cadeia de suprimentos. A China domina os componentes que fazem um robô se mover: estima-se que controle cerca de 70% do mercado global de LIDAR, além de posições dominantes em redutores harmônicos, juntas e controladores. Foi essa base industrial que derrubou o custo dos atuadores, o componente mais caro de um humanoide, em torno de uma ordem de grandeza em três anos. O Unitree G1 sai por volta de US$ 13 a 16 mil, um preço que há pouco tempo seria impensável.</p>
+
+      <h3>O detalhe inconveniente dos vídeos virais</h3>
+
+      <p>Aqui entra a ressalva que separa o hype da substância: a maioria dos vídeos que viralizam é roteirizada. Backflip no CES, dança no Spring Festival Gala, são demonstrações de controle de movimento e equilíbrio, lindas de ver, mas que não exigem que o robô entenda nada do ambiente ao redor. É corpo atlético com cérebro ausente. Tanto que a própria narrativa do setor começou a mudar de &ldquo;demo-driven&rdquo; para &ldquo;operations-driven&rdquo;: menos dança, mais robô fazendo tarefa repetitiva e chata numa fábrica.</p>
+
+      <h3>Os veteranos e desafiantes do Ocidente</h3>
+
+      <p>Do lado de fora da China, três nomes valem destaque.</p>
+
+      <p><strong>Boston Dynamics (Atlas).</strong> A veterana americana, criadora dos vídeos que definiram o imaginário de robô na internet. Vale corrigir um equívoco comum: ela não é mais japonesa. O SoftBank (japonês) foi dono entre 2017 e 2020, mas vendeu o controle para a <strong>Hyundai</strong> (sul-coreana) em dezembro de 2020, por US$ 1,1 bilhão, e a Hyundai detém hoje cerca de 80%. O novo Atlas é totalmente elétrico, usa atuadores da Hyundai Mobis e entra em produção em 2026. O mais interessante é a estratégia de cérebro: a Boston Dynamics fechou parceria com o <strong>Google DeepMind</strong> e vai treinar frotas de Atlas com os modelos <strong>Gemini Robotics</strong>. A veterana do corpo foi buscar cérebro de fora.</p>
+
+      <p><strong>Figure AI.</strong> Talvez a mais &ldquo;high profile&rdquo; das ocidentais puro-sangue. Fundada por Brett Adcock, chegou a uma avaliação reportada de US$ 39 bilhões em 2026. Rompeu com a OpenAI para construir o próprio cérebro, o <strong>Helix</strong>, um modelo visão-linguagem-ação (VLA) que roda onboard e controla todo o tronco superior em tempo real. Lançou o Figure 03 (out/2025), voltado para casa, com preço-alvo na casa dos US$ 20 mil, e já rodou na linha de montagem da BMW em Spartanburg.</p>
+
+      <p><strong>Tesla (Optimus).</strong> A aposta mais comentada e, na minha visão, uma das mais bem posicionadas, por um motivo que desenvolvo adiante. A V3 deve entrar em produção no verão americano de 2026 em Fremont, com volume maior só em 2027. O ponto-chave: o Optimus compartilha a mesma arquitetura de visão e rede neural do <strong>Full Self-Driving</strong> dos carros. Preço-alvo de longo prazo na casa dos US$ 20 mil.</p>
+
+      <p>O resumo da Parte 1 exige cuidado. Seria exagero dizer que o corpo &ldquo;virou commodity&rdquo;: partes dele continuam difíceis e, pior, presas à física, não a leis de escala de software. A densidade energética das baterias (o G1 roda apenas duas horas e melhora poucos pontos percentuais ao ano) e as mãos com tato de alta fidelidade ainda são fronteiras abertas. O que dá para afirmar é mais sóbrio: locomoção e equilíbrio estão essencialmente resolvidos, a manufatura é um playbook que a China está ganhando e, somando tudo, <strong>o corpo deixou de ser onde mora o maior valor da cadeia.</strong> Se o jogo fosse só hardware, ele já teria um favorito. Mas não é.</p>
+
+      <hr />
+
+      <h2>Parte 2: O cérebro, o verdadeiro gargalo</h2>
+
+      <p>Se o corpo deixou de ser o gargalo, o que sobra? O cérebro. Um humanoide só vira <strong>útil</strong> quando consegue entrar num ambiente que nunca viu, entender o que está acontecendo e agir, sem script, sem teleoperação, sem um engenheiro programando cada gesto. E é exatamente nisso que a robótica ainda engatinha.</p>
+
+      <p>Vale uma distinção. Robôs fáceis de programar para tarefas repetitivas já são muito úteis e reinventaram a fabricação moderna. Mas um entendimento mais generalizado do mundo, baseado em world models, pode destravar casos de uso de forma exponencial. É parecido com o que aconteceu na IA digital: saímos de modelos especialistas, treinados para uma única tarefa, para modelos genéricos como os LLMs, versáteis o bastante para resolver uma gama enorme de problemas. A aposta é que a robótica faça a mesma travessia, do robô especialista de uma tarefa só para o robô generalista.</p>
+
+      <h3>Por que dados são o problema</h3>
+
+      <p>A melhor forma de entender o gargalo veio do Jim Fan, que lidera a pesquisa de IA incorporada da Nvidia. Os LLMs aprenderam a prever a próxima palavra a partir de praticamente todo o texto da internet. Robôs não têm essa sorte: <strong>não existe uma &ldquo;internet de como interagir com o mundo físico&rdquo;.</strong> Você não raspa do YouTube nem da Wikipedia o sinal contínuo de controle das juntas de um robô pegando uma xícara. Se o texto da internet é o &ldquo;combustível fóssil&rdquo; da IA, na robótica não há nem combustível fóssil, é preciso queimar &ldquo;combustível humano&rdquo;.</p>
+
+      <p>A saída tradicional foi a <strong>teleoperação</strong>: um humano de headset VR controlando o robô para gerar dados. Funciona, mas não escala. O teto físico é 24 horas por robô por dia, e na prática muito menos. A própria indústria estima ter acumulado, até aqui, só algumas centenas de milhares de horas de dados. É pouco demais para uma IA generalista.</p>
+
+      <h3>A virada: world models</h3>
+
+      <p>A razão de eu achar que dessa vez é diferente tem nome: <strong>world models</strong>, modelos que aprendem a simular o próximo estado do mundo físico.</p>
+
+      <p>A evolução recente foi tratar <strong>vídeo como simulador</strong>. Modelos de geração de vídeo, treinados em centenas de milhões de clipes, aprendem sozinhos gravidade, reflexo, fluido e colisão. Nada disso é codificado à mão; a física <em>emerge</em> da previsão do próximo quadro em escala. Quando você acopla <em>ação</em> a esse imaginário físico, o robô passa a &ldquo;ensaiar&rdquo; alguns segundos do futuro e agir de acordo. É a transição que o setor está fazendo dos VLAs (visão-linguagem-ação, ótimos com objetos e nomes, fracos em física e verbos) para os chamados <strong>World Action Models</strong>.</p>
+
+      <figure>
+        <img src="/articles/images/ia-mundo-fisico/how-robots-learn-the-physical-world.jpg" alt="How Robots Learn the Physical World: o espectro de dados de treino dos robôs" />
+        <figcaption>O espectro de dados para treinar robôs, do mais real e caro (teleoperação) ao mais sintético e barato (world models neurais). Não é &ldquo;ou&rdquo;, é &ldquo;e&rdquo;: pré-treina-se no lado abundante e refina-se no lado preciso.</figcaption>
+      </figure>
+
+      <p>Há também uma evidência relevante. O paper EgoScale (fev/2026) mostrou pela primeira vez, de forma empírica, que modelos de robótica seguem <strong>as mesmas leis de escala</strong> dos LLMs: a performance melhora de forma previsível conforme se adiciona dados de pré-treino. Se isso se confirmar, transforma robótica de &ldquo;arte&rdquo; em &ldquo;engenharia de escala&rdquo;, e o problema passa a ser de quando, não de se. É uma evidência importante, ainda que, como argumento na Parte 3, mais frágil do que parece à primeira vista.</p>
+
+      <h3>Quem lidera o cérebro</h3>
+
+      <p>E é aqui que a geografia se inverte. Se na manufatura o líder é a China, no cérebro a liderança ainda é, de forma clara, dos <strong>Estados Unidos</strong>, que concentram o talento de ponta e a pesquisa de modelos. Os principais postos:</p>
+
+      <p><strong>Nvidia, a &ldquo;vendedora de pás&rdquo;.</strong> Mais do que fazer robôs, a Nvidia quer ser a camada que habilita todos eles. Lançou o <strong>Isaac GR00T N1</strong> (primeiro modelo de fundação aberto para humanoides) e a família <strong>Cosmos</strong> de world foundation models, culminando no Cosmos 3 (mai/2026). Um número ilustra a estratégia: a Nvidia gerou 780 mil trajetórias sintéticas, equivalente a 9 meses de demonstração humana, em 11 horas, e usou isso para melhorar a performance do GR00T em 40%. É o tipo de fábrica de dados que faltava à robótica. E o símbolo da divisão de trabalho global: o robô de referência que a Nvidia apresentou em jun/2026 roda seu cérebro americano sobre um <strong>chassi Unitree, chinês</strong>.</p>
+
+      <p><strong>Google DeepMind.</strong> Talvez o portfólio mais completo: <strong>Gemini Robotics</strong> (o cérebro que vai treinar os Atlas da Boston Dynamics) e o <strong>Genie 3</strong>, um world model que gera ambientes interativos a partir de texto. A Waymo já adotou uma versão do Genie para simular casos extremos e treinar robotáxis.</p>
+
+      <p><strong>Tesla.</strong> Aqui está, para mim, um trunfo frequentemente subestimado. A Tesla já roda, há anos, <strong>o maior flywheel de dados físicos do mundo</strong>: cada carro com FSD na rua é uma sonda coletando interação com o mundo real, de forma ambiente, sem ninguém vestir um headset. Como o Optimus compartilha a arquitetura do FSD, a aposta é que a experiência com robotáxis e direção autônoma se transfira para o corpo.</p>
+
+      <p>Mas é justo ser sóbrio sobre os limites da analogia. No caso dos carros, havia milhões de humanos dirigindo e gerando, em tempo real, exatamente o sinal supervisionado que treina o FSD. A Tesla <strong>não</strong> terá milhões de robôs teleoperados por pessoas nas ruas fazendo o mesmo, e é aí que a analogia quebra. Existe alguma portabilidade do modelo de carro para o de robô, mas o flywheel não se transfere de graça. Sem outras técnicas, como o vídeo egocêntrico e os world models, é improvável que esse edge se escale sozinho. A vantagem da Tesla é real, mas menor do que o entusiasmo costuma sugerir.</p>
+
+      <p>Mapeados os dois lados, a pergunta deixa de ser técnica e passa a ser estratégica: se o corpo é majoritariamente chinês e o cérebro majoritariamente americano, quem fica com o valor?</p>
+
+      <p>A história da computação oferece dois roteiros opostos para essa pergunta. No PC, o valor se desacoplou do hardware: a caixa virou commodity e a margem migrou para o sistema operacional e os chips. No smartphone, aconteceu quase o contrário: a Apple, integrando hardware e software num produto único, capturou a maior fatia da margem do setor inteiro. Na robótica, ainda não está claro qual roteiro vai prevalecer. Nvidia e Google apostam no modelo desacoplado: querem ser a camada de inteligência de robôs que eles próprios não fabricam. Tesla e Figure apostam no verticalizado, construindo corpo e cérebro juntos. O mais provável é que os dois coexistam, como hoje convivem o ecossistema aberto do Android e o jardim murado da Apple. E há uma ressalva que joga a favor da China: em sistemas físicos, dados vêm do hardware implantado; quem tem mais robôs no mundo real gira o flywheel de dados primeiro.</p>
+
+      <p>Resolvida (ou não) a disputa pelo valor, sobra a pergunta que todo mundo realmente quer responder: quando?</p>
+
+      <hr />
+
+      <h2>Parte 3: Estamos a 24 meses de um breakthrough?</h2>
+
+      <p>Minha resposta honesta: <strong>mais perto do que nunca, mas com uma ressalva grande sobre confiabilidade.</strong></p>
+
+      <p>O caso otimista é consistente. Pela primeira vez temos evidência empírica de leis de escala para robótica (EgoScale), world models avançando rápido em capacidade (Cosmos 3, Genie 3), novas formas de gerar dados que prometem levar o setor de centenas de milhares para dezenas de milhões de horas de treino até 2027, e capital fluindo em volume recorde. Quando dados, compute e capital convergem sobre um problema com leis de escala aparentes, a evolução costuma ser rápida.</p>
+
+      <p>O caso cético também é sério. A Bessemer cravou, em 2026, que estamos no <strong>&ldquo;momento GPT-2.5 da robótica&rdquo;</strong>: as capacidades são reais e as leis de escala começam a aparecer, mas o abismo entre o desempenho de laboratório e os <strong>99,9% de confiabilidade</strong> que uma operação real exige ainda é grande. Um chatbot que erra 1 em 20 é irritante; um robô de 70 kg que erra 1 em 20 é perigoso. Essa última milha de confiabilidade é dura, e historicamente é onde muitas promessas de robótica naufragaram.</p>
+
+      <p>Faço questão de registrar duas ressalvas de honestidade intelectual. A primeira é de <strong>fonte</strong>: boa parte da narrativa de que &ldquo;o cérebro é o gargalo e o corpo é commodity&rdquo; vem de quem vende o cérebro, a Nvidia, cujo negócio é o compute que roda esses world models. Vale ouvir o argumento, descontando o interesse. A segunda é <strong>técnica</strong>: o paralelo com os LLMs pode ser sedutor demais. A internet é uma amostra quase completa do mundo do texto; não existe equivalente para o mundo físico. Vídeo ensina como as coisas <em>parecem</em>, não como <em>reagem à força</em>, e força, torque e contato são justamente o que mais importa para manipular um objeto. É possível que estejamos escalando a distribuição errada, e que &ldquo;pré-breakthrough&rdquo; signifique não &ldquo;falta escala&rdquo;, mas &ldquo;falta um paradigma&rdquo;.</p>
+
+      <p>Talvez o sinal mais útil de que o &ldquo;momento ChatGPT&rdquo; realmente chegou não seja um vídeo bonito, mas, como provocou um analista, <strong>um release de resultados</strong>: a primeira empresa a reportar receita relevante gerada por humanoides. Um marco entediante, e é exatamente por isso que será real. O Bank of America projeta cerca de 90 mil humanoides embarcados em 2026, ainda piloto, mas já não é zero.</p>
+
+      <p>A assimetria entre os dois lados se resume assim: <strong>no corpo, a incerteza é de quando e quão barato; no cérebro, a incerteza é de se.</strong> É por isso que o cérebro guarda o prêmio maior.</p>
+
+      <p>Na prática, fico observando três sinais. O primeiro caso de uso com retorno claro e repetível, provavelmente industrial, numa tarefa mais genérica. A primeira demonstração convincente de manipulação destra e confiável fora de um ambiente controlado. E qual modelo de captura de valor, desacoplado ou verticalizado, começa a se desenhar. Nenhum desses sinais vira manchete; todos viram decisão de alocação de capital.</p>
+
+      <p>A minha aposta pessoal: não vamos acordar com um humanoide perfeito em 24 meses. Mas é plausível que, nesse horizonte, a gente veja o primeiro desses sinais se materializar. E é aí que a curva vira. Como diz o Jim Fan, levou 14 anos do AlexNet (que mal distinguia gato de cachorro) à IA agêntica de hoje. A tecnologia não anda em linha reta, anda em exponencial. O robô que finalmente entende o mundo ao redor provavelmente não vai chegar com fanfarra. Vai chegar numa terça-feira qualquer, e a gente quase não vai notar.</p>
+
+      <p>Bem, e fora a curiosidade intelectual, por que isso é relevante para a vida de cada um de nós? Pois bem: se a tendência se confirmar, os impactos vão muito além dos descritos até aqui. A revolução digital da IA mexeu primeiro com o trabalho de quem vive de tela: texto, código, análise. O mundo físico parecia protegido. Quando a IA atravessar essa fronteira, indústrias inteiras e profissões que hoje se sentem seguras, da logística à manufatura, dos serviços ao cuidado, podem deixar de ser em um período muito curto. Entender esse movimento cedo, como empresa, investidor ou profissional, pode ser a diferença entre assistir ao jogo e se posicionar no novo tabuleiro de xadrez que está se montando.</p>
+
+      <p>É sobre esse tabuleiro que pretendo escrever nos próximos artigos.</p>
+
+      <p class="endnote">Publicado originalmente em <a href="https://pedroripper.com">pedroripper.com</a>.</p>
+    </div>
+  </article>
