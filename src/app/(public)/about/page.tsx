@@ -35,6 +35,14 @@ export default async function AboutPage() {
         <BackToHome />
       </div>
       <AboutSection bio={bio} />
+      <div className="max-w-[1200px] mx-auto px-5 md:px-12 pb-16 -mt-8">
+        <p className="text-[0.9rem] text-[var(--color-text-secondary)]">
+          Procurando a versão estruturada (em inglês, para imprensa e agentes)?{" "}
+          <a href="/pedro-ripper" className="text-[var(--color-accent)] hover:underline">
+            Perfil canônico →
+          </a>
+        </p>
+      </div>
     </div>
   );
 }

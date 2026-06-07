@@ -87,6 +87,9 @@ export default function Footer() {
             <a href="#" className="text-[0.8rem] text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors duration-[400ms]">
               Termos
             </a>
+            <a href="/llms.txt" className="text-[0.8rem] text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors duration-[400ms]">
+              llms.txt
+            </a>
           </div>
         </div>
       </div>

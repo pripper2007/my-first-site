@@ -2,9 +2,10 @@ import fs from "fs/promises";
 import path from "path";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getInsightBySlug } from "@/lib/content";
+import { getInsightBySlug, getInsights } from "@/lib/content";
 import InsightArticleContent from "@/components/public/InsightArticleContent";
 import NewsletterSignup from "@/components/public/NewsletterSignup";
+import InsightListRow from "@/components/public/InsightListRow";
 import type { Metadata } from "next";
 
 export async function generateMetadata({
@@ -99,6 +100,29 @@ export default async function InsightArticlePage({
 
   const fragment = await getArticleFragment(slug);
 
+  // Related articles — shared tags first, newest fill the rest
+  const others = (await getInsights()).filter((i) => i.slug !== slug);
+  const sharesTag = (i: (typeof others)[number]) =>
+    i.tags?.some((t) => insight.tags?.includes(t));
+  const related = [...others.filter(sharesTag), ...others.filter((i) => !sharesTag(i))].slice(0, 3);
+
+  const relatedBlock =
+    related.length > 0 ? (
+      <div className="max-w-[1200px] mx-auto px-5 md:px-12 mt-12">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="w-7 h-[1.5px] bg-[var(--color-accent)]" />
+          <span className="text-[0.72rem] font-semibold tracking-[0.18em] text-[var(--color-accent)] uppercase">
+            Leia também
+          </span>
+        </div>
+        <div className="flex flex-col">
+          {related.map((item, i) => (
+            <InsightListRow key={item.id} item={item} topBorder={i > 0} />
+          ))}
+        </div>
+      </div>
+    ) : null;
+
   const backLink = (
     <Link
       href="/insights"
@@ -137,6 +161,7 @@ export default async function InsightArticlePage({
           <div className="max-w-[640px] mx-auto px-5 md:px-0 mt-4 mb-10">
             <NewsletterSignup />
           </div>
+          {relatedBlock}
         </div>
       ) : (
         <article className="pt-[120px] pb-[120px]">
@@ -144,6 +169,7 @@ export default async function InsightArticlePage({
             <div className="mb-12">{backLink}</div>
             <InsightArticleContent insight={insight} />
           </div>
+          {relatedBlock}
         </article>
       )}
     </>
