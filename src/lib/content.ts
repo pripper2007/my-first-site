@@ -23,21 +23,43 @@ import type {
 
 const CONTENT_DIR = path.join(process.cwd(), "src", "content");
 
-/** True when a Vercel Blob token is available (production / preview deploys). */
-const useBlob = !!process.env.BLOB_READ_WRITE_TOKEN;
+/** True when a Vercel Blob token is available AND we're not in local development. */
+const useBlob =
+  !!process.env.BLOB_READ_WRITE_TOKEN && process.env.NODE_ENV !== "development";
 
 /* ── Blob-backed helpers ─────────────────────── */
 
+/**
+ * In-memory content cache (per serverless instance). Absorbs blob read
+ * bursts and transient failures: fresh reads are cached for a short TTL,
+ * and if a blob read blips we serve the last good copy instead of letting
+ * pages 404 ("stale-on-error"). Admin writes update the cache in place.
+ */
+const contentCache = new Map<string, { data: unknown; at: number }>();
+const CONTENT_CACHE_TTL_MS = 60_000;
+
 async function readJsonFile<T>(filename: string): Promise<T> {
   if (useBlob) {
-    /* Find the blob by its path prefix and fetch its contents */
-    const { blobs } = await list({ prefix: `content/${filename}`, limit: 1 });
-    if (blobs.length === 0) {
-      throw new Error(`Content not found in blob store: ${filename}`);
+    const hit = contentCache.get(filename);
+    if (hit && Date.now() - hit.at < CONTENT_CACHE_TTL_MS) {
+      return hit.data as T;
     }
-    const res = await fetch(blobs[0].url, { cache: "no-store" });
-    if (!res.ok) throw new Error(`Failed to fetch blob: ${filename}`);
-    return res.json();
+    try {
+      /* Find the blob by its path prefix and fetch its contents */
+      const { blobs } = await list({ prefix: `content/${filename}`, limit: 1 });
+      if (blobs.length === 0) {
+        throw new Error(`Content not found in blob store: ${filename}`);
+      }
+      const res = await fetch(blobs[0].url, { cache: "no-store" });
+      if (!res.ok) throw new Error(`Failed to fetch blob: ${filename}`);
+      const data = await res.json();
+      contentCache.set(filename, { data, at: Date.now() });
+      return data as T;
+    } catch (err) {
+      /* Stale-on-error: a momentary blob failure must not 404 the site */
+      if (hit) return hit.data as T;
+      throw err;
+    }
   }
 
   /* Local filesystem fallback */
@@ -57,6 +79,8 @@ async function writeJsonFile<T>(filename: string, data: T): Promise<void> {
       allowOverwrite: true,
       contentType: "application/json",
     });
+    /* Keep this instance's cache fresh after admin writes */
+    contentCache.set(filename, { data, at: Date.now() });
     return;
   }
 

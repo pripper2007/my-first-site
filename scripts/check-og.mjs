@@ -38,18 +38,19 @@ async function main() {
 
   const failures = [];
   for (const url of urls) {
-    let html;
-    try {
-      const res = await fetch(url, { redirect: "follow" });
-      if (!res.ok) {
-        failures.push(`${url} → HTTP ${res.status}`);
-        continue;
+    let html = null;
+    // up to 3 attempts — content reads can blip during blob writes/bursts
+    for (let attempt = 1; attempt <= 3 && html === null; attempt++) {
+      try {
+        const res = await fetch(url, { redirect: "follow" });
+        if (res.ok) { html = await res.text(); break; }
+        if (attempt === 3) failures.push(`${url} → HTTP ${res.status}`);
+      } catch (e) {
+        if (attempt === 3) failures.push(`${url} → fetch failed (${e.message})`);
       }
-      html = await res.text();
-    } catch (e) {
-      failures.push(`${url} → fetch failed (${e.message})`);
-      continue;
+      if (html === null && attempt < 3) await new Promise((r) => setTimeout(r, 10000));
     }
+    if (html === null) continue;
 
     const title = og(html, "title");
     const ogUrl = og(html, "url");
