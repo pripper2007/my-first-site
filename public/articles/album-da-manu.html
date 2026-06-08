@@ -97,6 +97,16 @@
     line-height: 1.55; font-style: italic; text-align: center; }
   @media (max-width: 560px) { .screens .row { grid-template-columns: 1fr 1fr; gap: 14px; } }
 
+  /* Easter-egg videos: 3 uniform tiles side by side */
+  .eastereggs { max-width: 760px; margin: 2.6em auto; }
+  .eastereggs .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .eastereggs video { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block;
+    border-radius: 12px; background: #000;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.04); }
+  .eastereggs figcaption { font-size: 13.5px; color: var(--text-muted); margin-top: 14px;
+    line-height: 1.55; font-style: italic; text-align: center; }
+  @media (max-width: 480px) { .eastereggs .row { gap: 8px; } }
+
   .annex { margin-top: 16px; font-size: 15px; color: var(--text-muted); }
   .annex h2 { font-size: 22px; color: var(--text); }
   .annex p { margin: 0 0 1em; line-height: 1.6; }
@@ -238,6 +248,21 @@
       <p>O álbum está no ar e a Manu usa todo dia, no ritmo da Copa. Mas o produto é o menos importante.</p>
 
       <p>Uma cena resume bem. Eu, empolgadíssimo com as funcionalidades: sincronização em tempo real, multi-device, interface caprichada. E a Manu? Morrendo de rir dos easter eggs que estamos preparando, onde as fotos sérias e estáticas dos jogadores passam a fazer caretas quando você destrava o código secreto.</p>
+
+      <figure class="eastereggs">
+        <div class="row">
+          <video autoplay muted loop playsinline preload="metadata" poster="/articles/images/album-da-manu/ee-cristiano.jpg" aria-label="Easter egg: figurinha fazendo careta">
+            <source src="/articles/images/album-da-manu/ee-cristiano.mp4" type="video/mp4" />
+          </video>
+          <video autoplay muted loop playsinline preload="metadata" poster="/articles/images/album-da-manu/ee-gege.jpg" aria-label="Easter egg: figurinha animada">
+            <source src="/articles/images/album-da-manu/ee-gege.mp4" type="video/mp4" />
+          </video>
+          <video autoplay muted loop playsinline preload="metadata" poster="/articles/images/album-da-manu/ee-manu.jpg" aria-label="Easter egg: figurinha animada">
+            <source src="/articles/images/album-da-manu/ee-manu.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <figcaption>Os easter eggs que a Manu mais ama: as figurinhas sérias ganham vida e fazem careta quando ela destrava o código secreto.</figcaption>
+      </figure>
 
       <p>Realmente, a cabeça das crianças é diferente. Eu celebrava a engenharia; ela, as caretas. E ela tem razão: brinquedo bom se mede pela risada, não pela ficha técnica.</p>
 
