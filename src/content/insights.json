@@ -17,8 +17,8 @@
     ],
     "date": "2026-06-09",
     "readingTime": "4 min de leitura",
-    "visible": false,
-    "featured": false,
+    "visible": true,
+    "featured": true,
     "order": -3,
     "createdAt": "2026-06-09T00:00:00Z",
     "updatedAt": "2026-06-09T00:00:00Z"

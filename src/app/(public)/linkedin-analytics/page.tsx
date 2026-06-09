@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: "https://pedroripper.com/linkedin-analytics" },
-  robots: { index: false, follow: false }, // draft until launch
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
