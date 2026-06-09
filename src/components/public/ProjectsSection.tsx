@@ -21,6 +21,14 @@ const PROJECTS = [
     title: "IRPF Anual — Skill para Claude",
     desc: "A declaração conduzida em 5 rounds — GitHub, ZIP ou instalação via terminal.",
   },
+  {
+    href: "/linkedin-analytics",
+    kicker: "Analytics de LinkedIn",
+    date: "jun 2026",
+    title: "Seu próprio painel de LinkedIn",
+    desc: "Analytics self-hosted, dono dos seus dados. Open-source: repositório + documentação.",
+    cta: "Acessar o projeto",
+  },
 ];
 
 export default function ProjectsSection() {
@@ -39,7 +47,7 @@ export default function ProjectsSection() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {PROJECTS.map((p) => (
             <ScrollReveal key={p.href}>
               <Link
@@ -61,7 +69,7 @@ export default function ProjectsSection() {
                   {p.desc}
                 </p>
                 <span className="mt-3 inline-flex items-center gap-2 text-[0.88rem] font-medium text-[var(--color-accent)] group-hover:gap-3 transition-all duration-[400ms]">
-                  Acessar o kit
+                  {p.cta ?? "Acessar o kit"}
                   <svg
                     width="14"
                     height="14"
