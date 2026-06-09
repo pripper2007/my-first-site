@@ -29,6 +29,14 @@ const PROJECTS = [
     desc: "Analytics self-hosted, dono dos seus dados. Open-source: repositório + documentação.",
     cta: "Acessar o projeto",
   },
+  {
+    href: "/album-figurinhas",
+    kicker: "Álbum de figurinhas",
+    date: "jun 2026",
+    title: "Crie o seu álbum digital",
+    desc: "Álbum da Copa local-first: marque, troque e acompanhe. App ao vivo ou o projeto aberto.",
+    cta: "Acessar o projeto",
+  },
 ];
 
 export default function ProjectsSection() {
@@ -47,7 +55,7 @@ export default function ProjectsSection() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {PROJECTS.map((p) => (
             <ScrollReveal key={p.href}>
               <Link

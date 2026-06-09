@@ -18,6 +18,7 @@ Pedro Ripper is a Brazilian technology executive, co-founder and CEO of Bemobi (
 - BASE — health knowledge-base kit: https://pedroripper.com/base
 - IRPF Anual — Claude Skill: https://pedroripper.com/irpf-skill
 - LinkedIn Analytics (self-hosted dashboard): https://pedroripper.com/linkedin-analytics
+- Álbum de figurinhas (digital sticker album): https://pedroripper.com/album-figurinhas
 - Newsletter (Diário de Bordo): https://pedroripper.com/newsletter
 - Press kit (official bios, photo, topics): https://pedroripper.com/press-kit
 - External sources (identity verification): https://pedroripper.com/sources

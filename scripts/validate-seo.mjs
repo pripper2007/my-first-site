@@ -15,7 +15,7 @@ const BASE = (process.env.SITE_URL || "https://pedroripper.com").replace(/\/$/, 
 
 const MAIN_PAGES = [
   "/", "/about", "/pedro-ripper", "/insights", "/picks", "/books",
-  "/talks", "/news", "/base", "/irpf-skill", "/linkedin-analytics", "/newsletter", "/press-kit", "/sources",
+  "/talks", "/news", "/base", "/irpf-skill", "/linkedin-analytics", "/album-figurinhas", "/newsletter", "/press-kit", "/sources",
   "/topics/ai-agents", "/topics/digital-payments", "/topics/company-building", "/topics/books-and-learning",
 ];
 // canary articles: body marker strings that must appear in the raw HTML

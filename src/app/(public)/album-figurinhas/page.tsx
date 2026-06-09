@@ -12,7 +12,6 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: "https://pedroripper.com/album-figurinhas" },
-  robots: { index: false, follow: false }, // draft até lançar junto com o artigo do álbum
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
