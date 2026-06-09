@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<link rel="canonical" href="https://pedroripper.com/insights/linkedin-analytics" />
+<meta name="robots" content="noindex, nofollow" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Criei uma ferramenta de analytics de LinkedIn melhor que muitas profissionais. E esse foi o problema. | Pedro Ripper</title>
+<meta name="description" content="Estimei duas horas, passei de trinta. O projeto lateral de analytics de LinkedIn que furou o escopo, o que aprendi com isso e por que, mesmo assim, valeu a pena." />
+
+<!-- Fonts: match pedroripper.com -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #ececec;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --accent: #c8a251;
+    --accent-soft: rgba(200, 162, 81, 0.12);
+    --hairline: rgba(26, 26, 26, 0.12);
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    --measure: 640px;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg); color: var(--text);
+    font-family: var(--sans); font-size: 17.6px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--accent); color: #fff; }
+  a { color: inherit; }
+
+  .topbar { position: sticky; top: 0; z-index: 10;
+    background: rgba(250,250,250,0.82);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--hairline); }
+  .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 16px 32px;
+    display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-family: var(--serif); font-weight: 800; font-size: 22px;
+    letter-spacing: -0.02em; text-decoration: none; }
+  .brand .dot { color: var(--accent); }
+  .back { font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; text-decoration: none; opacity: 0.75; }
+  .back:hover { opacity: 1; }
+
+  article { max-width: 1200px; margin: 0 auto; padding: 64px 32px 120px; }
+  .hero { max-width: 860px; margin: 0 auto 40px; }
+  .kicker { display: inline-block; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 22px; }
+  .kicker::after { content: ""; display: inline-block; width: 28px; height: 1px;
+    background: var(--accent); vertical-align: middle; margin-left: 12px; transform: translateY(-2px); }
+  h1.title { font-family: var(--serif); font-weight: 800;
+    font-size: clamp(34px, 5vw, 56px); line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 22px; }
+  .meta { display: flex; gap: 14px; align-items: center; color: var(--text-muted); font-size: 14px; }
+  .meta .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); opacity: .5; }
+
+  .body { max-width: var(--measure); margin: 0 auto; }
+  .body p { margin: 0 0 1.4em; }
+  .body p.lead { font-size: 20px; line-height: 1.5; color: #2a2a2a; }
+  .body strong { font-weight: 600; }
+  .body ul { margin: 0 0 1.4em; padding-left: 1.2em; }
+  .body li { margin: 0 0 0.6em; line-height: 1.6; }
+  .body .endnote { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--hairline);
+    font-size: 14px; color: var(--text-muted); }
+  .body .endnote a { color: var(--accent); text-decoration: none; }
+  .body .endnote a:hover { text-decoration: underline; }
+
+  /* Landscape product screenshots */
+  .cover { max-width: 860px; margin: 0 auto 8px; }
+  .cover img { width: 100%; height: auto; display: block; border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04); }
+  .cover figcaption { font-size: 13.5px; color: var(--text-muted); margin-top: 12px;
+    line-height: 1.55; font-style: italic; text-align: center; }
+  .shot { max-width: 820px; margin: 2.4em auto; }
+  .shot img { width: 100%; height: auto; display: block; border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04); }
+  .shot figcaption { font-size: 13.5px; color: var(--text-muted); margin-top: 12px;
+    line-height: 1.55; font-style: italic; text-align: center; }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="https://pedroripper.com">Pedro<span class="dot">.</span></a>
+      <a class="back" href="/insights">Insights</a>
+    </div>
+  </header>
+
+  <article>
+    <div class="hero">
+      <span class="kicker">IA &amp; Aprendizado</span>
+      <h1 class="title">Criei uma ferramenta de analytics de LinkedIn que supera muitas ferramentas profissionais em funcionalidade. E esse foi o problema.</h1>
+      <div class="meta">
+        <span>Pedro Ripper</span><span class="sep"></span>
+        <span>9 de junho de 2026</span><span class="sep"></span>
+        <span>4 min de leitura</span>
+      </div>
+    </div>
+
+    <figure class="cover">
+      <img src="/articles/images/linkedin-analytics/dashboard.jpg" alt="Dashboard da ferramenta de analytics, com resumo executivo de 12 meses" />
+      <figcaption>O dashboard: 12 meses de histórico, KPIs e tendências num resumo executivo. (Telas da ferramenta que construí.)</figcaption>
+    </figure>
+
+    <div class="body">
+      <p class="lead">Estimei duas horas. Passei de trinta. Algumas madrugadas e fins de semana em um projeto que ninguém me pediu e que não muda minha vida em nada.</p>
+
+      <p>No post anterior, falei sobre as duas formas de aprender IA na prática, e que eu havia furado o escopo em um projeto lateral. Pois é, esse é o projeto.</p>
+
+      <p>Começou pequeno. Meu time de marketing insiste há tempos para eu ter presença mais ativa aqui. Não tenho tantos seguidores (uns 11 mil), mas tenho um network de CEOs, fundadores e conselheiros construído ao longo da carreira. Se eu ia investir energia na rede, decidi fazer com método e com dados.</p>
+
+      <p>A hipótese: fazer algo simples com ajuda de IA, de alto retorno. Doce engano.</p>
+
+      <p>O LinkedIn entrega as métricas básicas, mas eu queria mais: histórico ilimitado, correlação objetiva entre o que comunica bem e o que não comunica, e uma camada de leitura que a plataforma não tem. Precisei tirar os dados para uma base própria. E o escopo começou a crescer sozinho:</p>
+
+      <ul>
+        <li>histórico completo, acima dos 24 meses que o LinkedIn guarda;</li>
+        <li>análise por post com ranking e comparação por cohort (mesmo tema e formato);</li>
+        <li>crítica qualitativa via IA em cada post, usando meu próprio skill de escrita como rubrica;</li>
+        <li>clusters temáticos, estimativa de earned media e visão demográfica da audiência;</li>
+        <li>tudo online, com base de dados, hosting e administração próprios.</li>
+      </ul>
+
+      <figure class="shot">
+        <img src="/articles/images/linkedin-analytics/quando-postar.jpg" alt="Mapa de calor de impressões por dia e horário" />
+        <figcaption>Quando postar: impressões médias por dia e horário, em mapa de calor. A camada de leitura que a plataforma não entrega.</figcaption>
+      </figure>
+
+      <p>Entre dezenas de outras funcionalidades menores que fui &ldquo;inventando&rdquo;.</p>
+
+      <p>Cada nova funcionalidade aparecia com esforço baixo. E é aí que mora a armadilha. Quando o próximo passo é fácil, você nunca sente que está exagerando. Só percebe trinta horas depois.</p>
+
+      <figure class="shot">
+        <img src="/articles/images/linkedin-analytics/o-que-funciona.jpg" alt="Gráficos de desempenho por tema, estilo de escrita, tamanho de texto e número de features" />
+        <figcaption>O que funciona: tema, estilo de escrita, tamanho do texto e número de features, cada um correlacionado a impressões e engajamento.</figcaption>
+      </figure>
+
+      <figure class="shot">
+        <img src="/articles/images/linkedin-analytics/audiencia.jpg" alt="Painel de inteligência de audiência: localização, senioridade e setor" />
+        <figcaption>Quem está do outro lado: localização, senioridade e setor da audiência, agregados a partir dos posts com dados demográficos.</figcaption>
+      </figure>
+
+      <p>Mas o aprendizado foi real e específico: criar programas mais complexos, usar sub-agentes e git-trees, meu segundo projeto com Vercel e Supabase. E, principalmente, a percepção de onde a IA se vira sozinha e onde depende de mão humana. Debugar um plugin de Chrome me transformou no debugador de luxo dela: eu rodando o teste, ela formulando a hipótese. Esse mapa de alavancagem é o que levo para os projetos que importam.</p>
+
+      <p>Por isso o stop-loss. Incorporei o que tinha que incorporar e segui para o que move o ponteiro na empresa e na vida.</p>
+
+      <p>Fica a ressalva: o que para mim virou distração, para muita gente é o trabalho principal. Marketing, criadores, quem vive da rede. O que construí não tem a maturidade de um produto profissional, ainda tem bugs, mas funcionalmente não está longe.</p>
+
+      <p>Se for útil, posso sanitizar e compartilhar a base, para uso pessoal e estudo. Comenta ANALYTICS aqui que eu organizo e mando o Git.</p>
+
+      <p>E me conta: você também já foi abduzido por um projeto no Claude Code ou no Codex que era para durar duas horas e tomou muito mais tempo do que o razoável?</p>
+
+      <p class="endnote">Publicado originalmente no <a href="https://www.linkedin.com/in/pedroripper" target="_blank" rel="noopener">LinkedIn</a> de Pedro Ripper.</p>
+    </div>
+  </article>
+</body>
+</html>

@@ -1,5 +1,29 @@
 [
   {
+    "id": "insight-draft-linkedin",
+    "title": "Criei uma ferramenta de analytics de LinkedIn que supera muitas ferramentas profissionais em funcionalidade. E esse foi o problema.",
+    "titlePt": "Criei uma ferramenta de analytics de LinkedIn que supera muitas ferramentas profissionais em funcionalidade. E esse foi o problema.",
+    "slug": "linkedin-analytics",
+    "excerpt": "Estimei duas horas, passei de trinta. O projeto lateral de analytics de LinkedIn que furou o escopo, o que aprendi e por que, mesmo assim, valeu a pena.",
+    "excerptPt": "Estimei duas horas, passei de trinta. O projeto lateral de analytics de LinkedIn que furou o escopo, o que aprendi e por que, mesmo assim, valeu a pena.",
+    "content": "Rascunho. [Abrir →](/insights/linkedin-analytics)",
+    "contentPt": "Rascunho. [Abrir →](/insights/linkedin-analytics)",
+    "language": "pt",
+    "coverImage": "/articles/images/linkedin-analytics/og-cover.jpg",
+    "tags": [
+      "AI",
+      "Learning",
+      "Product"
+    ],
+    "date": "2026-06-09",
+    "readingTime": "4 min de leitura",
+    "visible": false,
+    "featured": false,
+    "order": -3,
+    "createdAt": "2026-06-09T00:00:00Z",
+    "updatedAt": "2026-06-09T00:00:00Z"
+  },
+  {
     "id": "insight-draft-album",
     "title": "Copa do Mundo, minha filha de 11 anos e a IA",
     "titlePt": "Copa do Mundo, minha filha de 11 anos e a IA",
