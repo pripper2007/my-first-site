@@ -60,6 +60,14 @@
     box-shadow: 0 6px 24px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04); }
 .article-doc .shot figcaption { font-size: 13.5px; color: var(--text-muted); margin-top: 12px;
     line-height: 1.55; font-style: italic; text-align: center; }
+.article-doc .cta-proj { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 14px; margin: 8px 0 1.6em; padding: 18px 20px; background: var(--accent-soft);
+    border: 1px solid var(--accent); border-radius: 14px; }
+.article-doc .cta-proj .txt { font-size: 15.5px; }
+.article-doc .cta-proj .txt b { font-weight: 650; }
+.article-doc .cta-proj a.btn { flex-shrink: 0; background: var(--accent); color: #fff; text-decoration: none;
+    font-weight: 650; font-size: 14.5px; padding: 10px 16px; border-radius: 10px; }
+.article-doc .cta-proj a.btn:hover { filter: brightness(.95); }
 </style>
 <article>
     <div class="hero">
@@ -122,6 +130,11 @@
       <p>Fica a ressalva: o que para mim virou distração, para muita gente é o trabalho principal. Marketing, criadores, quem vive da rede. O que construí não tem a maturidade de um produto profissional, ainda tem bugs, mas funcionalmente não está longe.</p>
 
       <p>Se for útil, posso sanitizar e compartilhar a base, para uso pessoal e estudo. Comenta ANALYTICS aqui que eu organizo e mando o Git.</p>
+
+      <div class="cta-proj">
+        <span class="txt">🔧 <b>O projeto está aberto:</b> documentação, arquitetura e o repositório completo, numa página só.</span>
+        <a class="btn" href="https://pedroripper.com/linkedin-analytics">Conhecer o projeto →</a>
+      </div>
 
       <p>E me conta: você também já foi abduzido por um projeto no Claude Code ou no Codex que era para durar duas horas e tomou muito mais tempo do que o razoável?</p>
 
