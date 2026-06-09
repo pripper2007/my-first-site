@@ -28,8 +28,8 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
-      <ProjectsSection />
       <InsightsSection items={insights} />
+      <ProjectsSection />
       <PicksSection items={picks} />
       <BooksSection items={books} />
       <VideosSection items={videos} />

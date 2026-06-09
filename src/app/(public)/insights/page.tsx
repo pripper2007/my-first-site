@@ -38,7 +38,7 @@ export default async function InsightsPage() {
         <BackToHome />
         <SectionHeader
           label="INSIGHTS"
-          title="Escrita"
+          title="Artigos"
           subtitle="Pensamentos originais sobre IA, pagamentos, tecnologia e liderança."
         />
 
