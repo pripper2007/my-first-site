@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     url: "https://pedroripper.com/linkedin-analytics",
     siteName: "Pedro Ripper",
     type: "website",
-    images: [{ url: "/images/og-preview.png", width: 1200, height: 630, alt: TITLE }],
+    images: [{ url: "/articles/images/linkedin-analytics/og-cover.jpg", width: 1200, height: 628, alt: TITLE }],
   },
-  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION, images: ["/images/og-preview.png"] },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION, images: ["/articles/images/linkedin-analytics/og-cover.jpg"] },
 };
 
 const GITHUB = "https://github.com/pripper2007/linkedin-analytics-dashboard";
