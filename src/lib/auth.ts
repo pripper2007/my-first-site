@@ -2,7 +2,7 @@
  * Simple password-based auth for the admin panel.
  * Uses ADMIN_PASSWORD env var and an HMAC-signed session cookie.
  */
-import { createHmac, randomBytes } from "crypto";
+import { createHmac, randomBytes, timingSafeEqual } from "crypto";
 import { cookies } from "next/headers";
 
 const COOKIE_NAME = "admin_session";
@@ -19,9 +19,16 @@ function signToken(payload: string): string {
   return createHmac("sha256", getSecret()).update(payload).digest("hex");
 }
 
+/** Constant-time string comparison (prevents timing attacks) */
+function safeEqual(a: string, b: string): boolean {
+  const bufA = Buffer.from(a);
+  const bufB = Buffer.from(b);
+  return bufA.length === bufB.length && timingSafeEqual(bufA, bufB);
+}
+
 /** Verifies the provided password matches the env var */
 export function verifyPassword(password: string): boolean {
-  return password === getSecret();
+  return safeEqual(password, getSecret());
 }
 
 /** Creates a session cookie after successful login */
@@ -48,7 +55,7 @@ export async function isAuthenticated(): Promise<boolean> {
   const [nonce, signature] = cookie.value.split(".");
   if (!nonce || !signature) return false;
 
-  return signToken(nonce) === signature;
+  return safeEqual(signToken(nonce), signature);
 }
 
 /** Destroys the session cookie */

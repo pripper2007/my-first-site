@@ -1,9 +1,8 @@
 import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
-import { getBooks } from "@/lib/content";
+import { getAllBooks, saveBooks } from "@/lib/content";
 import { isAuthenticated } from "@/lib/auth";
-import { promises as fs } from "fs";
-import path from "path";
+import { v4 as uuidv4 } from "uuid";
 
 /**
  * Bulk-imports books from an array of {title, author, ...} objects.
@@ -21,7 +20,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Expected an array of books" }, { status: 400 });
   }
 
-  const existing = await getBooks();
+  /* getAllBooks (not getBooks): the import rewrites the whole collection,
+     so starting from the filtered list would silently drop hidden books */
+  const existing = await getAllBooks();
   const existingTitles = new Set(existing.map((b) => b.title.toLowerCase()));
 
   let imported = 0;
@@ -32,7 +33,7 @@ export async function POST(request: Request) {
     if (existingTitles.has(item.title.toLowerCase())) continue;
 
     const newBook = {
-      id: `book-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+      id: uuidv4(),
       title: item.title || "",
       author: item.author || "",
       tag: item.tag || "",
@@ -52,8 +53,7 @@ export async function POST(request: Request) {
     imported++;
   }
 
-  const filepath = path.join(process.cwd(), "src", "content", "books.json");
-  await fs.writeFile(filepath, JSON.stringify(existing, null, 2), "utf-8");
+  await saveBooks(existing);
 
   return NextResponse.json({ imported, total: existing.length });
 }

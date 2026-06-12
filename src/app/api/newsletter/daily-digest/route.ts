@@ -9,6 +9,7 @@
  * Triggered daily by the Vercel cron in vercel.json (08h BRT). Vercel attaches
  * `Authorization: Bearer ${CRON_SECRET}`; the same bearer allows a manual run.
  */
+import { timingSafeEqual } from "crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { put, list } from "@vercel/blob";
@@ -94,8 +95,9 @@ export async function GET(req: NextRequest) {
   const { RESEND_API_KEY, RESEND_AUDIENCE_ID, CRON_SECRET } = process.env;
 
   if (CRON_SECRET) {
-    const auth = req.headers.get("authorization");
-    if (auth !== `Bearer ${CRON_SECRET}`) {
+    const auth = Buffer.from(req.headers.get("authorization") ?? "");
+    const expected = Buffer.from(`Bearer ${CRON_SECRET}`);
+    if (auth.length !== expected.length || !timingSafeEqual(auth, expected)) {
       return NextResponse.json({ error: "unauthorized" }, { status: 401 });
     }
   }

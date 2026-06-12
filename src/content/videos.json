@@ -1,5 +1,27 @@
 [
   {
+    "id": "e68-lu2RwjY",
+    "title": "Capital Insights entrevista Pedro Ripper, CEO da Bemobi | CNN Money",
+    "description": "Entrevista de Pedro Ripper, CEO da Bemobi, ao programa Capital Insights da CNN Brasil Money.",
+    "type": "interview",
+    "event": "CNN Brasil",
+    "date": "2026-06-11",
+    "duration": "42min",
+    "youtubeUrl": "https://www.youtube.com/watch?v=e68-lu2RwjY",
+    "embedUrl": "https://www.youtube.com/embed/e68-lu2RwjY",
+    "thumbnailUrl": "https://i.ytimg.com/vi/e68-lu2RwjY/maxresdefault.jpg",
+    "categories": [
+      "interview",
+      "media_appearance"
+    ],
+    "contentType": "tv_interview",
+    "channelName": "CNN Brasil",
+    "featured": true,
+    "order": -2,
+    "createdAt": "2026-06-11T00:00:00.000Z",
+    "updatedAt": "2026-06-11T00:00:00.000Z"
+  },
+  {
     "id": "rAdU_Z4_aSc",
     "title": "Bemobi aposta em IA para revolucionar pagamentos e ações disparam após virada estratégica",
     "description": "Entrevista ao Times Brasil (CNBC) sobre a aposta da Bemobi em IA para reinventar pagamentos e a virada estratégica da companhia.",

@@ -2,27 +2,55 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 /**
- * Proxy — protects /admin routes (except /admin/login).
- * Checks for the session cookie; redirects to login if missing.
- * Cannot import server-only code here, so we do a lightweight
- * cookie-existence check. Full HMAC validation happens server-side.
+ * Proxy — protects /admin and /api/admin routes (except the login endpoints).
+ *
+ * Validates the full HMAC signature of the admin_session cookie here at the
+ * edge, so a forged/garbage cookie can't reach the admin pages (which would
+ * otherwise expose hidden drafts in read-only views). The cookie format and
+ * key match src/lib/auth.ts; we use Web Crypto because the proxy runs on the
+ * Edge runtime (no node:crypto). The /api/admin/* routes also re-check
+ * server-side via isAuthenticated().
  */
-export function proxy(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  /* Let login page and API login endpoint through */
   if (pathname === "/admin/login" || pathname === "/api/admin/login") {
     return NextResponse.next();
   }
 
-  /* Check for session cookie */
-  const session = request.cookies.get("admin_session");
-  if (!session?.value) {
-    const loginUrl = new URL("/admin/login", request.url);
-    return NextResponse.redirect(loginUrl);
+  const token = request.cookies.get("admin_session")?.value;
+  if (token && (await isValidSession(token))) {
+    return NextResponse.next();
   }
 
-  return NextResponse.next();
+  return NextResponse.redirect(new URL("/admin/login", request.url));
+}
+
+async function isValidSession(token: string): Promise<boolean> {
+  const [nonce, signature] = token.split(".");
+  const secret = process.env.ADMIN_PASSWORD;
+  if (!nonce || !signature || !secret) return false;
+
+  const enc = new TextEncoder();
+  const key = await crypto.subtle.importKey(
+    "raw",
+    enc.encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"],
+  );
+  const mac = await crypto.subtle.sign("HMAC", key, enc.encode(nonce));
+  const expected = Array.from(new Uint8Array(mac))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+
+  /* Constant-time comparison */
+  if (expected.length !== signature.length) return false;
+  let diff = 0;
+  for (let i = 0; i < expected.length; i++) {
+    diff |= expected.charCodeAt(i) ^ signature.charCodeAt(i);
+  }
+  return diff === 0;
 }
 
 export const config = {

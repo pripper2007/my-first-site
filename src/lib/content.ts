@@ -316,6 +316,14 @@ export async function updateBook(
   return books[index];
 }
 
+/**
+ * Bulk-replaces the books collection — used by the import route, which
+ * builds the merged list itself. Keeps the write on the blob/fs abstraction.
+ */
+export async function saveBooks(books: BookItem[]): Promise<void> {
+  await writeJsonFile("books.json", books);
+}
+
 export async function deleteBook(id: string): Promise<boolean> {
   const books = await getAllBooks();
   const filtered = books.filter((b) => b.id !== id);
