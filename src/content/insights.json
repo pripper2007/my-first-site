@@ -1,5 +1,29 @@
 [
   {
+    "id": "insight-014",
+    "title": "O governo americano acaba de forçar a Anthropic a desligar seu modelo mais avançado. E o que isto significa?",
+    "titlePt": "O governo americano acaba de forçar a Anthropic a desligar seu modelo mais avançado. E o que isto significa?",
+    "slug": "governo-eua-desliga-modelo-anthropic",
+    "excerpt": "Pela primeira vez, um governo tirou do ar um modelo de fronteira já em produção. As dimensões regulatórias, geopolíticas e de arquitetura que isso abre, a quente.",
+    "excerptPt": "Pela primeira vez, um governo tirou do ar um modelo de fronteira já em produção. As dimensões regulatórias, geopolíticas e de arquitetura que isso abre, a quente.",
+    "content": "Este artigo está disponível como uma página standalone. [Leia o artigo completo →](/insights/governo-eua-desliga-modelo-anthropic)",
+    "contentPt": "Este artigo está disponível como uma página standalone. [Leia o artigo completo →](/insights/governo-eua-desliga-modelo-anthropic)",
+    "language": "pt",
+    "coverImage": "/articles/images/governo-eua-desliga-modelo-anthropic/og-cover.jpg",
+    "tags": [
+      "AI",
+      "Regulation",
+      "Geopolitics"
+    ],
+    "date": "2026-06-13",
+    "readingTime": "6 min de leitura",
+    "visible": true,
+    "featured": true,
+    "order": -4,
+    "createdAt": "2026-06-13T00:00:00Z",
+    "updatedAt": "2026-06-13T00:00:00Z"
+  },
+  {
     "id": "insight-draft-linkedin",
     "title": "Criei uma ferramenta de analytics de LinkedIn que supera muitas ferramentas profissionais em funcionalidade. E esse foi o problema.",
     "titlePt": "Criei uma ferramenta de analytics de LinkedIn que supera muitas ferramentas profissionais em funcionalidade. E esse foi o problema.",
