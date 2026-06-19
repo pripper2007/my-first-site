@@ -10,11 +10,13 @@ import { track } from "@vercel/analytics";
  *
  * variant "card": framed block for kit pages / article ends / /newsletter.
  * variant "compact": slim row for the footer.
+ * variant "bare": just the form + feedback (no chrome/heading) — for the
+ *   home band, which provides its own heading and framing.
  */
 export default function NewsletterSignup({
   variant = "card",
 }: {
-  variant?: "card" | "compact";
+  variant?: "card" | "compact" | "bare";
 }) {
   const [email, setEmail] = useState("");
   const [state, setState] = useState<"idle" | "loading" | "sent" | "error">(
@@ -81,6 +83,17 @@ export default function NewsletterSignup({
         {message}
       </p>
     ) : null;
+
+  if (variant === "bare") {
+    return state === "sent" ? (
+      feedback
+    ) : (
+      <>
+        {form}
+        {feedback}
+      </>
+    );
+  }
 
   if (variant === "compact") {
     return (

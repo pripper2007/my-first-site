@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CopyTextButton from "@/components/public/CopyTextButton";
+import NewsletterSignup from "@/components/public/NewsletterSignup";
 import { PERSON_ID, WEBSITE_ID } from "@/lib/jsonld";
 
 const TITLE = "LinkedIn Analytics Command Center — seus dados, seu painel";
@@ -169,6 +170,11 @@ export default function LinkedInAnalyticsPage() {
           <a href={GITHUB} target="_blank" rel="noopener noreferrer" className="text-[var(--color-accent)] hover:underline">GitHub</a>.
           Um projeto pessoal: use por sua conta, para estudo e uso pessoal.
         </p>
+
+        {/* Newsletter */}
+        <div className="mt-14">
+          <NewsletterSignup />
+        </div>
       </div>
     </article>
   );

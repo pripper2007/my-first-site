@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CopyTextButton from "@/components/public/CopyTextButton";
+import NewsletterSignup from "@/components/public/NewsletterSignup";
 import { PERSON_ID, WEBSITE_ID } from "@/lib/jsonld";
 
 const TITLE = "Álbum digital de figurinhas — crie o seu";
@@ -128,6 +129,11 @@ export default function AlbumFigurinhasPage() {
           <a href={DISCLAIMER} target="_blank" rel="noopener noreferrer" className="text-[var(--color-accent)] hover:underline">DISCLAIMER</a>).
           Código sob licença MIT. Stack: Next.js · React · TypeScript · Tailwind
           · Dexie (IndexedDB) · Supabase (opcional).
+        </div>
+
+        {/* Newsletter */}
+        <div className="mt-14">
+          <NewsletterSignup />
         </div>
       </div>
     </article>

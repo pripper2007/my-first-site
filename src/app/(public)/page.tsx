@@ -1,6 +1,7 @@
 import { getFeaturedNews, getFeaturedVideos, getFeaturedBooks, getFeaturedPicks, getFeaturedInsights, getNews, getVideos, getBooks, getPicks, getInsights } from "@/lib/content";
 import Hero from "@/components/public/Hero";
 import ProjectsSection from "@/components/public/ProjectsSection";
+import NewsletterSection from "@/components/public/NewsletterSection";
 import InsightsSection from "@/components/public/InsightsSection";
 import PicksSection from "@/components/public/PicksSection";
 import BooksSection from "@/components/public/BooksSection";
@@ -9,7 +10,7 @@ import NewsSection from "@/components/public/NewsSection";
 import ContentMapSection from "@/components/public/ContentMapSection";
 
 /**
- * Homepage — Hero → Insights → Picks → Books → Talks → News → Content Atlas
+ * Homepage — Hero → Insights → Projects → Newsletter → Picks → Books → Talks → News → Content Atlas
  */
 export default async function HomePage() {
   const [news, videos, books, picks, insights, allNews, allVideos, allBooks, allPicks, allInsights] = await Promise.all([
@@ -30,6 +31,7 @@ export default async function HomePage() {
       <Hero />
       <InsightsSection items={insights} />
       <ProjectsSection />
+      <NewsletterSection />
       <PicksSection items={picks} />
       <BooksSection items={books} />
       <VideosSection items={videos} />
